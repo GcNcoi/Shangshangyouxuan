@@ -18,5 +18,4 @@ public interface RoleService extends IService<Role> {
     Map<String, Object> getRoleByAdminId(Long id);
 
     void saveAdminRole(Long adminId, List<Long> roleIdList);
-
 }

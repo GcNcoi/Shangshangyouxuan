@@ -69,8 +69,7 @@ public class RoleController {
 
     @ApiOperation("批量删除角色")
     @DeleteMapping("/batchRemove")
-    public Result<Role> batchRemoveRole(@ApiParam(name = "idList", value = "角色id列表", required = true)
-                                        @RequestBody List<Long> idList) {
+    public Result<Role> batchRemoveRole(@RequestBody List<Long> idList) {
         roleService.removeByIds(idList);
         return Result.ok();
     }
