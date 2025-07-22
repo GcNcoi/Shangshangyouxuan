@@ -5,33 +5,53 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="092f8b6c-3e13-4246-83c4-4a4aa538fb51" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/service/service-sys/src/main/java/com/atguigu/ssyx/sys/controller/RegionWareController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/service-sys/src/main/java/com/atguigu/ssyx/sys/service/impl/RegionWareServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f6dce760-b362-441e-9a23-837c323d6a3c.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/service-util/src/main/java/com/atguigu/ssyx/common/config/MybatisPlusConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/service-util/src/main/java/com/atguigu/ssyx/common/config/MybatisPlusConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/service-util/target/classes/com/atguigu/ssyx/common/config/MybatisPlusConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/common/service-util/target/classes/com/atguigu/ssyx/common/config/MybatisPlusConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/service-product/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/service-product/src/main/java/com/atguigu/ssyx/ServiceProductApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/service-product/src/main/java/com/atguigu/ssyx/product/mapper/AttrGroupMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/service-product/src/main/java/com/atguigu/ssyx/product/mapper/AttrMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/service-product/src/main/java/com/atguigu/ssyx/product/mapper/CategoryMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/service-product/src/main/java/com/atguigu/ssyx/product/mapper/SkuAttrValueMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/service-product/src/main/java/com/atguigu/ssyx/product/mapper/SkuImageMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/service-product/src/main/java/com/atguigu/ssyx/product/mapper/SkuInfoMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/service-product/src/main/java/com/atguigu/ssyx/product/mapper/SkuPosterMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/service-product/src/main/java/com/atguigu/ssyx/product/service/AttrGroupService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/service-product/src/main/java/com/atguigu/ssyx/product/service/AttrService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/service-product/src/main/java/com/atguigu/ssyx/product/service/CategoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/service-product/src/main/java/com/atguigu/ssyx/product/service/SkuAttrValueService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/service-product/src/main/java/com/atguigu/ssyx/product/service/SkuImageService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/service-product/src/main/java/com/atguigu/ssyx/product/service/SkuInfoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/service-product/src/main/java/com/atguigu/ssyx/product/service/SkuPosterService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/service-product/src/main/java/com/atguigu/ssyx/product/service/impl/AttrGroupServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/service-product/src/main/java/com/atguigu/ssyx/product/service/impl/AttrServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/service-product/src/main/java/com/atguigu/ssyx/product/service/impl/CategoryServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/service-product/src/main/java/com/atguigu/ssyx/product/service/impl/SkuAttrValueServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/service-product/src/main/java/com/atguigu/ssyx/product/service/impl/SkuImageServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/service-product/src/main/java/com/atguigu/ssyx/product/service/impl/SkuInfoServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/service-product/src/main/java/com/atguigu/ssyx/product/service/impl/SkuPosterServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/service-product/src/main/resources/application-dev.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/service-product/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/service-product/src/main/resources/mapper/AttrGroupMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/service-product/src/main/resources/mapper/AttrMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/service-product/src/main/resources/mapper/CategoryMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/service-product/src/main/resources/mapper/SkuAttrValueMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/service-product/src/main/resources/mapper/SkuImageMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/service-product/src/main/resources/mapper/SkuInfoMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/service-product/src/main/resources/mapper/SkuPosterMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/service-util/src/main/java/com/atguigu/ssyx/common/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/service-util/src/main/java/com/atguigu/ssyx/common/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/service-util/src/main/java/com/atguigu/ssyx/common/result/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/service-util/src/main/java/com/atguigu/ssyx/common/result/Result.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/service-util/target/classes/com/atguigu/ssyx/common/exception/GlobalExceptionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/common/service-util/target/classes/com/atguigu/ssyx/common/exception/GlobalExceptionHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/service-util/target/classes/com/atguigu/ssyx/common/result/Result.class" beforeDir="false" afterPath="$PROJECT_DIR$/common/service-util/target/classes/com/atguigu/ssyx/common/result/Result.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/service-acl/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/service/service-acl/src/main/resources/application-dev.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/service-acl/target/classes/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/service/service-acl/target/classes/application-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/service-sys/src/main/java/com/atguigu/ssyx/ServiceSysApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/service-sys/src/main/java/com/atguigu/ssyx/ServiceSysApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/service-sys/src/main/java/com/atguigu/ssyx/controller/RegionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/service-sys/src/main/java/com/atguigu/ssyx/sys/controller/RegionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/service-sys/src/main/java/com/atguigu/ssyx/controller/RegionWareController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/service-sys/src/main/java/com/atguigu/ssyx/controller/WareController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/service-sys/src/main/java/com/atguigu/ssyx/sys/controller/WareController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/service-sys/src/main/java/com/atguigu/ssyx/mapper/RegionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/service-sys/src/main/java/com/atguigu/ssyx/sys/mapper/RegionMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/service-sys/src/main/java/com/atguigu/ssyx/mapper/RegionWareMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/service-sys/src/main/java/com/atguigu/ssyx/sys/mapper/RegionWareMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/service-sys/src/main/java/com/atguigu/ssyx/mapper/WareMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/service-sys/src/main/java/com/atguigu/ssyx/sys/mapper/WareMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/service-sys/src/main/java/com/atguigu/ssyx/service/RegionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/service-sys/src/main/java/com/atguigu/ssyx/sys/service/RegionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/service-sys/src/main/java/com/atguigu/ssyx/service/RegionWareService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/service-sys/src/main/java/com/atguigu/ssyx/sys/service/RegionWareService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/service-sys/src/main/java/com/atguigu/ssyx/service/WareService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/service-sys/src/main/java/com/atguigu/ssyx/sys/service/WareService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/service-sys/src/main/java/com/atguigu/ssyx/service/impl/RegionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/service-sys/src/main/java/com/atguigu/ssyx/sys/service/impl/RegionServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/service-sys/src/main/java/com/atguigu/ssyx/service/impl/RegionWareServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/service-sys/src/main/java/com/atguigu/ssyx/service/impl/WareServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/service-sys/src/main/java/com/atguigu/ssyx/sys/service/impl/WareServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/service-sys/src/main/java/com/atguigu/ssyx/sys/controller/RegionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/service-sys/src/main/java/com/atguigu/ssyx/sys/controller/RegionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/service-sys/src/main/java/com/atguigu/ssyx/sys/controller/RegionWareController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/service-sys/src/main/java/com/atguigu/ssyx/sys/controller/RegionWareController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/service-sys/src/main/java/com/atguigu/ssyx/sys/controller/WareController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/service-sys/src/main/java/com/atguigu/ssyx/sys/controller/WareController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/service-sys/src/main/java/com/atguigu/ssyx/sys/service/RegionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/service-sys/src/main/java/com/atguigu/ssyx/sys/service/RegionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/service-sys/src/main/java/com/atguigu/ssyx/sys/service/RegionWareService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/service-sys/src/main/java/com/atguigu/ssyx/sys/service/RegionWareService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/service-sys/src/main/java/com/atguigu/ssyx/sys/service/impl/RegionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/service-sys/src/main/java/com/atguigu/ssyx/sys/service/impl/RegionServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/service-sys/src/main/java/com/atguigu/ssyx/sys/service/impl/RegionWareServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/service-sys/src/main/java/com/atguigu/ssyx/sys/service/impl/RegionWareServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/service-sys/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/service/service-sys/src/main/resources/application-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/service-sys/src/main/resources/mapper/RegionMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service/service-sys/src/main/resources/mapper/RegionMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/service-sys/src/main/resources/mapper/RegionWareMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service/service-sys/src/main/resources/mapper/RegionWareMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/service-sys/src/main/resources/mapper/WareMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service/service-sys/src/main/resources/mapper/WareMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,10 +112,11 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Spring Boot.ServiceAclApplication.executor": "Debug",
+    "Spring Boot.ServiceSysApplication.executor": "Debug",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/Project/ssyx/ssyx/guigu-ssyx-parent/common/service-util/src/test/java/com/atguigu/ssyx",
+    "last_opened_file_path": "D:/Project/ssyx/ssyx/guigu-ssyx-parent/service/service-product/src/main/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -122,9 +143,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Project\ssyx\ssyx\guigu-ssyx-parent\service\service-product\src\main\resources" />
       <recent name="D:\Project\ssyx\ssyx\guigu-ssyx-parent\common\service-util\src\test\java\com\atguigu\ssyx" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Project\ssyx\ssyx\guigu-ssyx-parent\service\service-product\src\main\resources\mapper" />
       <recent name="D:\Project\ssyx\ssyx\guigu-ssyx-parent\service\service-sys\src\main\resources\mapper" />
     </key>
   </component>
@@ -189,6 +212,7 @@
       <workItem from="1753100673925" duration="10279000" />
       <workItem from="1753114211987" duration="553000" />
       <workItem from="1753167278081" duration="4839000" />
+      <workItem from="1753195316205" duration="4914000" />
     </task>
     <servers />
   </component>
