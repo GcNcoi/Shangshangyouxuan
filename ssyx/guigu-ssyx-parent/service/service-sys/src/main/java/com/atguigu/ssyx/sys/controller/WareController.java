@@ -1,4 +1,4 @@
-package com.atguigu.ssyx.controller;
+package com.atguigu.ssyx.sys.controller;
 
 /**
  * @BelongsProject: guigu-ssyx-parent

@@ -1,4 +1,4 @@
-package com.atguigu.ssyx.controller;
+package com.atguigu.ssyx.sys.controller;
 
 import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.CrossOrigin;

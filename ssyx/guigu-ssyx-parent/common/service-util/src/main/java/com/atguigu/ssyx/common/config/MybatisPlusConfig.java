@@ -24,7 +24,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  */
 //@EnableTransactionManagement
 @Configuration
-@MapperScan("com.atguigu.ssyx.*.mapper")
+@MapperScan("com.atguigu.ssyx.**.mapper")
 public class MybatisPlusConfig {
 
     /**

@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.atguigu.ssyx.mapper.WareMapper">
+<mapper namespace="com.atguigu.ssyx.sys.mapper.WareMapper">
 
     <resultMap id="BaseResultMap" type="com.atguigu.ssyx.model.sys.Ware">
             <id property="id" column="id" />
