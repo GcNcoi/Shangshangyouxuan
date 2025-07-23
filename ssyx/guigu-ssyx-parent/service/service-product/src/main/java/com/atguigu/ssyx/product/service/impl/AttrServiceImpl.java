@@ -1,10 +1,13 @@
 package com.atguigu.ssyx.product.service.impl;
 
 import com.atguigu.ssyx.model.product.Attr;
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.atguigu.ssyx.product.service.AttrService;
 import com.atguigu.ssyx.product.mapper.AttrMapper;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
 * @author 信信宝贝
@@ -15,6 +18,12 @@ import org.springframework.stereotype.Service;
 public class AttrServiceImpl extends ServiceImpl<AttrMapper, Attr>
     implements AttrService{
 
+    @Override
+    public List<Attr> findByGroupId(Long groupId) {
+        LambdaQueryWrapper<Attr> wrapper = new LambdaQueryWrapper<>();
+        wrapper.eq(Attr::getAttrGroupId, groupId);
+        return baseMapper.selectList(wrapper);
+    }
 }
 
 
