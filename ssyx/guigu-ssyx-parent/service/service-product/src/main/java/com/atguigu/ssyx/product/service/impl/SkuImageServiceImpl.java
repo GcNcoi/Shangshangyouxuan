@@ -1,14 +1,10 @@
 package com.atguigu.ssyx.product.service.impl;
 
 import com.atguigu.ssyx.model.product.SkuImage;
-import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.atguigu.ssyx.product.service.SkuImageService;
 import com.atguigu.ssyx.product.mapper.SkuImageMapper;
 import org.springframework.stereotype.Service;
-
-import java.util.Collections;
-import java.util.List;
 
 /**
 * @author 信信宝贝
@@ -19,12 +15,6 @@ import java.util.List;
 public class SkuImageServiceImpl extends ServiceImpl<SkuImageMapper, SkuImage>
     implements SkuImageService{
 
-    @Override
-    public List<SkuImage> getImageListBySkuId(Long id) {
-        LambdaQueryWrapper<SkuImage> wrapper = new LambdaQueryWrapper<>();
-        wrapper.eq(SkuImage::getSkuId, id);
-        return baseMapper.selectList(wrapper);
-    }
 }
 
 
