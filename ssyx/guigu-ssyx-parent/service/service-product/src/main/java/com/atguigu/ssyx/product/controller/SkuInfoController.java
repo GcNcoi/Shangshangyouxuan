@@ -15,6 +15,8 @@ import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 /**
  * @BelongsProject: guigu-ssyx-parent
  * @BelongsPackage: com.atguigu.ssyx.product.controller
@@ -46,6 +48,58 @@ public class SkuInfoController {
     @PostMapping("/save")
     public Result save(@ApiParam(name = "skuInfoVo", value = "商品对象", required = true) @RequestBody SkuInfoVo skuInfoVo) {
         skuInfoService.saveSkuInfo(skuInfoVo);
+        return Result.ok();
+    }
+
+    @ApiOperation(value = "获取sku信息")
+    @GetMapping("/get/{id}")
+    public Result<SkuInfoVo> get(@ApiParam(name = "id", value = "skuId", required = true) @PathVariable("id") Long id) {
+        SkuInfoVo skuInfoVo = skuInfoService.getSkuInfo(id);
+        return Result.ok(skuInfoVo);
+    }
+
+    @ApiOperation(value = "修改sku信息")
+    @PutMapping("/update")
+    public Result update(@ApiParam(name = "skuInfoVo", value = "sku对象", required = true) @RequestBody SkuInfoVo skuInfoVo) {
+        skuInfoService.updateSkuInfo(skuInfoVo);
+        return Result.ok();
+    }
+
+    @ApiOperation(value = "删除")
+    @DeleteMapping("/remove/{id}")
+    public Result remove(@ApiParam(name = "id", value = "skuId", required = true) @PathVariable("id") Long id) {
+        skuInfoService.removeById(id);
+        return Result.ok();
+    }
+
+    @ApiOperation(value = "根据id列表删除")
+    @DeleteMapping("/batchRemove")
+    public Result batchRemove(@ApiParam(name = "idList", value = "skuId集合", required = false) @RequestBody List<Long> idList) {
+        skuInfoService.removeByIds(idList);
+        return Result.ok();
+    }
+
+    @ApiOperation(value = "商品审核")
+    @GetMapping("/check/{skuId}/{status}")
+    public Result check(@ApiParam(name = "skuId", value = "skuId", required = true) @PathVariable("skuId") Long skuId,
+                        @ApiParam(name = "status", value = "状态", required = true) @PathVariable("status") Integer status) {
+        skuInfoService.check(skuId, status);
+        return Result.ok();
+    }
+
+    @ApiOperation(value = "商品上架")
+    @GetMapping("/publish/{skuId}/{status}")
+    public Result publish(@ApiParam(name = "skuId", value = "skuId", required = true) @PathVariable("skuId") Long skuId,
+                        @ApiParam(name = "status", value = "状态", required = true) @PathVariable("status") Integer status) {
+        skuInfoService.publish(skuId, status);
+        return Result.ok();
+    }
+
+    @ApiOperation(value = "新人专享")
+    @GetMapping("/isNewPerson/{skuId}/{status}")
+    public Result isNewPerson(@ApiParam(name = "skuId", value = "skuId", required = true) @PathVariable("skuId") Long skuId,
+                          @ApiParam(name = "status", value = "状态", required = true) @PathVariable("status") Integer status) {
+        skuInfoService.isNewPerson(skuId, status);
         return Result.ok();
     }
 
