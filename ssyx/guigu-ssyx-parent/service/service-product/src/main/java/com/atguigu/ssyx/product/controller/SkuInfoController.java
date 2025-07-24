@@ -15,6 +15,8 @@ import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 /**
  * @BelongsProject: guigu-ssyx-parent
  * @BelongsPackage: com.atguigu.ssyx.product.controller
@@ -49,4 +51,55 @@ public class SkuInfoController {
         return Result.ok();
     }
 
+    @ApiOperation(value = "获取商品详情信息")
+    @GetMapping("/get/{id}")
+    public Result<SkuInfoVo> get(@ApiParam(name = "id", value = "商品id", required = true) @PathVariable("id") Long id) {
+        SkuInfoVo skuInfoVo = skuInfoService.getSkuInfoVo(id);
+        return Result.ok(skuInfoVo);
+    }
+
+    @ApiOperation(value = "修改商品")
+    @PutMapping("/update")
+    public Result updateById(@ApiParam(name = "skuInfoVo", value = "商品对象", required = true) @RequestBody SkuInfoVo skuInfoVo) {
+        skuInfoService.updateSkuInfo(skuInfoVo);
+        return Result.ok();
+    }
+
+    @ApiOperation(value = "删除")
+    @DeleteMapping("/remove/{id}")
+    public Result remove(@ApiParam(name = "id", value = "商品id", required = true) @PathVariable Long id) {
+        skuInfoService.removeById(id);
+        return Result.ok();
+    }
+
+    @ApiOperation(value = "根据id列表删除")
+    @DeleteMapping("/batchRemove")
+    public Result batchRemove(@ApiParam(name = "idList", value = "商品id列表", required = false) @RequestBody List<Long> idList) {
+        skuInfoService.removeByIds(idList);
+        return Result.ok();
+    }
+
+    @ApiOperation(value = "商品审核")
+    @GetMapping("/check/{skuId}/{status}")
+    public Result check(@ApiParam(name = "skuId", value = "商品id", required = true) @PathVariable("skuId") Long skuId,
+                        @ApiParam(name = "status", value = "状态", required = true) @PathVariable("status") Integer status) {
+        skuInfoService.check(skuId, status);
+        return Result.ok();
+    }
+
+    @ApiOperation(value = "商品上架")
+    @GetMapping("/publish/{skuId}/{status}")
+    public Result publish(@ApiParam(name = "skuId", value = "商品id", required = true) @PathVariable("skuId") Long skuId,
+                          @ApiParam(name = "status", value = "状态", required = true) @PathVariable("status") Integer status) {
+        skuInfoService.publish(skuId, status);
+        return Result.ok();
+    }
+
+    @ApiOperation(value = "新人专享")
+    @GetMapping("/isNewPerson/{skuId}/{status}")
+    public Result isNewPerson(@ApiParam(name = "skuId", value = "商品id", required = true) @PathVariable("skuId") Long skuId,
+                              @ApiParam(name = "status", value = "状态", required = true) @PathVariable("status") Integer status) {
+        skuInfoService.isNewPerson(skuId, status);
+        return Result.ok();
+    }
 }
