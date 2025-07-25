@@ -1,5 +1,6 @@
 package com.atguigu.ssyx.product.service.impl;
 
+import com.atguigu.ssyx.constant.MqConst;
 import com.atguigu.ssyx.model.product.SkuAttrValue;
 import com.atguigu.ssyx.model.product.SkuImage;
 import com.atguigu.ssyx.model.product.SkuInfo;
@@ -7,6 +8,7 @@ import com.atguigu.ssyx.model.product.SkuPoster;
 import com.atguigu.ssyx.product.service.SkuAttrValueService;
 import com.atguigu.ssyx.product.service.SkuImageService;
 import com.atguigu.ssyx.product.service.SkuPosterService;
+import com.atguigu.ssyx.service.RabbitService;
 import com.atguigu.ssyx.vo.product.SkuInfoQueryVo;
 import com.atguigu.ssyx.vo.product.SkuInfoVo;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
@@ -21,6 +23,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
+import springfox.documentation.annotations.ApiIgnore;
 
 import java.util.List;
 
@@ -41,6 +44,9 @@ public class SkuInfoServiceImpl extends ServiceImpl<SkuInfoMapper, SkuInfo>
 
     @Autowired
     private SkuPosterService skuPosterService;
+
+    @Autowired
+    private RabbitService rabbitService;
 
     @Override
     public IPage<SkuInfo> selectPageSkuInfo(Page<SkuInfo> pageParam, SkuInfoQueryVo skuInfoQueryVo) {
@@ -183,13 +189,15 @@ public class SkuInfoServiceImpl extends ServiceImpl<SkuInfoMapper, SkuInfo>
             skuInfoUp.setId(skuId);
             skuInfoUp.setPublishStatus(1);
             baseMapper.updateById(skuInfoUp);
-            //TODO 商品上架 后续会完善：发送mq消息更新es数据
+            //商品上架 后续会完善：发送mq消息更新es数据
+            rabbitService.sendMessage(MqConst.EXCHANGE_GOODS_DIRECT, MqConst.ROUTING_GOODS_UPPER, skuId);
         } else {
             SkuInfo skuInfoUp = new SkuInfo();
             skuInfoUp.setId(skuId);
             skuInfoUp.setPublishStatus(0);
             baseMapper.updateById(skuInfoUp);
-            //TODO 商品下架 后续会完善：发送mq消息更新es数据
+            //商品下架 后续会完善：发送mq消息更新es数据
+            rabbitService.sendMessage(MqConst.EXCHANGE_GOODS_DIRECT, MqConst.ROUTING_GOODS_LOWER, skuId);
         }
     }
 

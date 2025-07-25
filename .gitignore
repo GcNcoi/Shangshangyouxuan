@@ -1,9 +1,8 @@
 target/
-application-dev.yml
 .idea/
 # 忽略 .gitattributes 文件
 .gitattributes
-
+.idea/workspace.xml
 # 忽略 git-filter-repo 目录或文件（根据实际情况）
 git-filter-repo/  # 如果是目录，末尾加斜杠
 # 或者
