@@ -1,5 +1,6 @@
 target/
 .idea/
+.idea/workspace.xml
 # 忽略 .gitattributes 文件
 .gitattributes
 .idea/workspace.xml

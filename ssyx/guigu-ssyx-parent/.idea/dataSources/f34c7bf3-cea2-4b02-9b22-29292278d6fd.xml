@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="@localhost">
-  <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.41">
+  <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.52">
     <root id="1">
       <DefaultCasing>lower/lower</DefaultCasing>
       <DefaultEngine>InnoDB</DefaultEngine>
@@ -1150,51 +1150,51 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <column id="318" parent="259" name="id">
       <AutoIncrement>12</AutoIncrement>
       <Comment>会员id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="319" parent="259" name="username">
       <Comment>用户名</Comment>
-      <DataType>varchar(20)|0s</DataType>
+      <DasType>varchar(20)|0s</DasType>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
     <column id="320" parent="259" name="password">
       <Comment>密码</Comment>
-      <DataType>varchar(32)|0s</DataType>
+      <DasType>varchar(32)|0s</DasType>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
     <column id="321" parent="259" name="name">
       <Comment>姓名</Comment>
-      <DataType>varchar(50)|0s</DataType>
+      <DasType>varchar(50)|0s</DasType>
       <Position>4</Position>
     </column>
     <column id="322" parent="259" name="phone">
       <Comment>手机</Comment>
-      <DataType>varchar(11)|0s</DataType>
+      <DasType>varchar(11)|0s</DasType>
       <Position>5</Position>
     </column>
     <column id="323" parent="259" name="ware_id">
       <Comment>仓库id（默认为：0为平台用户）</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
     <column id="324" parent="259" name="create_time">
       <Comment>创建时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>7</Position>
     </column>
     <column id="325" parent="259" name="update_time">
       <Comment>更新时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
@@ -1202,7 +1202,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </column>
     <column id="326" parent="259" name="is_deleted">
       <Comment>删除标记（0:不可用 1:可用）</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>9</Position>
@@ -1227,37 +1227,37 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </key>
     <column id="331" parent="260" name="id">
       <AutoIncrement>1</AutoIncrement>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="332" parent="260" name="admin_id">
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <Position>2</Position>
     </column>
     <column id="333" parent="260" name="ip">
-      <DataType>varchar(64)|0s</DataType>
+      <DasType>varchar(64)|0s</DasType>
       <Position>3</Position>
     </column>
     <column id="334" parent="260" name="address">
-      <DataType>varchar(100)|0s</DataType>
+      <DasType>varchar(100)|0s</DasType>
       <Position>4</Position>
     </column>
     <column id="335" parent="260" name="user_agent">
       <Comment>浏览器登录类型</Comment>
-      <DataType>varchar(100)|0s</DataType>
+      <DasType>varchar(100)|0s</DasType>
       <Position>5</Position>
     </column>
     <column id="336" parent="260" name="create_time">
       <Comment>创建时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
     <column id="337" parent="260" name="update_time">
       <Comment>更新时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
@@ -1265,7 +1265,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </column>
     <column id="338" parent="260" name="is_deleted">
       <Comment>删除标记（0:不可用 1:可用）</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>8</Position>
@@ -1283,34 +1283,34 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <column id="341" parent="261" name="id">
       <AutoIncrement>17</AutoIncrement>
       <Comment>主键id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="342" parent="261" name="role_id">
       <Comment>角色id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
     <column id="343" parent="261" name="admin_id">
       <Comment>用户id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
     <column id="344" parent="261" name="create_time">
       <Comment>创建时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
     <column id="345" parent="261" name="update_time">
       <Comment>更新时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
@@ -1318,7 +1318,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </column>
     <column id="346" parent="261" name="is_deleted">
       <Comment>删除标记（0:不可用 1:可用）</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>6</Position>
@@ -1344,56 +1344,56 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <column id="351" parent="262" name="id">
       <AutoIncrement>101</AutoIncrement>
       <Comment>编号</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="352" parent="262" name="pid">
       <Comment>所属上级</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
     <column id="353" parent="262" name="name">
       <Comment>名称</Comment>
-      <DataType>varchar(20)|0s</DataType>
+      <DasType>varchar(20)|0s</DasType>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
     <column id="354" parent="262" name="code">
       <Comment>名称code</Comment>
-      <DataType>varchar(50)|0s</DataType>
+      <DasType>varchar(50)|0s</DasType>
       <Position>4</Position>
     </column>
     <column id="355" parent="262" name="to_code">
       <Comment>跳转页面code</Comment>
-      <DataType>varchar(100)|0s</DataType>
+      <DasType>varchar(100)|0s</DasType>
       <Position>5</Position>
     </column>
     <column id="356" parent="262" name="type">
       <Comment>类型(1:菜单,2:按钮)</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
     <column id="357" parent="262" name="status">
       <Comment>状态(0:禁止,1:正常)</Comment>
-      <DataType>tinyint(4)|0s</DataType>
+      <DasType>tinyint(4)|0s</DasType>
       <Position>7</Position>
     </column>
     <column id="358" parent="262" name="create_time">
       <Comment>创建时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>8</Position>
     </column>
     <column id="359" parent="262" name="update_time">
       <Comment>更新时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
@@ -1401,7 +1401,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </column>
     <column id="360" parent="262" name="is_deleted">
       <Comment>删除标记（0:不可用 1:可用）</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>10</Position>
@@ -1423,37 +1423,37 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <column id="364" parent="263" name="id">
       <AutoIncrement>25</AutoIncrement>
       <Comment>角色id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="365" parent="263" name="role_name">
       <Comment>角色名称</Comment>
-      <DataType>varchar(20)|0s</DataType>
+      <DasType>varchar(20)|0s</DasType>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
     <column id="366" parent="263" name="role_code">
       <Comment>角色编码</Comment>
-      <DataType>varchar(20)|0s</DataType>
+      <DasType>varchar(20)|0s</DasType>
       <Position>3</Position>
     </column>
     <column id="367" parent="263" name="remark">
       <Comment>备注</Comment>
-      <DataType>varchar(255)|0s</DataType>
+      <DasType>varchar(255)|0s</DasType>
       <Position>4</Position>
     </column>
     <column id="368" parent="263" name="create_time">
       <Comment>创建时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
     <column id="369" parent="263" name="update_time">
       <Comment>更新时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
@@ -1461,7 +1461,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </column>
     <column id="370" parent="263" name="is_deleted">
       <Comment>删除标记（0:不可用 1:可用）</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>7</Position>
@@ -1478,32 +1478,32 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </key>
     <column id="373" parent="264" name="id">
       <AutoIncrement>315</AutoIncrement>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="374" parent="264" name="role_id">
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
     <column id="375" parent="264" name="permission_id">
-      <DataType>bigint(11)|0s</DataType>
+      <DasType>bigint(11)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
     <column id="376" parent="264" name="create_time">
       <Comment>创建时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
     <column id="377" parent="264" name="update_time">
       <Comment>更新时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
@@ -1511,7 +1511,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </column>
     <column id="378" parent="264" name="is_deleted">
       <Comment>删除标记（0:不可用 1:可用）</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>6</Position>
@@ -1537,47 +1537,47 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <column id="383" parent="265" name="id">
       <AutoIncrement>3</AutoIncrement>
       <Comment>活动id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="384" parent="265" name="activity_name">
       <Comment>活动名称</Comment>
-      <DataType>varchar(200)|0s</DataType>
+      <DasType>varchar(200)|0s</DasType>
       <Position>2</Position>
     </column>
     <column id="385" parent="265" name="activity_type">
       <Comment>活动类型（1：满减，2：折扣）</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>1</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
     <column id="386" parent="265" name="activity_desc">
       <Comment>活动描述</Comment>
-      <DataType>varchar(2000)|0s</DataType>
+      <DasType>varchar(2000)|0s</DasType>
       <Position>4</Position>
     </column>
     <column id="387" parent="265" name="start_time">
       <Comment>开始时间</Comment>
-      <DataType>date|0s</DataType>
+      <DasType>date|0s</DasType>
       <Position>5</Position>
     </column>
     <column id="388" parent="265" name="end_time">
       <Comment>结束时间</Comment>
-      <DataType>date|0s</DataType>
+      <DasType>date|0s</DasType>
       <Position>6</Position>
     </column>
     <column id="389" parent="265" name="create_time">
       <Comment>创建时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>7</Position>
     </column>
     <column id="390" parent="265" name="update_time">
       <Comment>更新时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
@@ -1585,7 +1585,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </column>
     <column id="391" parent="265" name="is_deleted">
       <Comment>删除标记（0:不可用 1:可用）</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>9</Position>
@@ -1603,52 +1603,52 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <column id="394" parent="266" name="id">
       <AutoIncrement>4</AutoIncrement>
       <Comment>编号</Comment>
-      <DataType>int(11)|0s</DataType>
+      <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="395" parent="266" name="activity_id">
       <Comment>类型</Comment>
-      <DataType>int(11)|0s</DataType>
+      <DasType>int(11)|0s</DasType>
       <Position>2</Position>
     </column>
     <column id="396" parent="266" name="activity_type">
       <Comment>活动类型（1：满减，2：折扣）</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>1</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
     <column id="397" parent="266" name="condition_amount">
       <Comment>满减金额</Comment>
-      <DataType>decimal(16,2 digit)|0s</DataType>
+      <DasType>decimal(16,2 digit)|0s</DasType>
       <Position>4</Position>
     </column>
     <column id="398" parent="266" name="condition_num">
       <Comment>满减件数</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <Position>5</Position>
     </column>
     <column id="399" parent="266" name="benefit_amount">
       <Comment>优惠金额</Comment>
-      <DataType>decimal(16,2 digit)|0s</DataType>
+      <DasType>decimal(16,2 digit)|0s</DasType>
       <Position>6</Position>
     </column>
     <column id="400" parent="266" name="benefit_discount">
       <Comment>优惠折扣</Comment>
-      <DataType>decimal(10,2 digit)|0s</DataType>
+      <DasType>decimal(10,2 digit)|0s</DasType>
       <Position>7</Position>
     </column>
     <column id="401" parent="266" name="create_time">
       <Comment>创建时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>8</Position>
     </column>
     <column id="402" parent="266" name="update_time">
       <Comment>更新时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
@@ -1656,7 +1656,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </column>
     <column id="403" parent="266" name="is_deleted">
       <Comment>删除标记（0:不可用 1:可用）</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>10</Position>
@@ -1674,30 +1674,30 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <column id="406" parent="267" name="id">
       <AutoIncrement>3</AutoIncrement>
       <Comment>编号</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="407" parent="267" name="activity_id">
       <Comment>活动id </Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <Position>2</Position>
     </column>
     <column id="408" parent="267" name="sku_id">
       <Comment>sku_id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <Position>3</Position>
     </column>
     <column id="409" parent="267" name="create_time">
       <Comment>创建时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
     <column id="410" parent="267" name="update_time">
       <Comment>更新时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
@@ -1705,7 +1705,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </column>
     <column id="411" parent="267" name="is_deleted">
       <Comment>删除标记（0:不可用 1:可用）</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>6</Position>
@@ -1723,106 +1723,106 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <column id="414" parent="268" name="id">
       <AutoIncrement>7</AutoIncrement>
       <Comment>id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="415" parent="268" name="coupon_type">
       <Comment>购物券类型 1 现金券 2 满减券</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>1</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
     <column id="416" parent="268" name="coupon_name">
       <Comment>优惠卷名字</Comment>
-      <DataType>varchar(100)|0s</DataType>
+      <DasType>varchar(100)|0s</DasType>
       <Position>3</Position>
     </column>
     <column id="417" parent="268" name="amount">
       <Comment>金额</Comment>
-      <DataType>decimal(10,2 digit)|0s</DataType>
+      <DasType>decimal(10,2 digit)|0s</DasType>
       <DefaultExpression>0.00</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
     <column id="418" parent="268" name="condition_amount">
       <Comment>使用门槛 0-&gt;没门槛</Comment>
-      <DataType>decimal(10,2 digit)|0s</DataType>
+      <DasType>decimal(10,2 digit)|0s</DasType>
       <DefaultExpression>0.00</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
     <column id="419" parent="268" name="start_time">
       <Comment>可以领取的开始日期</Comment>
-      <DataType>date|0s</DataType>
+      <DasType>date|0s</DasType>
       <Position>6</Position>
     </column>
     <column id="420" parent="268" name="end_time">
       <Comment>可以领取的结束日期</Comment>
-      <DataType>date|0s</DataType>
+      <DasType>date|0s</DasType>
       <Position>7</Position>
     </column>
     <column id="421" parent="268" name="range_type">
       <Comment>使用范围[1-&gt;全场通用；2-&gt;指定分类；3-&gt;指定商品]</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>1</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>8</Position>
     </column>
     <column id="422" parent="268" name="range_desc">
       <Comment>使用范围描述</Comment>
-      <DataType>varchar(200)|0s</DataType>
+      <DasType>varchar(200)|0s</DasType>
       <Position>9</Position>
     </column>
     <column id="423" parent="268" name="publish_count">
       <Comment>发行数量</Comment>
-      <DataType>int(11)|0s</DataType>
+      <DasType>int(11)|0s</DasType>
       <DefaultExpression>1</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>10</Position>
     </column>
     <column id="424" parent="268" name="per_limit">
       <Comment>每人限领张数</Comment>
-      <DataType>int(11)|0s</DataType>
+      <DasType>int(11)|0s</DasType>
       <DefaultExpression>1</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>11</Position>
     </column>
     <column id="425" parent="268" name="use_count">
       <Comment>已使用数量</Comment>
-      <DataType>int(11)|0s</DataType>
+      <DasType>int(11)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>12</Position>
     </column>
     <column id="426" parent="268" name="receive_count">
       <Comment>领取数量</Comment>
-      <DataType>int(11)|0s</DataType>
+      <DasType>int(11)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>13</Position>
     </column>
     <column id="427" parent="268" name="expire_time">
       <Comment>过期时间</Comment>
-      <DataType>datetime|0s</DataType>
+      <DasType>datetime|0s</DasType>
       <Position>14</Position>
     </column>
     <column id="428" parent="268" name="publish_status">
       <Comment>发布状态[0-未发布，1-已发布]</Comment>
-      <DataType>tinyint(1)|0s</DataType>
+      <DasType>tinyint(1)|0s</DasType>
       <Position>15</Position>
     </column>
     <column id="429" parent="268" name="create_time">
       <Comment>创建时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>16</Position>
     </column>
     <column id="430" parent="268" name="update_time">
       <Comment>更新时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
@@ -1830,7 +1830,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </column>
     <column id="431" parent="268" name="is_deleted">
       <Comment>删除标记（0:不可用 1:可用）</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>18</Position>
@@ -1848,100 +1848,100 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <column id="434" parent="269" name="id">
       <AutoIncrement>1</AutoIncrement>
       <Comment>id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="435" parent="269" name="coupon_type">
       <Comment>优惠卷类型[0-&gt;全场赠券；1-&gt;会员赠券；2-&gt;购物赠券；3-&gt;注册赠券]</Comment>
-      <DataType>tinyint(1)|0s</DataType>
+      <DasType>tinyint(1)|0s</DasType>
       <Position>2</Position>
     </column>
     <column id="436" parent="269" name="coupon_name">
       <Comment>优惠卷名字</Comment>
-      <DataType>varchar(100)|0s</DataType>
+      <DasType>varchar(100)|0s</DasType>
       <Position>3</Position>
     </column>
     <column id="437" parent="269" name="num">
       <Comment>数量</Comment>
-      <DataType>int(11)|0s</DataType>
+      <DasType>int(11)|0s</DasType>
       <Position>4</Position>
     </column>
     <column id="438" parent="269" name="amount">
       <Comment>金额</Comment>
-      <DataType>decimal(18,4 digit)|0s</DataType>
+      <DasType>decimal(18,4 digit)|0s</DasType>
       <Position>5</Position>
     </column>
     <column id="439" parent="269" name="per_limit">
       <Comment>每人限领张数</Comment>
-      <DataType>int(11)|0s</DataType>
+      <DasType>int(11)|0s</DasType>
       <Position>6</Position>
     </column>
     <column id="440" parent="269" name="condition_amount">
       <Comment>使用门槛 0-&gt;没门槛</Comment>
-      <DataType>decimal(18,4 digit)|0s</DataType>
+      <DasType>decimal(18,4 digit)|0s</DasType>
       <Position>7</Position>
     </column>
     <column id="441" parent="269" name="start_time">
       <Comment>使用开始时间</Comment>
-      <DataType>datetime|0s</DataType>
+      <DasType>datetime|0s</DasType>
       <Position>8</Position>
     </column>
     <column id="442" parent="269" name="end_time">
       <Comment>使用结束时间</Comment>
-      <DataType>datetime|0s</DataType>
+      <DasType>datetime|0s</DasType>
       <Position>9</Position>
     </column>
     <column id="443" parent="269" name="range_type">
       <Comment>使用范围[0-&gt;全场通用；1-&gt;指定分类；2-&gt;指定商品]</Comment>
-      <DataType>tinyint(1)|0s</DataType>
+      <DasType>tinyint(1)|0s</DasType>
       <Position>10</Position>
     </column>
     <column id="444" parent="269" name="range_desc">
       <Comment>使用范围描述</Comment>
-      <DataType>varchar(200)|0s</DataType>
+      <DasType>varchar(200)|0s</DasType>
       <Position>11</Position>
     </column>
     <column id="445" parent="269" name="publish_count">
       <Comment>发行数量</Comment>
-      <DataType>int(11)|0s</DataType>
+      <DasType>int(11)|0s</DasType>
       <Position>12</Position>
     </column>
     <column id="446" parent="269" name="use_count">
       <Comment>已使用数量</Comment>
-      <DataType>int(11)|0s</DataType>
+      <DasType>int(11)|0s</DasType>
       <Position>13</Position>
     </column>
     <column id="447" parent="269" name="receive_count">
       <Comment>领取数量</Comment>
-      <DataType>int(11)|0s</DataType>
+      <DasType>int(11)|0s</DasType>
       <Position>14</Position>
     </column>
     <column id="448" parent="269" name="enable_start_time">
       <Comment>可以领取的开始日期</Comment>
-      <DataType>datetime|0s</DataType>
+      <DasType>datetime|0s</DasType>
       <Position>15</Position>
     </column>
     <column id="449" parent="269" name="enable_end_time">
       <Comment>可以领取的结束日期</Comment>
-      <DataType>datetime|0s</DataType>
+      <DasType>datetime|0s</DasType>
       <Position>16</Position>
     </column>
     <column id="450" parent="269" name="publish_status">
       <Comment>发布状态[0-未发布，1-已发布]</Comment>
-      <DataType>tinyint(1)|0s</DataType>
+      <DasType>tinyint(1)|0s</DasType>
       <Position>17</Position>
     </column>
     <column id="451" parent="269" name="create_time">
       <Comment>创建时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>18</Position>
     </column>
     <column id="452" parent="269" name="update_time">
       <Comment>更新时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
@@ -1949,7 +1949,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </column>
     <column id="453" parent="269" name="is_deleted">
       <Comment>删除标记（0:不可用 1:可用）</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>1</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>20</Position>
@@ -1967,40 +1967,40 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <column id="456" parent="270" name="id">
       <AutoIncrement>7</AutoIncrement>
       <Comment>购物券编号</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="457" parent="270" name="coupon_id">
       <Comment>优惠券id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
     <column id="458" parent="270" name="range_type">
       <Comment>范围类型； 1-&gt;商品(sku) ；2-&gt;分类</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>1</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
     <column id="459" parent="270" name="range_id">
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
     <column id="460" parent="270" name="create_time">
       <Comment>创建时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
     <column id="461" parent="270" name="update_time">
       <Comment>更新时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
@@ -2008,7 +2008,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </column>
     <column id="462" parent="270" name="is_deleted">
       <Comment>删除标记（0:不可用 1:可用）</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>7</Position>
@@ -2026,67 +2026,67 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <column id="465" parent="271" name="id">
       <AutoIncrement>17</AutoIncrement>
       <Comment>编号</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="466" parent="271" name="coupon_id">
       <Comment>购物券ID</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <Position>2</Position>
     </column>
     <column id="467" parent="271" name="user_id">
       <Comment>用户ID</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <Position>3</Position>
     </column>
     <column id="468" parent="271" name="order_id">
       <Comment>订单ID</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <Position>4</Position>
     </column>
     <column id="469" parent="271" name="coupon_status">
       <Comment>购物券状态（1：未使用 2：已使用）</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <Position>5</Position>
     </column>
     <column id="470" parent="271" name="get_type">
       <Comment>获取类型（1：后台赠送；2：主动获取）</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>2</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
     <column id="471" parent="271" name="get_time">
       <Comment>获取时间</Comment>
-      <DataType>datetime|0s</DataType>
+      <DasType>datetime|0s</DasType>
       <Position>7</Position>
     </column>
     <column id="472" parent="271" name="using_time">
       <Comment>使用时间</Comment>
-      <DataType>datetime|0s</DataType>
+      <DasType>datetime|0s</DasType>
       <Position>8</Position>
     </column>
     <column id="473" parent="271" name="used_time">
       <Comment>支付时间</Comment>
-      <DataType>datetime|0s</DataType>
+      <DasType>datetime|0s</DasType>
       <Position>9</Position>
     </column>
     <column id="474" parent="271" name="expire_time">
       <Comment>过期时间</Comment>
-      <DataType>datetime|0s</DataType>
+      <DasType>datetime|0s</DasType>
       <Position>10</Position>
     </column>
     <column id="475" parent="271" name="create_time">
       <Comment>创建时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>11</Position>
     </column>
     <column id="476" parent="271" name="update_time">
       <Comment>更新时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
@@ -2094,7 +2094,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </column>
     <column id="477" parent="271" name="is_deleted">
       <Comment>删除标记（0:不可用 1:可用）</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>13</Position>
@@ -2112,55 +2112,55 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <column id="480" parent="272" name="id">
       <AutoIncrement>1</AutoIncrement>
       <Comment>id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="481" parent="272" name="name">
       <Comment>专题名字</Comment>
-      <DataType>varchar(200)|0s</DataType>
+      <DasType>varchar(200)|0s</DasType>
       <Position>2</Position>
     </column>
     <column id="482" parent="272" name="title">
       <Comment>专题标题</Comment>
-      <DataType>varchar(255)|0s</DataType>
+      <DasType>varchar(255)|0s</DasType>
       <Position>3</Position>
     </column>
     <column id="483" parent="272" name="sub_title">
       <Comment>专题副标题</Comment>
-      <DataType>varchar(255)|0s</DataType>
+      <DasType>varchar(255)|0s</DasType>
       <Position>4</Position>
     </column>
     <column id="484" parent="272" name="status">
       <Comment>显示状态</Comment>
-      <DataType>tinyint(1)|0s</DataType>
+      <DasType>tinyint(1)|0s</DasType>
       <Position>5</Position>
     </column>
     <column id="485" parent="272" name="url">
       <Comment>详情连接</Comment>
-      <DataType>varchar(500)|0s</DataType>
+      <DasType>varchar(500)|0s</DasType>
       <Position>6</Position>
     </column>
     <column id="486" parent="272" name="sort">
       <Comment>排序</Comment>
-      <DataType>int(11)|0s</DataType>
+      <DasType>int(11)|0s</DasType>
       <Position>7</Position>
     </column>
     <column id="487" parent="272" name="img">
       <Comment>专题图片地址</Comment>
-      <DataType>varchar(500)|0s</DataType>
+      <DasType>varchar(500)|0s</DasType>
       <Position>8</Position>
     </column>
     <column id="488" parent="272" name="create_time">
       <Comment>创建时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>9</Position>
     </column>
     <column id="489" parent="272" name="update_time">
       <Comment>更新时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
@@ -2168,7 +2168,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </column>
     <column id="490" parent="272" name="is_deleted">
       <Comment>删除标记（0:不可用 1:可用）</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>1</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>11</Position>
@@ -2186,40 +2186,40 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <column id="493" parent="273" name="id">
       <AutoIncrement>1</AutoIncrement>
       <Comment>id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="494" parent="273" name="name">
       <Comment>专题名字</Comment>
-      <DataType>varchar(200)|0s</DataType>
+      <DasType>varchar(200)|0s</DasType>
       <Position>2</Position>
     </column>
     <column id="495" parent="273" name="subject_id">
       <Comment>专题id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <Position>3</Position>
     </column>
     <column id="496" parent="273" name="sku_id">
       <Comment>sku_id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <Position>4</Position>
     </column>
     <column id="497" parent="273" name="sort">
       <Comment>排序</Comment>
-      <DataType>int(11)|0s</DataType>
+      <DasType>int(11)|0s</DasType>
       <Position>5</Position>
     </column>
     <column id="498" parent="273" name="create_time">
       <Comment>创建时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
     <column id="499" parent="273" name="update_time">
       <Comment>更新时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
@@ -2227,7 +2227,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </column>
     <column id="500" parent="273" name="is_deleted">
       <Comment>删除标记（0:不可用 1:可用）</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>1</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>8</Position>
@@ -2245,40 +2245,40 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <column id="503" parent="274" name="id">
       <AutoIncrement>4</AutoIncrement>
       <Comment>id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="504" parent="274" name="title">
       <Comment>活动标题</Comment>
-      <DataType>varchar(255)|0s</DataType>
+      <DasType>varchar(255)|0s</DasType>
       <Position>2</Position>
     </column>
     <column id="505" parent="274" name="start_time">
       <Comment>开始时间</Comment>
-      <DataType>date|0s</DataType>
+      <DasType>date|0s</DasType>
       <Position>3</Position>
     </column>
     <column id="506" parent="274" name="end_time">
       <Comment>结束时间</Comment>
-      <DataType>date|0s</DataType>
+      <DasType>date|0s</DasType>
       <Position>4</Position>
     </column>
     <column id="507" parent="274" name="status">
       <Comment>上下线状态</Comment>
-      <DataType>tinyint(4)|0s</DataType>
+      <DasType>tinyint(4)|0s</DasType>
       <Position>5</Position>
     </column>
     <column id="508" parent="274" name="create_time">
       <Comment>创建时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
     <column id="509" parent="274" name="update_time">
       <Comment>更新时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
@@ -2286,7 +2286,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </column>
     <column id="510" parent="274" name="is_deleted">
       <Comment>删除标记（0:不可用 1:可用）</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>8</Position>
@@ -2304,77 +2304,77 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <column id="513" parent="275" name="id">
       <AutoIncrement>9</AutoIncrement>
       <Comment>id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="514" parent="275" name="seckill_id">
       <Comment>秒杀活动id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
     <column id="515" parent="275" name="seckill_time_id">
       <Comment>活动场次id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
     <column id="516" parent="275" name="sku_id">
       <Comment>skuId</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
     <column id="517" parent="275" name="sku_name">
       <Comment>sku名称</Comment>
-      <DataType>varchar(100)|0s</DataType>
+      <DasType>varchar(100)|0s</DasType>
       <Position>5</Position>
     </column>
     <column id="518" parent="275" name="img_url">
-      <DataType>varchar(200)|0s</DataType>
+      <DasType>varchar(200)|0s</DasType>
       <Position>6</Position>
     </column>
     <column id="519" parent="275" name="seckill_price">
       <Comment>秒杀价格</Comment>
-      <DataType>decimal(10,2 digit)|0s</DataType>
+      <DasType>decimal(10,2 digit)|0s</DasType>
       <Position>7</Position>
     </column>
     <column id="520" parent="275" name="seckill_stock">
       <Comment>秒杀库存</Comment>
-      <DataType>decimal(10)|0s</DataType>
+      <DasType>decimal(10)|0s</DasType>
       <Position>8</Position>
     </column>
     <column id="521" parent="275" name="seckill_limit">
       <Comment>每人限购数量</Comment>
-      <DataType>decimal(10)|0s</DataType>
+      <DasType>decimal(10)|0s</DasType>
       <Position>9</Position>
     </column>
     <column id="522" parent="275" name="seckill_sale">
       <Comment>秒杀销量</Comment>
-      <DataType>int(11)|0s</DataType>
+      <DasType>int(11)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>10</Position>
     </column>
     <column id="523" parent="275" name="seckill_sort">
       <Comment>排序</Comment>
-      <DataType>int(11)|0s</DataType>
+      <DasType>int(11)|0s</DasType>
       <Position>11</Position>
     </column>
     <column id="524" parent="275" name="create_time">
       <Comment>创建时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>12</Position>
     </column>
     <column id="525" parent="275" name="update_time">
       <Comment>更新时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
@@ -2382,7 +2382,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </column>
     <column id="526" parent="275" name="is_deleted">
       <Comment>删除标记（0:不可用 1:可用）</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>14</Position>
@@ -2400,50 +2400,50 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <column id="529" parent="276" name="id">
       <AutoIncrement>1</AutoIncrement>
       <Comment>id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="530" parent="276" name="user_id">
       <Comment>user_id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <Position>2</Position>
     </column>
     <column id="531" parent="276" name="sku_id">
       <Comment>sku_id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <Position>3</Position>
     </column>
     <column id="532" parent="276" name="session_id">
       <Comment>活动场次id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <Position>4</Position>
     </column>
     <column id="533" parent="276" name="subcribe_time">
       <Comment>订阅时间</Comment>
-      <DataType>datetime|0s</DataType>
+      <DasType>datetime|0s</DasType>
       <Position>5</Position>
     </column>
     <column id="534" parent="276" name="send_time">
       <Comment>发送时间</Comment>
-      <DataType>datetime|0s</DataType>
+      <DasType>datetime|0s</DasType>
       <Position>6</Position>
     </column>
     <column id="535" parent="276" name="notice_type">
       <Comment>通知方式[0-短信，1-邮件]</Comment>
-      <DataType>tinyint(1)|0s</DataType>
+      <DasType>tinyint(1)|0s</DasType>
       <Position>7</Position>
     </column>
     <column id="536" parent="276" name="create_time">
       <Comment>创建时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>8</Position>
     </column>
     <column id="537" parent="276" name="update_time">
       <Comment>更新时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
@@ -2451,7 +2451,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </column>
     <column id="538" parent="276" name="is_deleted">
       <Comment>删除标记（0:不可用 1:可用）</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>10</Position>
@@ -2469,40 +2469,40 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <column id="541" parent="277" name="id">
       <AutoIncrement>16</AutoIncrement>
       <Comment>id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="542" parent="277" name="name">
       <Comment>场次名称</Comment>
-      <DataType>varchar(200)|0s</DataType>
+      <DasType>varchar(200)|0s</DasType>
       <Position>2</Position>
     </column>
     <column id="543" parent="277" name="start_time">
       <Comment>每日开始时间</Comment>
-      <DataType>time|0s</DataType>
+      <DasType>time|0s</DasType>
       <Position>3</Position>
     </column>
     <column id="544" parent="277" name="end_time">
       <Comment>每日结束时间</Comment>
-      <DataType>time|0s</DataType>
+      <DasType>time|0s</DasType>
       <Position>4</Position>
     </column>
     <column id="545" parent="277" name="status">
       <Comment>启用状态</Comment>
-      <DataType>tinyint(1)|0s</DataType>
+      <DasType>tinyint(1)|0s</DasType>
       <Position>5</Position>
     </column>
     <column id="546" parent="277" name="create_time">
       <Comment>创建时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
     <column id="547" parent="277" name="update_time">
       <Comment>更新时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
@@ -2510,7 +2510,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </column>
     <column id="548" parent="277" name="is_deleted">
       <Comment>删除标记（0:不可用 1:可用）</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>8</Position>
@@ -2527,150 +2527,150 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </key>
     <column id="551" parent="278" name="id">
       <AutoIncrement>14</AutoIncrement>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="552" parent="278" name="category_id">
       <Comment>分类id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
     <column id="553" parent="278" name="attr_group_id">
       <Comment>平台属性分组id</Comment>
-      <DataType>bigint(1)|0s</DataType>
+      <DasType>bigint(1)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
     <column id="554" parent="278" name="sku_types">
       <Comment>商品类型：0-&gt;普通商品 1-&gt;秒杀商品</Comment>
-      <DataType>tinyint(1)|0s</DataType>
+      <DasType>tinyint(1)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
     <column id="555" parent="278" name="sku_name">
       <Comment>sku名称</Comment>
-      <DataType>varchar(100)|0s</DataType>
+      <DasType>varchar(100)|0s</DasType>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
     <column id="556" parent="278" name="img_url">
       <Comment>展示图片</Comment>
-      <DataType>varchar(255)|0s</DataType>
+      <DasType>varchar(255)|0s</DasType>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
     <column id="557" parent="278" name="per_limit">
       <Comment>限购个数/每天（0：不限购）</Comment>
-      <DataType>int(11)|0s</DataType>
+      <DasType>int(11)|0s</DasType>
       <DefaultExpression>1</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>7</Position>
     </column>
     <column id="558" parent="278" name="publish_status">
       <Comment>上架状态：0-&gt;下架；1-&gt;上架</Comment>
-      <DataType>tinyint(1)|0s</DataType>
+      <DasType>tinyint(1)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>8</Position>
     </column>
     <column id="559" parent="278" name="check_status">
       <Comment>审核状态：0-&gt;未审核；1-&gt;审核通过</Comment>
-      <DataType>tinyint(1)|0s</DataType>
+      <DasType>tinyint(1)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>9</Position>
     </column>
     <column id="560" parent="278" name="is_new_person">
       <Comment>是否新人专享：0-&gt;否；1-&gt;是</Comment>
-      <DataType>tinyint(1)|0s</DataType>
+      <DasType>tinyint(1)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>10</Position>
     </column>
     <column id="561" parent="278" name="sort">
       <Comment>排序</Comment>
-      <DataType>int(11)|0s</DataType>
+      <DasType>int(11)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>11</Position>
     </column>
     <column id="562" parent="278" name="sku_code">
       <Comment>sku编码</Comment>
-      <DataType>varchar(30)|0s</DataType>
+      <DasType>varchar(30)|0s</DasType>
       <Position>12</Position>
     </column>
     <column id="563" parent="278" name="price">
       <Comment>价格</Comment>
-      <DataType>decimal(10,2 digit)|0s</DataType>
+      <DasType>decimal(10,2 digit)|0s</DasType>
       <DefaultExpression>0.00</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>13</Position>
     </column>
     <column id="564" parent="278" name="market_price">
       <Comment>市场价</Comment>
-      <DataType>decimal(10,2 digit)|0s</DataType>
+      <DasType>decimal(10,2 digit)|0s</DasType>
       <DefaultExpression>0.00</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>14</Position>
     </column>
     <column id="565" parent="278" name="stock">
       <Comment>库存</Comment>
-      <DataType>int(11)|0s</DataType>
+      <DasType>int(11)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>15</Position>
     </column>
     <column id="566" parent="278" name="lock_stock">
       <Comment>锁定库存</Comment>
-      <DataType>int(11)|0s</DataType>
+      <DasType>int(11)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>16</Position>
     </column>
     <column id="567" parent="278" name="low_stock">
       <Comment>预警库存</Comment>
-      <DataType>int(11)|0s</DataType>
+      <DasType>int(11)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>17</Position>
     </column>
     <column id="568" parent="278" name="sale">
       <Comment>销量</Comment>
-      <DataType>int(11)|0s</DataType>
+      <DasType>int(11)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>18</Position>
     </column>
     <column id="569" parent="278" name="ware_id">
       <Comment>仓库</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>19</Position>
     </column>
     <column id="570" parent="278" name="version">
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>20</Position>
     </column>
     <column id="571" parent="278" name="create_time">
       <Comment>创建时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>21</Position>
     </column>
     <column id="572" parent="278" name="update_time">
       <Comment>更新时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
@@ -2678,7 +2678,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </column>
     <column id="573" parent="278" name="is_deleted">
       <Comment>删除标记（0:不可用 1:可用）</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>23</Position>
@@ -2696,83 +2696,83 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <column id="576" parent="279" name="id">
       <AutoIncrement>1</AutoIncrement>
       <Comment>编号</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="577" parent="279" name="user_id">
       <Comment>用户id</Comment>
-      <DataType>varchar(200)|0s</DataType>
+      <DasType>varchar(200)|0s</DasType>
       <Position>2</Position>
     </column>
     <column id="578" parent="279" name="category_id">
       <Comment>分类id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <Position>3</Position>
     </column>
     <column id="579" parent="279" name="sku_type">
       <Comment>sku类型</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <Position>4</Position>
     </column>
     <column id="580" parent="279" name="sku_name">
       <Comment>sku名称 (冗余)</Comment>
-      <DataType>varchar(200)|0s</DataType>
+      <DasType>varchar(200)|0s</DasType>
       <Position>5</Position>
     </column>
     <column id="581" parent="279" name="sku_id">
       <Comment>skuid</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <Position>6</Position>
     </column>
     <column id="582" parent="279" name="cart_price">
       <Comment>放入购物车时价格</Comment>
-      <DataType>decimal(10,2 digit)|0s</DataType>
+      <DasType>decimal(10,2 digit)|0s</DasType>
       <Position>7</Position>
     </column>
     <column id="583" parent="279" name="sku_num">
       <Comment>数量</Comment>
-      <DataType>int(11)|0s</DataType>
+      <DasType>int(11)|0s</DasType>
       <Position>8</Position>
     </column>
     <column id="584" parent="279" name="per_limit">
       <Comment>限购个数</Comment>
-      <DataType>int(11)|0s</DataType>
+      <DasType>int(11)|0s</DasType>
       <Position>9</Position>
     </column>
     <column id="585" parent="279" name="img_url">
       <Comment>图片文件</Comment>
-      <DataType>varchar(200)|0s</DataType>
+      <DasType>varchar(200)|0s</DasType>
       <Position>10</Position>
     </column>
     <column id="586" parent="279" name="is_checked">
-      <DataType>tinyint(1)|0s</DataType>
+      <DasType>tinyint(1)|0s</DasType>
       <DefaultExpression>1</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>11</Position>
     </column>
     <column id="587" parent="279" name="status">
       <Comment>状态（1：正常 0：无效）</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>1</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>12</Position>
     </column>
     <column id="588" parent="279" name="ware_id">
       <Comment>仓库id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <Position>13</Position>
     </column>
     <column id="589" parent="279" name="create_time">
       <Comment>创建时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>14</Position>
     </column>
     <column id="590" parent="279" name="update_time">
       <Comment>更新时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
@@ -2780,7 +2780,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </column>
     <column id="591" parent="279" name="is_deleted">
       <Comment>删除标记（0:不可用 1:可用）</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>16</Position>
@@ -2798,52 +2798,52 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <column id="594" parent="280" name="id">
       <AutoIncrement>1</AutoIncrement>
       <Comment>id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="595" parent="280" name="deliver_date">
       <Comment>配送日期</Comment>
-      <DataType>datetime|0s</DataType>
+      <DasType>datetime|0s</DasType>
       <Position>2</Position>
     </column>
     <column id="596" parent="280" name="leader_id">
       <Comment>团长id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
     <column id="597" parent="280" name="driver_id">
       <Comment>司机id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <Position>4</Position>
     </column>
     <column id="598" parent="280" name="driver_name">
       <Comment>司机名称</Comment>
-      <DataType>varchar(20)|0s</DataType>
+      <DasType>varchar(20)|0s</DasType>
       <Position>5</Position>
     </column>
     <column id="599" parent="280" name="driver_phone">
       <Comment>司机电话</Comment>
-      <DataType>varchar(11)|0s</DataType>
+      <DasType>varchar(11)|0s</DasType>
       <Position>6</Position>
     </column>
     <column id="600" parent="280" name="status">
       <Comment>状态（0：默认，1：已发货，2：团长收货）</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <Position>7</Position>
     </column>
     <column id="601" parent="280" name="create_time">
       <Comment>创建时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>8</Position>
     </column>
     <column id="602" parent="280" name="update_time">
       <Comment>更新时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
@@ -2851,7 +2851,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </column>
     <column id="603" parent="280" name="is_deleted">
       <Comment>删除标记（0:不可用 1:可用）</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>10</Position>
@@ -2869,219 +2869,219 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <column id="606" parent="281" name="id">
       <AutoIncrement>164</AutoIncrement>
       <Comment>id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="607" parent="281" name="user_id">
       <Comment>会员_id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
     <column id="608" parent="281" name="nick_name">
       <Comment>昵称</Comment>
-      <DataType>varchar(200)|0s</DataType>
+      <DasType>varchar(200)|0s</DasType>
       <Position>3</Position>
     </column>
     <column id="609" parent="281" name="order_no">
       <Comment>订单号</Comment>
-      <DataType>char(64)|0s</DataType>
+      <DasType>char(64)|0s</DasType>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
     <column id="610" parent="281" name="coupon_id">
       <Comment>使用的优惠券</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <Position>5</Position>
     </column>
     <column id="611" parent="281" name="total_amount">
       <Comment>订单总额</Comment>
-      <DataType>decimal(10,2 digit)|0s</DataType>
+      <DasType>decimal(10,2 digit)|0s</DasType>
       <DefaultExpression>0.00</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
     <column id="612" parent="281" name="activity_amount">
       <Comment>促销金额</Comment>
-      <DataType>decimal(10,2 digit)|0s</DataType>
+      <DasType>decimal(10,2 digit)|0s</DasType>
       <DefaultExpression>0.00</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>7</Position>
     </column>
     <column id="613" parent="281" name="coupon_amount">
       <Comment>优惠券</Comment>
-      <DataType>decimal(10,2 digit)|0s</DataType>
+      <DasType>decimal(10,2 digit)|0s</DasType>
       <DefaultExpression>0.00</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>8</Position>
     </column>
     <column id="614" parent="281" name="original_total_amount">
       <Comment>原价金额</Comment>
-      <DataType>decimal(10,2 digit)|0s</DataType>
+      <DasType>decimal(10,2 digit)|0s</DasType>
       <DefaultExpression>0.00</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>9</Position>
     </column>
     <column id="615" parent="281" name="feight_fee">
       <Comment>运费</Comment>
-      <DataType>decimal(10,2 digit)|0s</DataType>
+      <DasType>decimal(10,2 digit)|0s</DasType>
       <DefaultExpression>0.00</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>10</Position>
     </column>
     <column id="616" parent="281" name="feight_fee_reduce">
       <Comment>减免运费</Comment>
-      <DataType>decimal(10,2 digit)|0s</DataType>
+      <DasType>decimal(10,2 digit)|0s</DasType>
       <DefaultExpression>0.00</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>11</Position>
     </column>
     <column id="617" parent="281" name="refundable_time">
       <Comment>可退款日期（签收后1天）</Comment>
-      <DataType>datetime|0s</DataType>
+      <DasType>datetime|0s</DasType>
       <Position>12</Position>
     </column>
     <column id="618" parent="281" name="pay_type">
       <Comment>支付方式【1-&gt;微信】</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <Position>13</Position>
     </column>
     <column id="619" parent="281" name="source_type">
       <Comment>订单来源[0-&gt;小程序；1-&gt;H5]</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <Position>14</Position>
     </column>
     <column id="620" parent="281" name="order_status">
       <Comment>订单状态【0-&gt;待付款；1-&gt;待发货；2-&gt;已发货；3-&gt;待用户收货，已完成；-1-&gt;已取消】</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>15</Position>
     </column>
     <column id="621" parent="281" name="process_status">
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>16</Position>
     </column>
     <column id="622" parent="281" name="leader_id">
       <Comment>团长id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>17</Position>
     </column>
     <column id="623" parent="281" name="leader_name">
       <Comment>团长名称</Comment>
-      <DataType>varchar(20)|0s</DataType>
+      <DasType>varchar(20)|0s</DasType>
       <Position>18</Position>
     </column>
     <column id="624" parent="281" name="leader_phone">
       <Comment>团长电话</Comment>
-      <DataType>varchar(11)|0s</DataType>
+      <DasType>varchar(11)|0s</DasType>
       <Position>19</Position>
     </column>
     <column id="625" parent="281" name="take_name">
       <Comment>提货点名称</Comment>
-      <DataType>varchar(50)|0s</DataType>
+      <DasType>varchar(50)|0s</DasType>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
       <Position>20</Position>
     </column>
     <column id="626" parent="281" name="receiver_name">
       <Comment>收货人姓名</Comment>
-      <DataType>varchar(100)|0s</DataType>
+      <DasType>varchar(100)|0s</DasType>
       <Position>21</Position>
     </column>
     <column id="627" parent="281" name="receiver_phone">
       <Comment>收货人电话</Comment>
-      <DataType>varchar(32)|0s</DataType>
+      <DasType>varchar(32)|0s</DasType>
       <Position>22</Position>
     </column>
     <column id="628" parent="281" name="receiver_post_code">
       <Comment>收货人邮编</Comment>
-      <DataType>varchar(32)|0s</DataType>
+      <DasType>varchar(32)|0s</DasType>
       <Position>23</Position>
     </column>
     <column id="629" parent="281" name="receiver_province">
       <Comment>省份/直辖市</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <Position>24</Position>
     </column>
     <column id="630" parent="281" name="receiver_city">
       <Comment>城市</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <Position>25</Position>
     </column>
     <column id="631" parent="281" name="receiver_district">
       <Comment>区</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <Position>26</Position>
     </column>
     <column id="632" parent="281" name="receiver_address">
       <Comment>详细地址</Comment>
-      <DataType>varchar(200)|0s</DataType>
+      <DasType>varchar(200)|0s</DasType>
       <Position>27</Position>
     </column>
     <column id="633" parent="281" name="payment_time">
       <Comment>支付时间</Comment>
-      <DataType>datetime|0s</DataType>
+      <DasType>datetime|0s</DasType>
       <Position>28</Position>
     </column>
     <column id="634" parent="281" name="delivery_time">
       <Comment>发货时间</Comment>
-      <DataType>datetime|0s</DataType>
+      <DasType>datetime|0s</DasType>
       <Position>29</Position>
     </column>
     <column id="635" parent="281" name="take_time">
       <Comment>提货时间</Comment>
-      <DataType>datetime|0s</DataType>
+      <DasType>datetime|0s</DasType>
       <Position>30</Position>
     </column>
     <column id="636" parent="281" name="receive_time">
       <Comment>确认收货时间</Comment>
-      <DataType>datetime|0s</DataType>
+      <DasType>datetime|0s</DasType>
       <Position>31</Position>
     </column>
     <column id="637" parent="281" name="remark">
       <Comment>订单备注</Comment>
-      <DataType>varchar(500)|0s</DataType>
+      <DasType>varchar(500)|0s</DasType>
       <Position>32</Position>
     </column>
     <column id="638" parent="281" name="cancel_time">
       <Comment>取消订单时间</Comment>
-      <DataType>datetime|0s</DataType>
+      <DasType>datetime|0s</DasType>
       <Position>33</Position>
     </column>
     <column id="639" parent="281" name="cancel_reason">
       <Comment>取消订单原因</Comment>
-      <DataType>varchar(255)|0s</DataType>
+      <DasType>varchar(255)|0s</DasType>
       <Position>34</Position>
     </column>
     <column id="640" parent="281" name="ware_id">
       <Comment>仓库id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>35</Position>
     </column>
     <column id="641" parent="281" name="commission_amount">
       <Comment>团长佣金</Comment>
-      <DataType>decimal(10,2 digit)|0s</DataType>
+      <DasType>decimal(10,2 digit)|0s</DasType>
       <Position>36</Position>
     </column>
     <column id="642" parent="281" name="create_time">
       <Comment>创建时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>37</Position>
     </column>
     <column id="643" parent="281" name="update_time">
       <Comment>更新时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
@@ -3089,7 +3089,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </column>
     <column id="644" parent="281" name="is_deleted">
       <Comment>删除标记（0:不可用 1:可用）</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>39</Position>
@@ -3107,80 +3107,80 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <column id="647" parent="282" name="id">
       <AutoIncrement>362</AutoIncrement>
       <Comment>id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="648" parent="282" name="order_id">
       <Comment>order_id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <Position>2</Position>
     </column>
     <column id="649" parent="282" name="category_id">
       <Comment>商品分类id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <Position>3</Position>
     </column>
     <column id="650" parent="282" name="sku_type">
       <Comment>sku类型</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <Position>4</Position>
     </column>
     <column id="651" parent="282" name="sku_id">
       <Comment>商品sku编号</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <Position>5</Position>
     </column>
     <column id="652" parent="282" name="sku_name">
       <Comment>商品sku名字</Comment>
-      <DataType>varchar(255)|0s</DataType>
+      <DasType>varchar(255)|0s</DasType>
       <Position>6</Position>
     </column>
     <column id="653" parent="282" name="img_url">
       <Comment>商品sku图片</Comment>
-      <DataType>varchar(500)|0s</DataType>
+      <DasType>varchar(500)|0s</DasType>
       <Position>7</Position>
     </column>
     <column id="654" parent="282" name="sku_price">
       <Comment>商品sku价格</Comment>
-      <DataType>decimal(10,2 digit)|0s</DataType>
+      <DasType>decimal(10,2 digit)|0s</DasType>
       <Position>8</Position>
     </column>
     <column id="655" parent="282" name="sku_num">
       <Comment>商品购买的数量</Comment>
-      <DataType>int(11)|0s</DataType>
+      <DasType>int(11)|0s</DasType>
       <Position>9</Position>
     </column>
     <column id="656" parent="282" name="split_activity_amount">
       <Comment>商品促销分解金额</Comment>
-      <DataType>decimal(10,2 digit)|0s</DataType>
+      <DasType>decimal(10,2 digit)|0s</DasType>
       <Position>10</Position>
     </column>
     <column id="657" parent="282" name="split_coupon_amount">
       <Comment>优惠券优惠分解金额</Comment>
-      <DataType>decimal(10,2 digit)|0s</DataType>
+      <DasType>decimal(10,2 digit)|0s</DasType>
       <Position>11</Position>
     </column>
     <column id="658" parent="282" name="split_total_amount">
       <Comment>该商品经过优惠后的分解金额</Comment>
-      <DataType>decimal(10,2 digit)|0s</DataType>
+      <DasType>decimal(10,2 digit)|0s</DasType>
       <Position>12</Position>
     </column>
     <column id="659" parent="282" name="leader_id">
       <Comment>团长id（冗余）</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <Position>13</Position>
     </column>
     <column id="660" parent="282" name="create_time">
       <Comment>创建时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>14</Position>
     </column>
     <column id="661" parent="282" name="update_time">
       <Comment>更新时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
@@ -3188,7 +3188,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </column>
     <column id="662" parent="282" name="is_deleted">
       <Comment>删除标记（0:不可用 1:可用）</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>16</Position>
@@ -3205,40 +3205,40 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </key>
     <column id="665" parent="283" name="id">
       <AutoIncrement>175</AutoIncrement>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="666" parent="283" name="order_id">
       <Comment>订单id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <Position>2</Position>
     </column>
     <column id="667" parent="283" name="operate_user">
       <Comment>操作人：用户；系统；后台管理员</Comment>
-      <DataType>varchar(100)|0s</DataType>
+      <DasType>varchar(100)|0s</DasType>
       <Position>3</Position>
     </column>
     <column id="668" parent="283" name="process_status">
       <Comment>订单状态</Comment>
-      <DataType>int(1)|0s</DataType>
+      <DasType>int(1)|0s</DasType>
       <Position>4</Position>
     </column>
     <column id="669" parent="283" name="note">
       <Comment>备注</Comment>
-      <DataType>varchar(500)|0s</DataType>
+      <DasType>varchar(500)|0s</DasType>
       <Position>5</Position>
     </column>
     <column id="670" parent="283" name="create_time">
       <Comment>创建时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
     <column id="671" parent="283" name="update_time">
       <Comment>更新时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
@@ -3246,7 +3246,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </column>
     <column id="672" parent="283" name="is_deleted">
       <Comment>删除标记（0:不可用 1:可用）</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>8</Position>
@@ -3263,135 +3263,135 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </key>
     <column id="675" parent="284" name="id">
       <AutoIncrement>1</AutoIncrement>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="676" parent="284" name="order_id">
       <Comment>订单id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <Position>2</Position>
     </column>
     <column id="677" parent="284" name="merchant_id">
       <Comment>团长门店id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <Position>3</Position>
     </column>
     <column id="678" parent="284" name="sku_id">
       <Comment>退货商品id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <Position>4</Position>
     </column>
     <column id="679" parent="284" name="order_sn">
       <Comment>订单编号</Comment>
-      <DataType>varchar(64)|0s</DataType>
+      <DasType>varchar(64)|0s</DasType>
       <Position>5</Position>
     </column>
     <column id="680" parent="284" name="name">
       <Comment>会员用户名</Comment>
-      <DataType>varchar(64)|0s</DataType>
+      <DasType>varchar(64)|0s</DasType>
       <Position>6</Position>
     </column>
     <column id="681" parent="284" name="return_amount">
       <Comment>退款金额</Comment>
-      <DataType>decimal(10,2 digit)|0s</DataType>
+      <DasType>decimal(10,2 digit)|0s</DasType>
       <Position>7</Position>
     </column>
     <column id="682" parent="284" name="return_name">
       <Comment>退货人姓名</Comment>
-      <DataType>varchar(100)|0s</DataType>
+      <DasType>varchar(100)|0s</DasType>
       <Position>8</Position>
     </column>
     <column id="683" parent="284" name="return_phone">
       <Comment>退货人电话</Comment>
-      <DataType>varchar(100)|0s</DataType>
+      <DasType>varchar(100)|0s</DasType>
       <Position>9</Position>
     </column>
     <column id="684" parent="284" name="status">
       <Comment>申请状态：0-&gt;待处理；1-&gt;退货中；2-&gt;已完成；3-&gt;已拒绝</Comment>
-      <DataType>int(1)|0s</DataType>
+      <DasType>int(1)|0s</DasType>
       <Position>10</Position>
     </column>
     <column id="685" parent="284" name="handle_time">
       <Comment>处理时间</Comment>
-      <DataType>datetime|0s</DataType>
+      <DasType>datetime|0s</DasType>
       <Position>11</Position>
     </column>
     <column id="686" parent="284" name="sku_pic">
       <Comment>商品图片</Comment>
-      <DataType>varchar(500)|0s</DataType>
+      <DasType>varchar(500)|0s</DasType>
       <Position>12</Position>
     </column>
     <column id="687" parent="284" name="sku_name">
       <Comment>商品名称</Comment>
-      <DataType>varchar(200)|0s</DataType>
+      <DasType>varchar(200)|0s</DasType>
       <Position>13</Position>
     </column>
     <column id="688" parent="284" name="sku_num">
       <Comment>退货数量</Comment>
-      <DataType>int(11)|0s</DataType>
+      <DasType>int(11)|0s</DasType>
       <Position>14</Position>
     </column>
     <column id="689" parent="284" name="sku_price">
       <Comment>商品单价</Comment>
-      <DataType>decimal(10,2 digit)|0s</DataType>
+      <DasType>decimal(10,2 digit)|0s</DasType>
       <Position>15</Position>
     </column>
     <column id="690" parent="284" name="sku_real_price">
       <Comment>商品实际支付单价</Comment>
-      <DataType>decimal(10,2 digit)|0s</DataType>
+      <DasType>decimal(10,2 digit)|0s</DasType>
       <Position>16</Position>
     </column>
     <column id="691" parent="284" name="reason">
       <Comment>原因</Comment>
-      <DataType>varchar(200)|0s</DataType>
+      <DasType>varchar(200)|0s</DasType>
       <Position>17</Position>
     </column>
     <column id="692" parent="284" name="description">
       <Comment>描述</Comment>
-      <DataType>varchar(500)|0s</DataType>
+      <DasType>varchar(500)|0s</DasType>
       <Position>18</Position>
     </column>
     <column id="693" parent="284" name="proof_pics">
       <Comment>凭证图片，以逗号隔开</Comment>
-      <DataType>varchar(1000)|0s</DataType>
+      <DasType>varchar(1000)|0s</DasType>
       <Position>19</Position>
     </column>
     <column id="694" parent="284" name="handle_note">
       <Comment>处理备注</Comment>
-      <DataType>varchar(500)|0s</DataType>
+      <DasType>varchar(500)|0s</DasType>
       <Position>20</Position>
     </column>
     <column id="695" parent="284" name="handle_man">
       <Comment>处理人员</Comment>
-      <DataType>varchar(100)|0s</DataType>
+      <DasType>varchar(100)|0s</DasType>
       <Position>21</Position>
     </column>
     <column id="696" parent="284" name="receive_man">
       <Comment>收货人</Comment>
-      <DataType>varchar(100)|0s</DataType>
+      <DasType>varchar(100)|0s</DasType>
       <Position>22</Position>
     </column>
     <column id="697" parent="284" name="receive_time">
       <Comment>收货时间</Comment>
-      <DataType>datetime|0s</DataType>
+      <DasType>datetime|0s</DasType>
       <Position>23</Position>
     </column>
     <column id="698" parent="284" name="receive_note">
       <Comment>收货备注</Comment>
-      <DataType>varchar(500)|0s</DataType>
+      <DasType>varchar(500)|0s</DasType>
       <Position>24</Position>
     </column>
     <column id="699" parent="284" name="create_time">
       <Comment>创建时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>25</Position>
     </column>
     <column id="700" parent="284" name="update_time">
       <Comment>更新时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
@@ -3399,7 +3399,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </column>
     <column id="701" parent="284" name="is_deleted">
       <Comment>删除标记（0:不可用 1:可用）</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>27</Position>
@@ -3416,34 +3416,34 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </key>
     <column id="704" parent="285" name="id">
       <AutoIncrement>1</AutoIncrement>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="705" parent="285" name="name">
       <Comment>退货类型</Comment>
-      <DataType>varchar(100)|0s</DataType>
+      <DasType>varchar(100)|0s</DasType>
       <Position>2</Position>
     </column>
     <column id="706" parent="285" name="sort">
-      <DataType>int(11)|0s</DataType>
+      <DasType>int(11)|0s</DasType>
       <Position>3</Position>
     </column>
     <column id="707" parent="285" name="status">
       <Comment>状态：0-&gt;不启用；1-&gt;启用</Comment>
-      <DataType>int(1)|0s</DataType>
+      <DasType>int(1)|0s</DasType>
       <Position>4</Position>
     </column>
     <column id="708" parent="285" name="create_time">
       <Comment>创建时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
     <column id="709" parent="285" name="update_time">
       <Comment>更新时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
@@ -3451,7 +3451,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </column>
     <column id="710" parent="285" name="is_deleted">
       <Comment>删除标记（0:不可用 1:可用）</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>7</Position>
@@ -3468,45 +3468,45 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </key>
     <column id="713" parent="286" name="id">
       <AutoIncrement>2</AutoIncrement>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="714" parent="286" name="seckill_order_overtime">
       <Comment>秒杀订单超时关闭时间(分)</Comment>
-      <DataType>int(11)|0s</DataType>
+      <DasType>int(11)|0s</DasType>
       <Position>2</Position>
     </column>
     <column id="715" parent="286" name="normal_order_overtime">
       <Comment>正常订单超时时间(分)</Comment>
-      <DataType>int(11)|0s</DataType>
+      <DasType>int(11)|0s</DasType>
       <Position>3</Position>
     </column>
     <column id="716" parent="286" name="confirm_overtime">
       <Comment>发货后自动确认收货时间（天）</Comment>
-      <DataType>int(11)|0s</DataType>
+      <DasType>int(11)|0s</DasType>
       <Position>4</Position>
     </column>
     <column id="717" parent="286" name="finish_overtime">
       <Comment>自动完成交易时间，不能申请售后（天）</Comment>
-      <DataType>int(11)|0s</DataType>
+      <DasType>int(11)|0s</DasType>
       <Position>5</Position>
     </column>
     <column id="718" parent="286" name="profit_rate">
       <Comment>佣金分成比例</Comment>
-      <DataType>decimal(10,2 digit)|0s</DataType>
+      <DasType>decimal(10,2 digit)|0s</DasType>
       <Position>6</Position>
     </column>
     <column id="719" parent="286" name="create_time">
       <Comment>创建时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>7</Position>
     </column>
     <column id="720" parent="286" name="update_time">
       <Comment>更新时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
@@ -3514,7 +3514,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </column>
     <column id="721" parent="286" name="is_deleted">
       <Comment>删除标记（0:不可用 1:可用）</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>9</Position>
@@ -3532,70 +3532,70 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <column id="724" parent="287" name="id">
       <AutoIncrement>86</AutoIncrement>
       <Comment>编号</Comment>
-      <DataType>int(11)|0s</DataType>
+      <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="725" parent="287" name="order_no">
       <Comment>订单号</Comment>
-      <DataType>varchar(50)|0s</DataType>
+      <DasType>varchar(50)|0s</DasType>
       <Position>2</Position>
     </column>
     <column id="726" parent="287" name="order_id">
       <Comment>订单编号</Comment>
-      <DataType>varchar(50)|0s</DataType>
+      <DasType>varchar(50)|0s</DasType>
       <Position>3</Position>
     </column>
     <column id="727" parent="287" name="user_id">
       <Comment>用户id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <Position>4</Position>
     </column>
     <column id="728" parent="287" name="payment_type">
       <Comment>支付类型（微信 支付宝）</Comment>
-      <DataType>varchar(20)|0s</DataType>
+      <DasType>varchar(20)|0s</DasType>
       <Position>5</Position>
     </column>
     <column id="729" parent="287" name="trade_no">
       <Comment>交易编号</Comment>
-      <DataType>varchar(50)|0s</DataType>
+      <DasType>varchar(50)|0s</DasType>
       <Position>6</Position>
     </column>
     <column id="730" parent="287" name="total_amount">
       <Comment>支付金额</Comment>
-      <DataType>decimal(10,2 digit)|0s</DataType>
+      <DasType>decimal(10,2 digit)|0s</DasType>
       <Position>7</Position>
     </column>
     <column id="731" parent="287" name="subject">
       <Comment>交易内容</Comment>
-      <DataType>varchar(200)|0s</DataType>
+      <DasType>varchar(200)|0s</DasType>
       <Position>8</Position>
     </column>
     <column id="732" parent="287" name="payment_status">
       <Comment>支付状态</Comment>
-      <DataType>varchar(20)|0s</DataType>
+      <DasType>varchar(20)|0s</DasType>
       <Position>9</Position>
     </column>
     <column id="733" parent="287" name="callback_time">
       <Comment>回调时间</Comment>
-      <DataType>datetime|0s</DataType>
+      <DasType>datetime|0s</DasType>
       <Position>10</Position>
     </column>
     <column id="734" parent="287" name="callback_content">
       <Comment>回调信息</Comment>
-      <DataType>text|0s</DataType>
+      <DasType>text|0s</DasType>
       <Position>11</Position>
     </column>
     <column id="735" parent="287" name="create_time">
       <Comment>创建时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>12</Position>
     </column>
     <column id="736" parent="287" name="update_time">
       <Comment>更新时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
@@ -3603,7 +3603,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </column>
     <column id="737" parent="287" name="is_deleted">
       <Comment>删除标记（0:不可用 1:可用）</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>14</Position>
@@ -3621,69 +3621,69 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <column id="740" parent="288" name="id">
       <AutoIncrement>1</AutoIncrement>
       <Comment>编号</Comment>
-      <DataType>int(11)|0s</DataType>
+      <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="741" parent="288" name="out_trade_no">
       <Comment>对外业务编号</Comment>
-      <DataType>varchar(50)|0s</DataType>
+      <DasType>varchar(50)|0s</DasType>
       <Position>2</Position>
     </column>
     <column id="742" parent="288" name="order_id">
       <Comment>订单编号</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <Position>3</Position>
     </column>
     <column id="743" parent="288" name="sku_id">
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <Position>4</Position>
     </column>
     <column id="744" parent="288" name="payment_type">
       <Comment>支付类型（微信 支付宝）</Comment>
-      <DataType>varchar(20)|0s</DataType>
+      <DasType>varchar(20)|0s</DasType>
       <Position>5</Position>
     </column>
     <column id="745" parent="288" name="trade_no">
       <Comment>交易编号</Comment>
-      <DataType>varchar(50)|0s</DataType>
+      <DasType>varchar(50)|0s</DasType>
       <Position>6</Position>
     </column>
     <column id="746" parent="288" name="total_amount">
       <Comment>退款金额</Comment>
-      <DataType>decimal(10,2 digit)|0s</DataType>
+      <DasType>decimal(10,2 digit)|0s</DasType>
       <Position>7</Position>
     </column>
     <column id="747" parent="288" name="subject">
       <Comment>交易内容</Comment>
-      <DataType>varchar(200)|0s</DataType>
+      <DasType>varchar(200)|0s</DasType>
       <Position>8</Position>
     </column>
     <column id="748" parent="288" name="refund_status">
       <Comment>退款状态</Comment>
-      <DataType>varchar(30)|0s</DataType>
+      <DasType>varchar(30)|0s</DasType>
       <Position>9</Position>
     </column>
     <column id="749" parent="288" name="callback_time">
       <Comment>回调时间</Comment>
-      <DataType>datetime|0s</DataType>
+      <DasType>datetime|0s</DasType>
       <Position>10</Position>
     </column>
     <column id="750" parent="288" name="callback_content">
       <Comment>回调信息</Comment>
-      <DataType>text|0s</DataType>
+      <DasType>text|0s</DasType>
       <Position>11</Position>
     </column>
     <column id="751" parent="288" name="create_time">
       <Comment>创建时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>12</Position>
     </column>
     <column id="752" parent="288" name="update_time">
       <Comment>更新时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
@@ -3691,7 +3691,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </column>
     <column id="753" parent="288" name="is_deleted">
       <Comment>删除标记（0:不可用 1:可用）</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>14</Position>
@@ -3717,40 +3717,40 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <column id="758" parent="289" name="id">
       <AutoIncrement>6</AutoIncrement>
       <Comment>属性id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="759" parent="289" name="name">
       <Comment>属性名</Comment>
-      <DataType>char(30)|0s</DataType>
+      <DasType>char(30)|0s</DasType>
       <Position>2</Position>
     </column>
     <column id="760" parent="289" name="input_type">
       <Comment>属性录入方式：0-&gt;手工录入；1-&gt;从列表中选取</Comment>
-      <DataType>int(1)|0s</DataType>
+      <DasType>int(1)|0s</DasType>
       <Position>3</Position>
     </column>
     <column id="761" parent="289" name="select_list">
       <Comment>可选值列表[用逗号分隔]</Comment>
-      <DataType>varchar(255)|0s</DataType>
+      <DasType>varchar(255)|0s</DasType>
       <Position>4</Position>
     </column>
     <column id="762" parent="289" name="attr_group_id">
       <Comment>属性分组id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <Position>5</Position>
     </column>
     <column id="763" parent="289" name="create_time">
       <Comment>创建时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
     <column id="764" parent="289" name="update_time">
       <Comment>更新时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
@@ -3758,7 +3758,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </column>
     <column id="765" parent="289" name="is_deleted">
       <Comment>删除标记（0:不可用 1:可用）</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>8</Position>
@@ -3776,35 +3776,35 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <column id="768" parent="290" name="id">
       <AutoIncrement>4</AutoIncrement>
       <Comment>分组id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="769" parent="290" name="name">
       <Comment>组名</Comment>
-      <DataType>char(20)|0s</DataType>
+      <DasType>char(20)|0s</DasType>
       <Position>2</Position>
     </column>
     <column id="770" parent="290" name="sort">
       <Comment>排序</Comment>
-      <DataType>int(11)|0s</DataType>
+      <DasType>int(11)|0s</DasType>
       <Position>3</Position>
     </column>
     <column id="771" parent="290" name="remark">
       <Comment>备注</Comment>
-      <DataType>varchar(255)|0s</DataType>
+      <DasType>varchar(255)|0s</DasType>
       <Position>4</Position>
     </column>
     <column id="772" parent="290" name="create_time">
       <Comment>创建时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
     <column id="773" parent="290" name="update_time">
       <Comment>更新时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
@@ -3812,7 +3812,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </column>
     <column id="774" parent="290" name="is_deleted">
       <Comment>删除标记（0:不可用 1:可用）</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>7</Position>
@@ -3830,40 +3830,40 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <column id="777" parent="291" name="id">
       <AutoIncrement>12</AutoIncrement>
       <Comment>编号</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="778" parent="291" name="category3_id">
       <Comment>三级级分类id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
     <column id="779" parent="291" name="trademark_id">
       <Comment>品牌id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
     <column id="780" parent="291" name="create_time">
       <Comment>创建时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
     <column id="781" parent="291" name="update_time">
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
       <Position>5</Position>
     </column>
     <column id="782" parent="291" name="is_deleted">
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>6</Position>
@@ -3881,44 +3881,44 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <column id="785" parent="292" name="id">
       <AutoIncrement>15</AutoIncrement>
       <Comment>分类id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="786" parent="292" name="name">
       <Comment>分类名称</Comment>
-      <DataType>char(50)|0s</DataType>
+      <DasType>char(50)|0s</DasType>
       <Position>2</Position>
     </column>
     <column id="787" parent="292" name="img_url">
-      <DataType>varchar(200)|0s</DataType>
+      <DasType>varchar(200)|0s</DasType>
       <Position>3</Position>
     </column>
     <column id="788" parent="292" name="parent_id">
       <Comment>父分类id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <Position>4</Position>
     </column>
     <column id="789" parent="292" name="status">
       <Comment>是否显示[0-不显示，1显示]</Comment>
-      <DataType>tinyint(4)|0s</DataType>
+      <DasType>tinyint(4)|0s</DasType>
       <Position>5</Position>
     </column>
     <column id="790" parent="292" name="sort">
       <Comment>排序</Comment>
-      <DataType>int(11)|0s</DataType>
+      <DasType>int(11)|0s</DasType>
       <Position>6</Position>
     </column>
     <column id="791" parent="292" name="create_time">
       <Comment>创建时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>7</Position>
     </column>
     <column id="792" parent="292" name="update_time">
       <Comment>更新时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
@@ -3926,7 +3926,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </column>
     <column id="793" parent="292" name="is_deleted">
       <Comment>删除标记（0:不可用 1:可用）</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>9</Position>
@@ -3944,80 +3944,80 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <column id="796" parent="293" name="id">
       <AutoIncrement>1</AutoIncrement>
       <Comment>id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="797" parent="293" name="sku_id">
       <Comment>sku_id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <Position>2</Position>
     </column>
     <column id="798" parent="293" name="sku_name">
       <Comment>商品名字</Comment>
-      <DataType>varchar(255)|0s</DataType>
+      <DasType>varchar(255)|0s</DasType>
       <Position>3</Position>
     </column>
     <column id="799" parent="293" name="nick_name">
       <Comment>会员昵称</Comment>
-      <DataType>varchar(255)|0s</DataType>
+      <DasType>varchar(255)|0s</DasType>
       <Position>4</Position>
     </column>
     <column id="800" parent="293" name="icon">
       <Comment>用户头像</Comment>
-      <DataType>varchar(255)|0s</DataType>
+      <DasType>varchar(255)|0s</DasType>
       <Position>5</Position>
     </column>
     <column id="801" parent="293" name="star">
       <Comment>星级</Comment>
-      <DataType>tinyint(1)|0s</DataType>
+      <DasType>tinyint(1)|0s</DasType>
       <Position>6</Position>
     </column>
     <column id="802" parent="293" name="ip">
       <Comment>会员ip</Comment>
-      <DataType>varchar(64)|0s</DataType>
+      <DasType>varchar(64)|0s</DasType>
       <Position>7</Position>
     </column>
     <column id="803" parent="293" name="status">
       <Comment>显示状态[0-不显示，1-显示]</Comment>
-      <DataType>tinyint(1)|0s</DataType>
+      <DasType>tinyint(1)|0s</DasType>
       <Position>8</Position>
     </column>
     <column id="804" parent="293" name="follow_count">
       <Comment>点赞数</Comment>
-      <DataType>int(11)|0s</DataType>
+      <DasType>int(11)|0s</DasType>
       <Position>9</Position>
     </column>
     <column id="805" parent="293" name="reply_count">
       <Comment>回复数</Comment>
-      <DataType>int(11)|0s</DataType>
+      <DasType>int(11)|0s</DasType>
       <Position>10</Position>
     </column>
     <column id="806" parent="293" name="resources">
       <Comment>评论图片/视频[json数据；[{type:文件类型,url:资源路径}]]</Comment>
-      <DataType>varchar(1000)|0s</DataType>
+      <DasType>varchar(1000)|0s</DasType>
       <Position>11</Position>
     </column>
     <column id="807" parent="293" name="content">
       <Comment>内容</Comment>
-      <DataType>text|0s</DataType>
+      <DasType>text|0s</DasType>
       <Position>12</Position>
     </column>
     <column id="808" parent="293" name="type">
       <Comment>评论类型[0 - 对商品的直接评论，1 - 对评论的回复]</Comment>
-      <DataType>tinyint(4)|0s</DataType>
+      <DasType>tinyint(4)|0s</DasType>
       <Position>13</Position>
     </column>
     <column id="809" parent="293" name="create_time">
       <Comment>创建时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>14</Position>
     </column>
     <column id="810" parent="293" name="update_time">
       <Comment>更新时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
@@ -4025,7 +4025,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </column>
     <column id="811" parent="293" name="is_deleted">
       <Comment>删除标记（0:不可用 1:可用）</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>16</Position>
@@ -4042,36 +4042,36 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </key>
     <column id="814" parent="294" name="id">
       <AutoIncrement>1</AutoIncrement>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="815" parent="294" name="comment_id">
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <Position>2</Position>
     </column>
     <column id="816" parent="294" name="nick_name">
-      <DataType>varchar(255)|0s</DataType>
+      <DasType>varchar(255)|0s</DasType>
       <Position>3</Position>
     </column>
     <column id="817" parent="294" name="icon">
-      <DataType>varchar(255)|0s</DataType>
+      <DasType>varchar(255)|0s</DasType>
       <Position>4</Position>
     </column>
     <column id="818" parent="294" name="content">
-      <DataType>varchar(1000)|0s</DataType>
+      <DasType>varchar(1000)|0s</DasType>
       <Position>5</Position>
     </column>
     <column id="819" parent="294" name="create_time">
       <Comment>创建时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
     <column id="820" parent="294" name="update_time">
       <Comment>更新时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
@@ -4079,7 +4079,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </column>
     <column id="821" parent="294" name="is_deleted">
       <Comment>删除标记（0:不可用 1:可用）</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>1</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>8</Position>
@@ -4097,25 +4097,25 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <column id="824" parent="295" name="id">
       <AutoIncrement>1</AutoIncrement>
       <Comment>id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="825" parent="295" name="business_no">
       <Comment>业务编号</Comment>
-      <DataType>varchar(20)|0s</DataType>
+      <DasType>varchar(20)|0s</DasType>
       <Position>2</Position>
     </column>
     <column id="826" parent="295" name="create_time">
       <Comment>创建时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
     <column id="827" parent="295" name="update_time">
       <Comment>更新时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
@@ -4123,7 +4123,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </column>
     <column id="828" parent="295" name="is_deleted">
       <Comment>删除标记（0:不可用 1:可用）</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>5</Position>
@@ -4140,49 +4140,49 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </key>
     <column id="831" parent="296" name="id">
       <Comment>id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="832" parent="296" name="region">
       <Comment>开通区域</Comment>
-      <DataType>varchar(20)|0s</DataType>
+      <DasType>varchar(20)|0s</DasType>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
     <column id="833" parent="296" name="region_name">
       <Comment>区域名称</Comment>
-      <DataType>varchar(30)|0s</DataType>
+      <DasType>varchar(30)|0s</DasType>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
     <column id="834" parent="296" name="ware_id">
       <Comment>仓库</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
     <column id="835" parent="296" name="ware_name">
       <Comment>仓库名称</Comment>
-      <DataType>varchar(30)|0s</DataType>
+      <DasType>varchar(30)|0s</DasType>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
     <column id="836" parent="296" name="create_time">
       <Comment>创建时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
     <column id="837" parent="296" name="update_time">
       <Comment>更新时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
@@ -4190,7 +4190,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </column>
     <column id="838" parent="296" name="is_deleted">
       <Comment>删除标记（0:不可用 1:可用）</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>1</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>8</Position>
@@ -4208,45 +4208,45 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <column id="841" parent="297" name="id">
       <AutoIncrement>201</AutoIncrement>
       <Comment>id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="842" parent="297" name="sku_id">
       <Comment>商品id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <Position>2</Position>
     </column>
     <column id="843" parent="297" name="attr_id">
       <Comment>属性id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <Position>3</Position>
     </column>
     <column id="844" parent="297" name="attr_name">
       <Comment>属性名</Comment>
-      <DataType>varchar(200)|0s</DataType>
+      <DasType>varchar(200)|0s</DasType>
       <Position>4</Position>
     </column>
     <column id="845" parent="297" name="attr_value">
       <Comment>属性值</Comment>
-      <DataType>varchar(200)|0s</DataType>
+      <DasType>varchar(200)|0s</DasType>
       <Position>5</Position>
     </column>
     <column id="846" parent="297" name="sort">
       <Comment>顺序</Comment>
-      <DataType>int(11)|0s</DataType>
+      <DasType>int(11)|0s</DasType>
       <Position>6</Position>
     </column>
     <column id="847" parent="297" name="create_time">
       <Comment>创建时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>7</Position>
     </column>
     <column id="848" parent="297" name="update_time">
       <Comment>更新时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
@@ -4254,7 +4254,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </column>
     <column id="849" parent="297" name="is_deleted">
       <Comment>删除标记（0:不可用 1:可用）</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>9</Position>
@@ -4272,30 +4272,30 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <column id="852" parent="298" name="id">
       <AutoIncrement>14</AutoIncrement>
       <Comment>id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="853" parent="298" name="sku_id">
       <Comment>商品id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <Position>2</Position>
     </column>
     <column id="854" parent="298" name="detail_html">
       <Comment>详情内容</Comment>
-      <DataType>text|0s</DataType>
+      <DasType>text|0s</DasType>
       <Position>3</Position>
     </column>
     <column id="855" parent="298" name="create_time">
       <Comment>创建时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
     <column id="856" parent="298" name="update_time">
       <Comment>更新时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
@@ -4303,7 +4303,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </column>
     <column id="857" parent="298" name="is_deleted">
       <Comment>删除标记（0:不可用 1:可用）</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>6</Position>
@@ -4321,40 +4321,40 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <column id="860" parent="299" name="id">
       <AutoIncrement>102</AutoIncrement>
       <Comment>id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="861" parent="299" name="sku_id">
       <Comment>sku_id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <Position>2</Position>
     </column>
     <column id="862" parent="299" name="img_name">
       <Comment>图片名称</Comment>
-      <DataType>varchar(255)|0s</DataType>
+      <DasType>varchar(255)|0s</DasType>
       <Position>3</Position>
     </column>
     <column id="863" parent="299" name="img_url">
       <Comment>图片地址</Comment>
-      <DataType>varchar(255)|0s</DataType>
+      <DasType>varchar(255)|0s</DasType>
       <Position>4</Position>
     </column>
     <column id="864" parent="299" name="sort">
       <Comment>排序</Comment>
-      <DataType>int(11)|0s</DataType>
+      <DasType>int(11)|0s</DasType>
       <Position>5</Position>
     </column>
     <column id="865" parent="299" name="create_time">
       <Comment>创建时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
     <column id="866" parent="299" name="update_time">
       <Comment>更新时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
@@ -4362,7 +4362,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </column>
     <column id="867" parent="299" name="is_deleted">
       <Comment>删除标记（0:不可用 1:可用）</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>8</Position>
@@ -4379,150 +4379,150 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </key>
     <column id="870" parent="300" name="id">
       <AutoIncrement>14</AutoIncrement>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="871" parent="300" name="category_id">
       <Comment>分类id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
     <column id="872" parent="300" name="attr_group_id">
       <Comment>平台属性分组id</Comment>
-      <DataType>bigint(1)|0s</DataType>
+      <DasType>bigint(1)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
     <column id="873" parent="300" name="sku_type">
       <Comment>商品类型：0-&gt;普通商品 1-&gt;秒杀商品</Comment>
-      <DataType>tinyint(1)|0s</DataType>
+      <DasType>tinyint(1)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
     <column id="874" parent="300" name="sku_name">
       <Comment>sku名称</Comment>
-      <DataType>varchar(100)|0s</DataType>
+      <DasType>varchar(100)|0s</DasType>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
     <column id="875" parent="300" name="img_url">
       <Comment>展示图片</Comment>
-      <DataType>varchar(255)|0s</DataType>
+      <DasType>varchar(255)|0s</DasType>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
     <column id="876" parent="300" name="per_limit">
       <Comment>限购个数/每天（0：不限购）</Comment>
-      <DataType>int(11)|0s</DataType>
+      <DasType>int(11)|0s</DasType>
       <DefaultExpression>1</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>7</Position>
     </column>
     <column id="877" parent="300" name="publish_status">
       <Comment>上架状态：0-&gt;下架；1-&gt;上架</Comment>
-      <DataType>tinyint(1)|0s</DataType>
+      <DasType>tinyint(1)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>8</Position>
     </column>
     <column id="878" parent="300" name="check_status">
       <Comment>审核状态：0-&gt;未审核；1-&gt;审核通过</Comment>
-      <DataType>tinyint(1)|0s</DataType>
+      <DasType>tinyint(1)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>9</Position>
     </column>
     <column id="879" parent="300" name="is_new_person">
       <Comment>是否新人专享：0-&gt;否；1-&gt;是</Comment>
-      <DataType>tinyint(1)|0s</DataType>
+      <DasType>tinyint(1)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>10</Position>
     </column>
     <column id="880" parent="300" name="sort">
       <Comment>排序</Comment>
-      <DataType>int(11)|0s</DataType>
+      <DasType>int(11)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>11</Position>
     </column>
     <column id="881" parent="300" name="sku_code">
       <Comment>sku编码</Comment>
-      <DataType>varchar(30)|0s</DataType>
+      <DasType>varchar(30)|0s</DasType>
       <Position>12</Position>
     </column>
     <column id="882" parent="300" name="price">
       <Comment>价格</Comment>
-      <DataType>decimal(10,2 digit)|0s</DataType>
+      <DasType>decimal(10,2 digit)|0s</DasType>
       <DefaultExpression>0.00</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>13</Position>
     </column>
     <column id="883" parent="300" name="market_price">
       <Comment>市场价</Comment>
-      <DataType>decimal(10,2 digit)|0s</DataType>
+      <DasType>decimal(10,2 digit)|0s</DasType>
       <DefaultExpression>0.00</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>14</Position>
     </column>
     <column id="884" parent="300" name="stock">
       <Comment>库存</Comment>
-      <DataType>int(11)|0s</DataType>
+      <DasType>int(11)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>15</Position>
     </column>
     <column id="885" parent="300" name="lock_stock">
       <Comment>锁定库存</Comment>
-      <DataType>int(11)|0s</DataType>
+      <DasType>int(11)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>16</Position>
     </column>
     <column id="886" parent="300" name="low_stock">
       <Comment>预警库存</Comment>
-      <DataType>int(11)|0s</DataType>
+      <DasType>int(11)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>17</Position>
     </column>
     <column id="887" parent="300" name="sale">
       <Comment>销量</Comment>
-      <DataType>int(11)|0s</DataType>
+      <DasType>int(11)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>18</Position>
     </column>
     <column id="888" parent="300" name="ware_id">
       <Comment>仓库</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>19</Position>
     </column>
     <column id="889" parent="300" name="version">
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>20</Position>
     </column>
     <column id="890" parent="300" name="create_time">
       <Comment>创建时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>21</Position>
     </column>
     <column id="891" parent="300" name="update_time">
       <Comment>更新时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
@@ -4530,7 +4530,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </column>
     <column id="892" parent="300" name="is_deleted">
       <Comment>删除标记（0:不可用 1:可用）</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>23</Position>
@@ -4548,41 +4548,41 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <column id="895" parent="301" name="id">
       <AutoIncrement>148</AutoIncrement>
       <Comment>编号</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="896" parent="301" name="sku_id">
       <Comment>商品id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <Position>2</Position>
     </column>
     <column id="897" parent="301" name="img_name">
       <Comment>文件名称</Comment>
-      <DataType>varchar(200)|0s</DataType>
+      <DasType>varchar(200)|0s</DasType>
       <Position>3</Position>
     </column>
     <column id="898" parent="301" name="img_url">
       <Comment>文件路径</Comment>
-      <DataType>varchar(200)|0s</DataType>
+      <DasType>varchar(200)|0s</DasType>
       <Position>4</Position>
     </column>
     <column id="899" parent="301" name="create_time">
       <Comment>创建时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
     <column id="900" parent="301" name="update_time">
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
       <Position>6</Position>
     </column>
     <column id="901" parent="301" name="is_deleted">
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>7</Position>
@@ -4599,59 +4599,59 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </key>
     <column id="904" parent="302" name="id">
       <AutoIncrement>1</AutoIncrement>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="905" parent="302" name="sku_id">
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
     <column id="906" parent="302" name="price">
       <Comment>销售价格</Comment>
-      <DataType>decimal(10,2 digit)|0s</DataType>
+      <DasType>decimal(10,2 digit)|0s</DasType>
       <DefaultExpression>0.00</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
     <column id="907" parent="302" name="stock">
       <Comment>库存</Comment>
-      <DataType>int(11)|0s</DataType>
+      <DasType>int(11)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
     <column id="908" parent="302" name="sale">
       <Comment>销量</Comment>
-      <DataType>int(11)|0s</DataType>
+      <DasType>int(11)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
     <column id="909" parent="302" name="sale_date">
       <Comment>销售日期</Comment>
-      <DataType>date|0s</DataType>
+      <DasType>date|0s</DasType>
       <Position>6</Position>
     </column>
     <column id="910" parent="302" name="ware_id">
       <Comment>仓库</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>7</Position>
     </column>
     <column id="911" parent="302" name="create_time">
       <Comment>创建时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>8</Position>
     </column>
     <column id="912" parent="302" name="update_time">
       <Comment>更新时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
@@ -4659,7 +4659,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </column>
     <column id="913" parent="302" name="is_deleted">
       <Comment>删除标记（0:不可用 1:可用）</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>1</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>10</Position>
@@ -4677,57 +4677,57 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <column id="916" parent="303" name="id">
       <AutoIncrement>2</AutoIncrement>
       <Comment>id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="917" parent="303" name="name">
       <Comment>名称</Comment>
-      <DataType>varchar(100)|0s</DataType>
+      <DasType>varchar(100)|0s</DasType>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
     <column id="918" parent="303" name="province">
       <Comment>省code</Comment>
-      <DataType>varchar(20)|0s</DataType>
+      <DasType>varchar(20)|0s</DasType>
       <Position>3</Position>
     </column>
     <column id="919" parent="303" name="city">
       <Comment>城市code</Comment>
-      <DataType>varchar(20)|0s</DataType>
+      <DasType>varchar(20)|0s</DasType>
       <Position>4</Position>
     </column>
     <column id="920" parent="303" name="district">
       <Comment>区域code</Comment>
-      <DataType>varchar(20)|0s</DataType>
+      <DasType>varchar(20)|0s</DasType>
       <Position>5</Position>
     </column>
     <column id="921" parent="303" name="detail_address">
       <Comment>详细地址</Comment>
-      <DataType>varchar(255)|0s</DataType>
+      <DasType>varchar(255)|0s</DasType>
       <Position>6</Position>
     </column>
     <column id="922" parent="303" name="longitude">
       <Comment>经度</Comment>
-      <DataType>decimal(10,7 digit)|0s</DataType>
+      <DasType>decimal(10,7 digit)|0s</DasType>
       <Position>7</Position>
     </column>
     <column id="923" parent="303" name="latitude">
       <Comment>纬度</Comment>
-      <DataType>decimal(10,7 digit)|0s</DataType>
+      <DasType>decimal(10,7 digit)|0s</DasType>
       <Position>8</Position>
     </column>
     <column id="924" parent="303" name="create_time">
       <Comment>创建时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>9</Position>
     </column>
     <column id="925" parent="303" name="update_time">
       <Comment>更新时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
@@ -4735,7 +4735,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </column>
     <column id="926" parent="303" name="is_deleted">
       <Comment>删除标记（0:不可用 1:可用）</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>11</Position>
@@ -4752,35 +4752,35 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </key>
     <column id="929" parent="304" name="id">
       <Comment>id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="930" parent="304" name="parent_id">
       <Comment>上级id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
     <column id="931" parent="304" name="name">
       <Comment>名称</Comment>
-      <DataType>varchar(100)|0s</DataType>
+      <DasType>varchar(100)|0s</DasType>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
     <column id="932" parent="304" name="create_time">
       <Comment>创建时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
     <column id="933" parent="304" name="update_time">
       <Comment>更新时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
@@ -4788,7 +4788,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </column>
     <column id="934" parent="304" name="is_deleted">
       <Comment>删除标记（0:不可用 1:可用）</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>1</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>6</Position>
@@ -4810,55 +4810,55 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <column id="938" parent="305" name="id">
       <AutoIncrement>6</AutoIncrement>
       <Comment>id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="939" parent="305" name="region_id">
       <Comment>开通区域id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
     <column id="940" parent="305" name="region_name">
       <Comment>区域名称</Comment>
-      <DataType>varchar(30)|0s</DataType>
+      <DasType>varchar(30)|0s</DasType>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
     <column id="941" parent="305" name="ware_id">
       <Comment>仓库</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
     <column id="942" parent="305" name="ware_name">
       <Comment>仓库名称</Comment>
-      <DataType>varchar(30)|0s</DataType>
+      <DasType>varchar(30)|0s</DasType>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
     <column id="943" parent="305" name="status">
       <Comment>状态（0：未开通 1：已开通）</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>1</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
     <column id="944" parent="305" name="create_time">
       <Comment>创建时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>7</Position>
     </column>
     <column id="945" parent="305" name="update_time">
       <Comment>更新时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
@@ -4866,7 +4866,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </column>
     <column id="946" parent="305" name="is_deleted">
       <Comment>删除标记（0:不可用 1:可用）</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>9</Position>
@@ -4884,57 +4884,57 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <column id="949" parent="306" name="id">
       <AutoIncrement>2</AutoIncrement>
       <Comment>id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="950" parent="306" name="name">
       <Comment>名称</Comment>
-      <DataType>varchar(100)|0s</DataType>
+      <DasType>varchar(100)|0s</DasType>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
     <column id="951" parent="306" name="province">
       <Comment>省code</Comment>
-      <DataType>varchar(20)|0s</DataType>
+      <DasType>varchar(20)|0s</DasType>
       <Position>3</Position>
     </column>
     <column id="952" parent="306" name="city">
       <Comment>城市code</Comment>
-      <DataType>varchar(20)|0s</DataType>
+      <DasType>varchar(20)|0s</DasType>
       <Position>4</Position>
     </column>
     <column id="953" parent="306" name="district">
       <Comment>区域code</Comment>
-      <DataType>varchar(20)|0s</DataType>
+      <DasType>varchar(20)|0s</DasType>
       <Position>5</Position>
     </column>
     <column id="954" parent="306" name="detail_address">
       <Comment>详细地址</Comment>
-      <DataType>varchar(255)|0s</DataType>
+      <DasType>varchar(255)|0s</DasType>
       <Position>6</Position>
     </column>
     <column id="955" parent="306" name="longitude">
       <Comment>经度</Comment>
-      <DataType>decimal(10,7 digit)|0s</DataType>
+      <DasType>decimal(10,7 digit)|0s</DasType>
       <Position>7</Position>
     </column>
     <column id="956" parent="306" name="latitude">
       <Comment>纬度</Comment>
-      <DataType>decimal(10,7 digit)|0s</DataType>
+      <DasType>decimal(10,7 digit)|0s</DasType>
       <Position>8</Position>
     </column>
     <column id="957" parent="306" name="create_time">
       <Comment>创建时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>9</Position>
     </column>
     <column id="958" parent="306" name="update_time">
       <Comment>更新时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
@@ -4942,7 +4942,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </column>
     <column id="959" parent="306" name="is_deleted">
       <Comment>删除标记（0:不可用 1:可用）</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>11</Position>
@@ -4960,37 +4960,37 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <column id="962" parent="307" name="id">
       <AutoIncrement>3</AutoIncrement>
       <Comment>id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="963" parent="307" name="name">
       <Comment>名称</Comment>
-      <DataType>varchar(100)|0s</DataType>
+      <DasType>varchar(100)|0s</DasType>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
     <column id="964" parent="307" name="phone">
       <Comment>手机</Comment>
-      <DataType>varchar(20)|0s</DataType>
+      <DasType>varchar(20)|0s</DasType>
       <Position>3</Position>
     </column>
     <column id="965" parent="307" name="ware_id">
       <Comment>仓库id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <Position>4</Position>
     </column>
     <column id="966" parent="307" name="create_time">
       <Comment>创建时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
     <column id="967" parent="307" name="update_time">
       <Comment>更新时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
@@ -4998,7 +4998,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </column>
     <column id="968" parent="307" name="is_deleted">
       <Comment>删除标记（0:不可用 1:可用）</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>7</Position>
@@ -5016,143 +5016,143 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <column id="971" parent="308" name="id">
       <AutoIncrement>12</AutoIncrement>
       <Comment>id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="972" parent="308" name="user_id">
       <Comment>用户id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <Position>2</Position>
     </column>
     <column id="973" parent="308" name="region_id">
       <Comment>区域id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <Position>3</Position>
     </column>
     <column id="974" parent="308" name="name">
       <Comment>名称</Comment>
-      <DataType>varchar(100)|0s</DataType>
+      <DasType>varchar(100)|0s</DasType>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
     <column id="975" parent="308" name="phone">
       <Comment>手机号码</Comment>
-      <DataType>varchar(11)|0s</DataType>
+      <DasType>varchar(11)|0s</DasType>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
     <column id="976" parent="308" name="id_no">
       <Comment>身份证</Comment>
-      <DataType>varchar(20)|0s</DataType>
+      <DasType>varchar(20)|0s</DasType>
       <Position>6</Position>
     </column>
     <column id="977" parent="308" name="id_no_url1">
       <Comment>身份证图片路径</Comment>
-      <DataType>varchar(255)|0s</DataType>
+      <DasType>varchar(255)|0s</DasType>
       <Position>7</Position>
     </column>
     <column id="978" parent="308" name="id_no_url2">
       <Comment>身份证图片路径</Comment>
-      <DataType>varchar(255)|0s</DataType>
+      <DasType>varchar(255)|0s</DasType>
       <Position>8</Position>
     </column>
     <column id="979" parent="308" name="take_name">
       <Comment>提货点名称</Comment>
-      <DataType>varchar(50)|0s</DataType>
+      <DasType>varchar(50)|0s</DasType>
       <Position>9</Position>
     </column>
     <column id="980" parent="308" name="take_type">
       <Comment>提货点类型；1-&gt;宝妈；2-&gt;便利店店主；3-&gt;快递站点；4-&gt;物业中心</Comment>
-      <DataType>char(1)|0s</DataType>
+      <DasType>char(1)|0s</DasType>
       <Position>10</Position>
     </column>
     <column id="981" parent="308" name="province">
       <Comment>省</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <Position>11</Position>
     </column>
     <column id="982" parent="308" name="city">
       <Comment>城市</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <Position>12</Position>
     </column>
     <column id="983" parent="308" name="district">
       <Comment>区域code</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <Position>13</Position>
     </column>
     <column id="984" parent="308" name="detail_address">
       <Comment>详细地址</Comment>
-      <DataType>varchar(255)|0s</DataType>
+      <DasType>varchar(255)|0s</DasType>
       <Position>14</Position>
     </column>
     <column id="985" parent="308" name="longitude">
       <Comment>经度</Comment>
-      <DataType>decimal(10,7 digit)|0s</DataType>
+      <DasType>decimal(10,7 digit)|0s</DasType>
       <Position>15</Position>
     </column>
     <column id="986" parent="308" name="latitude">
       <Comment>纬度</Comment>
-      <DataType>decimal(10,7 digit)|0s</DataType>
+      <DasType>decimal(10,7 digit)|0s</DasType>
       <Position>16</Position>
     </column>
     <column id="987" parent="308" name="have_store">
       <Comment>有无门店</Comment>
-      <DataType>char(1)|0s</DataType>
+      <DasType>char(1)|0s</DasType>
       <Position>17</Position>
     </column>
     <column id="988" parent="308" name="store_path">
       <Comment>门店照片</Comment>
-      <DataType>varchar(255)|0s</DataType>
+      <DasType>varchar(255)|0s</DasType>
       <Position>18</Position>
     </column>
     <column id="989" parent="308" name="work_time">
       <Comment>营业时间</Comment>
-      <DataType>varchar(100)|0s</DataType>
+      <DasType>varchar(100)|0s</DasType>
       <Position>19</Position>
     </column>
     <column id="990" parent="308" name="work_status">
       <Comment>营业状态</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>20</Position>
     </column>
     <column id="991" parent="308" name="check_status">
       <Comment>审核状态（0：提交审核 1：审核通过 -1：审核未通过）</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>21</Position>
     </column>
     <column id="992" parent="308" name="check_time">
       <Comment>审核时间</Comment>
-      <DataType>datetime|0s</DataType>
+      <DasType>datetime|0s</DasType>
       <Position>22</Position>
     </column>
     <column id="993" parent="308" name="check_user">
       <Comment>审核用户</Comment>
-      <DataType>varchar(20)|0s</DataType>
+      <DasType>varchar(20)|0s</DasType>
       <Position>23</Position>
     </column>
     <column id="994" parent="308" name="check_content">
       <Comment>审核内容</Comment>
-      <DataType>varchar(255)|0s</DataType>
+      <DasType>varchar(255)|0s</DasType>
       <Position>24</Position>
     </column>
     <column id="995" parent="308" name="create_time">
       <Comment>创建时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>25</Position>
     </column>
     <column id="996" parent="308" name="update_time">
       <Comment>更新时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
@@ -5160,7 +5160,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </column>
     <column id="997" parent="308" name="is_deleted">
       <Comment>删除标记（0:不可用 1:可用）</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>27</Position>
@@ -5178,44 +5178,44 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <column id="1000" parent="309" name="id">
       <AutoIncrement>5</AutoIncrement>
       <Comment>id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="1001" parent="309" name="leader_id">
       <Comment>团长ID</Comment>
-      <DataType>varchar(36)|0s</DataType>
+      <DasType>varchar(36)|0s</DasType>
       <Position>2</Position>
     </column>
     <column id="1002" parent="309" name="total_amount">
       <Comment>总收益, 可能有部分余额因为订单未结束而不能提现</Comment>
-      <DataType>decimal(12,2 digit)|0s</DataType>
+      <DasType>decimal(12,2 digit)|0s</DasType>
       <Position>3</Position>
     </column>
     <column id="1003" parent="309" name="available_amount">
       <Comment>可提现余额</Comment>
-      <DataType>decimal(12,2 digit)|0s</DataType>
+      <DasType>decimal(12,2 digit)|0s</DasType>
       <Position>4</Position>
     </column>
     <column id="1004" parent="309" name="frozen_amount">
       <Comment>冻结余额</Comment>
-      <DataType>decimal(10,2 digit)|0s</DataType>
+      <DasType>decimal(10,2 digit)|0s</DasType>
       <Position>5</Position>
     </column>
     <column id="1005" parent="309" name="version">
-      <DataType>int(11)|0s</DataType>
+      <DasType>int(11)|0s</DasType>
       <Position>6</Position>
     </column>
     <column id="1006" parent="309" name="create_time">
       <Comment>创建时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>7</Position>
     </column>
     <column id="1007" parent="309" name="update_time">
       <Comment>更新时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
@@ -5223,7 +5223,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </column>
     <column id="1008" parent="309" name="is_deleted">
       <Comment>删除标记（0:不可用 1:可用）</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>9</Position>
@@ -5240,51 +5240,51 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </key>
     <column id="1011" parent="310" name="id">
       <Comment>id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="1012" parent="310" name="leader_id">
       <Comment>团长ID</Comment>
-      <DataType>varchar(36)|0s</DataType>
+      <DasType>varchar(36)|0s</DasType>
       <Position>2</Position>
     </column>
     <column id="1013" parent="310" name="account_type">
       <Comment>账户类型(微信,银行)</Comment>
-      <DataType>varchar(10)|0s</DataType>
+      <DasType>varchar(10)|0s</DasType>
       <Position>3</Position>
     </column>
     <column id="1014" parent="310" name="bank_name">
       <Comment>银行名称</Comment>
-      <DataType>varchar(45)|0s</DataType>
+      <DasType>varchar(45)|0s</DasType>
       <Position>4</Position>
     </column>
     <column id="1015" parent="310" name="bank_account_no">
       <Comment>银行账号</Comment>
-      <DataType>varchar(20)|0s</DataType>
+      <DasType>varchar(20)|0s</DasType>
       <Position>5</Position>
     </column>
     <column id="1016" parent="310" name="bank_account_name">
       <Comment>银行账户名</Comment>
-      <DataType>varchar(45)|0s</DataType>
+      <DasType>varchar(45)|0s</DasType>
       <Position>6</Position>
     </column>
     <column id="1017" parent="310" name="wechat_id">
       <Comment>微信ID</Comment>
-      <DataType>varchar(80)|0s</DataType>
+      <DasType>varchar(80)|0s</DasType>
       <Position>7</Position>
     </column>
     <column id="1018" parent="310" name="create_time">
       <Comment>创建时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>8</Position>
     </column>
     <column id="1019" parent="310" name="update_time">
       <Comment>更新时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
@@ -5292,7 +5292,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </column>
     <column id="1020" parent="310" name="is_deleted">
       <Comment>删除标记（0:不可用 1:可用）</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>10</Position>
@@ -5310,70 +5310,70 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <column id="1023" parent="311" name="id">
       <AutoIncrement>15</AutoIncrement>
       <Comment>id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="1024" parent="311" name="leader_id">
       <Comment>团长ID</Comment>
-      <DataType>varchar(36)|0s</DataType>
+      <DasType>varchar(36)|0s</DasType>
       <Position>2</Position>
     </column>
     <column id="1025" parent="311" name="bill_type">
       <Comment>账单类型</Comment>
-      <DataType>varchar(10)|0s</DataType>
+      <DasType>varchar(10)|0s</DasType>
       <Position>3</Position>
     </column>
     <column id="1026" parent="311" name="business_no">
       <Comment>业务编号</Comment>
-      <DataType>varchar(50)|0s</DataType>
+      <DasType>varchar(50)|0s</DasType>
       <Position>4</Position>
     </column>
     <column id="1027" parent="311" name="bill_time">
       <Comment>交易时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <Position>5</Position>
     </column>
     <column id="1028" parent="311" name="bill_amount">
       <Comment>账单金额</Comment>
-      <DataType>decimal(12,2 digit)|0s</DataType>
+      <DasType>decimal(12,2 digit)|0s</DasType>
       <Position>6</Position>
     </column>
     <column id="1029" parent="311" name="bill_no">
       <Comment>账单编号</Comment>
-      <DataType>varchar(50)|0s</DataType>
+      <DasType>varchar(50)|0s</DasType>
       <Position>7</Position>
     </column>
     <column id="1030" parent="311" name="bill_desc">
       <Comment>账单描述</Comment>
-      <DataType>varchar(500)|0s</DataType>
+      <DasType>varchar(500)|0s</DasType>
       <Position>8</Position>
     </column>
     <column id="1031" parent="311" name="balance_before">
       <Comment>交易前资金余额</Comment>
-      <DataType>decimal(12,2 digit)|0s</DataType>
+      <DasType>decimal(12,2 digit)|0s</DasType>
       <Position>9</Position>
     </column>
     <column id="1032" parent="311" name="balance_after">
       <Comment>交易后资金余额</Comment>
-      <DataType>decimal(12,2 digit)|0s</DataType>
+      <DasType>decimal(12,2 digit)|0s</DasType>
       <Position>10</Position>
     </column>
     <column id="1033" parent="311" name="bill_status">
       <Comment>账单状态（0：未到账 1：已到账）</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <Position>11</Position>
     </column>
     <column id="1034" parent="311" name="create_time">
       <Comment>创建时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>12</Position>
     </column>
     <column id="1035" parent="311" name="update_time">
       <Comment>更新时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
@@ -5381,7 +5381,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </column>
     <column id="1036" parent="311" name="is_deleted">
       <Comment>删除标记（0:不可用 1:可用）</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>14</Position>
@@ -5398,30 +5398,30 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </key>
     <column id="1039" parent="312" name="id">
       <Comment>id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="1040" parent="312" name="leader_id">
       <Comment>团长ID</Comment>
-      <DataType>varchar(36)|0s</DataType>
+      <DasType>varchar(36)|0s</DasType>
       <Position>2</Position>
     </column>
     <column id="1041" parent="312" name="user_id">
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <Position>3</Position>
     </column>
     <column id="1042" parent="312" name="create_time">
       <Comment>创建时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
     <column id="1043" parent="312" name="update_time">
       <Comment>更新时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
@@ -5429,7 +5429,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </column>
     <column id="1044" parent="312" name="is_deleted">
       <Comment>删除标记（0:不可用 1:可用）</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>6</Position>
@@ -5446,111 +5446,111 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </key>
     <column id="1047" parent="313" name="id">
       <Comment>id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="1048" parent="313" name="leader_id">
       <Comment>团长ID</Comment>
-      <DataType>varchar(36)|0s</DataType>
+      <DasType>varchar(36)|0s</DasType>
       <Position>2</Position>
     </column>
     <column id="1049" parent="313" name="merchant_amount">
       <Comment>提现金额</Comment>
-      <DataType>decimal(12,2 digit)|0s</DataType>
+      <DasType>decimal(12,2 digit)|0s</DasType>
       <Position>3</Position>
     </column>
     <column id="1050" parent="313" name="merchant_status">
       <Comment>提现状态</Comment>
-      <DataType>varchar(10)|0s</DataType>
+      <DasType>varchar(10)|0s</DasType>
       <Position>4</Position>
     </column>
     <column id="1051" parent="313" name="fail_reason">
       <Comment>提现失败原因</Comment>
-      <DataType>varchar(100)|0s</DataType>
+      <DasType>varchar(100)|0s</DasType>
       <Position>5</Position>
     </column>
     <column id="1052" parent="313" name="payment_method">
       <Comment>提现支付方式</Comment>
-      <DataType>varchar(10)|0s</DataType>
+      <DasType>varchar(10)|0s</DasType>
       <Position>6</Position>
     </column>
     <column id="1053" parent="313" name="bank_name">
       <Comment>银行名称</Comment>
-      <DataType>varchar(45)|0s</DataType>
+      <DasType>varchar(45)|0s</DasType>
       <Position>7</Position>
     </column>
     <column id="1054" parent="313" name="bank_account_no">
       <Comment>银行账号</Comment>
-      <DataType>varchar(20)|0s</DataType>
+      <DasType>varchar(20)|0s</DasType>
       <Position>8</Position>
     </column>
     <column id="1055" parent="313" name="bank_account_name">
       <Comment>银行账户名</Comment>
-      <DataType>varchar(45)|0s</DataType>
+      <DasType>varchar(45)|0s</DasType>
       <Position>9</Position>
     </column>
     <column id="1056" parent="313" name="wechat_id">
       <Comment>微信ID</Comment>
-      <DataType>varchar(80)|0s</DataType>
+      <DasType>varchar(80)|0s</DasType>
       <Position>10</Position>
     </column>
     <column id="1057" parent="313" name="withdraw_time">
       <Comment>提现时间</Comment>
-      <DataType>datetime|0s</DataType>
+      <DasType>datetime|0s</DasType>
       <Position>11</Position>
     </column>
     <column id="1058" parent="313" name="verify_time">
       <Comment>审核时间</Comment>
-      <DataType>datetime|0s</DataType>
+      <DasType>datetime|0s</DasType>
       <Position>12</Position>
     </column>
     <column id="1059" parent="313" name="transfer_time">
       <Comment>打款时间</Comment>
-      <DataType>datetime|0s</DataType>
+      <DasType>datetime|0s</DasType>
       <Position>13</Position>
     </column>
     <column id="1060" parent="313" name="withdraw_no">
       <Comment>提现交易编号</Comment>
-      <DataType>varchar(16)|0s</DataType>
+      <DasType>varchar(16)|0s</DasType>
       <Position>14</Position>
     </column>
     <column id="1061" parent="313" name="reject_reason">
       <Comment>审核拒绝理由</Comment>
-      <DataType>varchar(100)|0s</DataType>
+      <DasType>varchar(100)|0s</DasType>
       <Position>15</Position>
     </column>
     <column id="1062" parent="313" name="complete_time">
       <Comment>提现成功时间</Comment>
-      <DataType>datetime|0s</DataType>
+      <DasType>datetime|0s</DasType>
       <Position>16</Position>
     </column>
     <column id="1063" parent="313" name="payment_amount">
       <Comment>提现金额</Comment>
-      <DataType>decimal(12,2 digit)|0s</DataType>
+      <DasType>decimal(12,2 digit)|0s</DasType>
       <Position>17</Position>
     </column>
     <column id="1064" parent="313" name="tax_amount">
       <Comment>手续费</Comment>
-      <DataType>decimal(12,2 digit)|0s</DataType>
+      <DasType>decimal(12,2 digit)|0s</DasType>
       <Position>18</Position>
     </column>
     <column id="1065" parent="313" name="memo">
       <Comment>备注</Comment>
-      <DataType>varchar(500)|0s</DataType>
+      <DasType>varchar(500)|0s</DasType>
       <Position>19</Position>
     </column>
     <column id="1066" parent="313" name="create_time">
       <Comment>创建时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>20</Position>
     </column>
     <column id="1067" parent="313" name="update_time">
       <Comment>更新时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
@@ -5558,7 +5558,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </column>
     <column id="1068" parent="313" name="is_deleted">
       <Comment>删除标记（0:不可用 1:可用）</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>22</Position>
@@ -5575,35 +5575,35 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </key>
     <column id="1071" parent="314" name="id">
       <Comment>id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="1072" parent="314" name="parent_id">
       <Comment>上级id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
     <column id="1073" parent="314" name="name">
       <Comment>名称</Comment>
-      <DataType>varchar(100)|0s</DataType>
+      <DasType>varchar(100)|0s</DasType>
       <DefaultExpression>&apos;&apos;</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
     <column id="1074" parent="314" name="create_time">
       <Comment>创建时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
     <column id="1075" parent="314" name="update_time">
       <Comment>更新时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
@@ -5611,7 +5611,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </column>
     <column id="1076" parent="314" name="is_deleted">
       <Comment>删除标记（0:不可用 1:可用）</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>1</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>6</Position>
@@ -5633,70 +5633,70 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <column id="1080" parent="315" name="id">
       <AutoIncrement>29</AutoIncrement>
       <Comment>id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="1081" parent="315" name="user_type">
       <Comment>用户类型（0：会员 1：团长）</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <Position>2</Position>
     </column>
     <column id="1082" parent="315" name="photo_url">
       <Comment>会员头像</Comment>
-      <DataType>varchar(500)|0s</DataType>
+      <DasType>varchar(500)|0s</DasType>
       <Position>3</Position>
     </column>
     <column id="1083" parent="315" name="nick_name">
       <Comment>昵称</Comment>
-      <DataType>varchar(100)|0s</DataType>
+      <DasType>varchar(100)|0s</DasType>
       <Position>4</Position>
     </column>
     <column id="1084" parent="315" name="id_no">
       <Comment>身份证号码</Comment>
-      <DataType>varchar(45)|0s</DataType>
+      <DasType>varchar(45)|0s</DasType>
       <Position>5</Position>
     </column>
     <column id="1085" parent="315" name="sex">
       <Comment>性别</Comment>
-      <DataType>tinyint(1)|0s</DataType>
+      <DasType>tinyint(1)|0s</DasType>
       <Position>6</Position>
     </column>
     <column id="1086" parent="315" name="phone">
       <Comment>电话号码</Comment>
-      <DataType>varchar(17)|0s</DataType>
+      <DasType>varchar(17)|0s</DasType>
       <Position>7</Position>
     </column>
     <column id="1087" parent="315" name="memo">
       <Comment>备注</Comment>
-      <DataType>varchar(100)|0s</DataType>
+      <DasType>varchar(100)|0s</DasType>
       <Position>8</Position>
     </column>
     <column id="1088" parent="315" name="open_id">
       <Comment>小程序open id</Comment>
-      <DataType>varchar(45)|0s</DataType>
+      <DasType>varchar(45)|0s</DasType>
       <Position>9</Position>
     </column>
     <column id="1089" parent="315" name="union_id">
       <Comment>微信开放平台unionID</Comment>
-      <DataType>varchar(45)|0s</DataType>
+      <DasType>varchar(45)|0s</DasType>
       <Position>10</Position>
     </column>
     <column id="1090" parent="315" name="is_new">
       <Comment>是否新用户</Comment>
-      <DataType>char(1)|0s</DataType>
+      <DasType>char(1)|0s</DasType>
       <Position>11</Position>
     </column>
     <column id="1091" parent="315" name="create_time">
       <Comment>创建时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>12</Position>
     </column>
     <column id="1092" parent="315" name="update_time">
       <Comment>更新时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
@@ -5704,7 +5704,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </column>
     <column id="1093" parent="315" name="is_deleted">
       <Comment>删除标记（0:不可用 1:可用）</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>14</Position>
@@ -5722,41 +5722,41 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <column id="1096" parent="316" name="id">
       <AutoIncrement>67</AutoIncrement>
       <Comment>id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="1097" parent="316" name="user_id">
       <Comment>会员ID</Comment>
-      <DataType>varchar(36)|0s</DataType>
+      <DasType>varchar(36)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
     <column id="1098" parent="316" name="leader_id">
       <Comment>团长id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <Position>3</Position>
     </column>
     <column id="1099" parent="316" name="ware_id">
       <Comment>仓库id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <Position>4</Position>
     </column>
     <column id="1100" parent="316" name="is_default">
       <Comment>是否默认</Comment>
-      <DataType>char(1)|0s</DataType>
+      <DasType>char(1)|0s</DasType>
       <Position>5</Position>
     </column>
     <column id="1101" parent="316" name="create_time">
       <Comment>创建时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
     <column id="1102" parent="316" name="update_time">
       <Comment>更新时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
@@ -5764,7 +5764,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </column>
     <column id="1103" parent="316" name="is_deleted">
       <Comment>删除标记（0:不可用 1:可用）</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>8</Position>
@@ -5782,40 +5782,40 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <column id="1106" parent="317" name="id">
       <AutoIncrement>1</AutoIncrement>
       <Comment>id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="1107" parent="317" name="user_id">
       <Comment>用户id</Comment>
-      <DataType>bigint(20)|0s</DataType>
+      <DasType>bigint(20)|0s</DasType>
       <Position>2</Position>
     </column>
     <column id="1108" parent="317" name="ip">
       <Comment>登录ip</Comment>
-      <DataType>varchar(64)|0s</DataType>
+      <DasType>varchar(64)|0s</DasType>
       <Position>3</Position>
     </column>
     <column id="1109" parent="317" name="city">
       <Comment>登录城市</Comment>
-      <DataType>varchar(64)|0s</DataType>
+      <DasType>varchar(64)|0s</DasType>
       <Position>4</Position>
     </column>
     <column id="1110" parent="317" name="type">
       <Comment>登录类型【0-web，1-移动】</Comment>
-      <DataType>tinyint(1)|0s</DataType>
+      <DasType>tinyint(1)|0s</DasType>
       <Position>5</Position>
     </column>
     <column id="1111" parent="317" name="create_time">
       <Comment>创建时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
     <column id="1112" parent="317" name="update_time">
       <Comment>更新时间</Comment>
-      <DataType>timestamp|0s</DataType>
+      <DasType>timestamp|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
@@ -5823,7 +5823,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </column>
     <column id="1113" parent="317" name="is_deleted">
       <Comment>删除标记（0:不可用 1:可用）</Comment>
-      <DataType>tinyint(3)|0s</DataType>
+      <DasType>tinyint(3)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>8</Position>
