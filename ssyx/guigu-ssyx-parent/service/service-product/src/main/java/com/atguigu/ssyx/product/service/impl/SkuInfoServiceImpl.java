@@ -70,6 +70,7 @@ public class SkuInfoServiceImpl extends ServiceImpl<SkuInfoMapper, SkuInfo>
         return baseMapper.selectPage(pageParam, wrapper);
     }
 
+    @Transactional(rollbackFor = {Exception.class})
     @Override
     public void saveSkuInfo(SkuInfoVo skuInfoVo) {
         // 1.添加sku基本信息

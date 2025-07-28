@@ -2,6 +2,7 @@ package com.atguigu.ssyx.activity.mapper;
 
 import com.atguigu.ssyx.model.activity.CouponRange;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Mapper;
 
 /**
 * @author Administrator
@@ -9,6 +10,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 * @createDate 2025-07-25 17:19:33
 * @Entity com.atguigu.ssyx.activity.CouponRange
 */
+@Mapper
 public interface CouponRangeMapper extends BaseMapper<CouponRange> {
 
 }

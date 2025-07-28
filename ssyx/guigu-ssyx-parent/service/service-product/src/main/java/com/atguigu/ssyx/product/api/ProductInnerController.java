@@ -46,6 +46,12 @@ public class ProductInnerController {
         return skuInfoService.findSkuInfoList(skuIdList);
     }
 
+    @ApiOperation(value = "根据分类id列表得到分类列表")
+    @PostMapping("/inner/findCategoryList")
+    public List<Category> findCategoryList(@RequestBody List<Long> categoryIdList) {
+        return categoryService.listByIds(categoryIdList);
+    }
+
     @ApiOperation(value = "根据关键字匹配sku列表")
     @GetMapping("/inner/findSkuInfoByKeyWord/{keyword}")
     public List<SkuInfo> findSkuInfoByKeyWord(@PathVariable("keyword") String keyword) {

@@ -17,6 +17,7 @@ import com.atguigu.ssyx.activity.service.ActivityInfoService;
 import com.atguigu.ssyx.activity.mapper.ActivityInfoMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -74,6 +75,7 @@ public class ActivityInfoServiceImpl extends ServiceImpl<ActivityInfoMapper, Act
     }
 
     @Override
+    @Transactional(rollbackFor = Exception.class)
     public void saveActivityRule(ActivityRuleVo activityRuleVo) {
         // 1.根据活动id删除之前规则数据
         // 1.1 ActivityRule数据删除

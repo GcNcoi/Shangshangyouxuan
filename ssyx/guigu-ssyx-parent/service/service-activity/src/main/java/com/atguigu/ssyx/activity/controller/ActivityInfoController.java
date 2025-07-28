@@ -27,7 +27,6 @@ import java.util.Map;
 @Api(tags = "营销活动接口")
 @RestController
 @RequestMapping("/admin/activity/activityInfo")
-@CrossOrigin
 public class ActivityInfoController {
 
     @Autowired
@@ -44,7 +43,7 @@ public class ActivityInfoController {
 
     @ApiOperation("根据id查询活动")
     @GetMapping("/get/{id}")
-    public Result<ActivityInfo> getActivityInfoById(@ApiParam(name = "id", value = "活动id", required = true) @PathVariable("id") Long id) {
+    public Result<ActivityInfo> get(@ApiParam(name = "id", value = "活动id", required = true) @PathVariable("id") Long id) {
         ActivityInfo activityInfo = activityInfoService.getById(id);
         activityInfo.setActivityTypeString(activityInfo.getActivityType().getComment());
         return Result.ok(activityInfo);
