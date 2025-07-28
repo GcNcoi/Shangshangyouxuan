@@ -1,4 +1,4 @@
-package com.atguigu;
+package com.atguigu.ssyx;
 
 public class Main {
     public static void main(String[] args) {
