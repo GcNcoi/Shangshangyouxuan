@@ -25,6 +25,7 @@ import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
 import springfox.documentation.annotations.ApiIgnore;
 
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -207,6 +208,22 @@ public class SkuInfoServiceImpl extends ServiceImpl<SkuInfoMapper, SkuInfo>
         skuInfoUp.setId(skuId);
         skuInfoUp.setIsNewPerson(status);
         baseMapper.updateById(skuInfoUp);
+    }
+
+    @Override
+    public List<SkuInfo> findSkuInfoList(List<Long> skuIdList) {
+        // 检查参数是否为空，若为空则直接返回空列表
+        if (skuIdList == null || skuIdList.isEmpty()) {
+            return Collections.emptyList();
+        }
+        return baseMapper.selectBatchIds(skuIdList);
+    }
+
+    @Override
+    public List<SkuInfo> findSkuInfoByKeyWord(String keyword) {
+        LambdaQueryWrapper<SkuInfo> wrapper = new LambdaQueryWrapper<>();
+        wrapper.like(SkuInfo::getSkuName, keyword);
+        return baseMapper.selectList(wrapper);
     }
 }
 

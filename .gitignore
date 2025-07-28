@@ -1,5 +1,8 @@
 target/
 .idea/
+*.iml
+.idea/workspace.xml
+.gitattributes
 .idea/workspace.xml
 .gitattributes
 git-filter-repo/  # 如果是目录，末尾加斜杠
