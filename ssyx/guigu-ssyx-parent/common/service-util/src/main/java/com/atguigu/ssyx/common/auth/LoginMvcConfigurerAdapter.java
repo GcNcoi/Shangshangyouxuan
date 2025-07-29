@@ -13,6 +13,7 @@ public class LoginMvcConfigurerAdapter extends WebMvcConfigurationSupport {
 
     @Resource
     private RedisTemplate redisTemplate;
+
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new UserLoginInterceptor(redisTemplate))

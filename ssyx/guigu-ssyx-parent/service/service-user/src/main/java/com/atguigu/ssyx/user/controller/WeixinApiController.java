@@ -96,8 +96,8 @@ public class WeixinApiController {
         return Result.ok(map);
     }
 
-    @PostMapping("/auth/updateUser")
     @ApiOperation(value = "更新用户昵称与头像")
+    @PostMapping("/auth/updateUser")
     public Result updateUser(@RequestBody User user) {
         //获取当前登录用户id
         User user1 = userService.getById(AuthContextHolder.getUserId());
