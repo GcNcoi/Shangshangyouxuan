@@ -1,6 +1,6 @@
 package com.atguigu.ssyx.user.mapper;
 
-import com.atguigu.ssyx.user.UserDelivery;
+import com.atguigu.ssyx.model.user.UserDelivery;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 

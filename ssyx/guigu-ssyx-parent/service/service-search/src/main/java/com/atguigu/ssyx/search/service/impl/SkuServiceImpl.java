@@ -7,9 +7,15 @@ import com.atguigu.ssyx.model.product.SkuInfo;
 import com.atguigu.ssyx.model.search.SkuEs;
 import com.atguigu.ssyx.search.repository.SkuRepository;
 import com.atguigu.ssyx.search.service.SkuService;
+import com.atguigu.ssyx.vo.search.SkuEsQueryVo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * 功能描述
@@ -50,7 +56,7 @@ public class SkuServiceImpl implements SkuService {
         skuEs.setIsNewPerson(skuInfo.getIsNewPerson());
         skuEs.setImgUrl(skuInfo.getImgUrl());
         skuEs.setTitle(skuInfo.getSkuName());
-        if(skuInfo.getSkuType() == SkuType.COMMON.getCode()) {
+        if(skuInfo.getSkuType().equals(SkuType.COMMON.getCode())) {
             skuEs.setSkuType(0);
             skuEs.setPrice(skuInfo.getPrice().doubleValue());
             skuEs.setStock(skuInfo.getStock());
@@ -65,5 +71,23 @@ public class SkuServiceImpl implements SkuService {
     @Override
     public void lowerSku(Long skuId) {
         skuRepository.deleteById(skuId);
+    }
+
+    @Override
+    public List<SkuEs> findHotSkuList() {
+        Pageable pageable = PageRequest.of(0, 10);
+        Page<SkuEs> pageModel = skuRepository.findByOrderByHotScoreDesc(pageable);
+        return pageModel.getContent();
+    }
+
+    @Override
+    public Page<SkuEs> search(PageRequest pageRequest, SkuEsQueryVo skuEsQueryVo) {
+        // 1. 向SkuEsQueryVo设置wareId，当前登录用户的仓库id
+
+        // 2. 调用SkuRepository方法，根据springData命名规则定义方法，进行条件查询
+        // 判断keyword是否为空，如果为空，根据仓库id + 分类id查询；如果不为空，根据仓库id + 分类id + keyword查询
+
+        // 3. 查询商品参加优惠活动
+        return null;
     }
 }

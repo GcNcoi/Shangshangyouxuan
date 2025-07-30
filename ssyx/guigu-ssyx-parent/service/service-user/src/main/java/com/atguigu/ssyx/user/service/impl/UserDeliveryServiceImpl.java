@@ -1,7 +1,7 @@
 package com.atguigu.ssyx.user.service.impl;
 
+import com.atguigu.ssyx.model.user.UserDelivery;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.atguigu.ssyx.user.UserDelivery;
 import com.atguigu.ssyx.user.service.UserDeliveryService;
 import com.atguigu.ssyx.user.mapper.UserDeliveryMapper;
 import org.springframework.stereotype.Service;

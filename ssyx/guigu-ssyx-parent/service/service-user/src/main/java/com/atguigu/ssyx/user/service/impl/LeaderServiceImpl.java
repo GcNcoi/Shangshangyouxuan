@@ -1,7 +1,7 @@
 package com.atguigu.ssyx.user.service.impl;
 
+import com.atguigu.ssyx.model.user.Leader;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.atguigu.ssyx.user.Leader;
 import com.atguigu.ssyx.user.service.LeaderService;
 import com.atguigu.ssyx.user.mapper.LeaderMapper;
 import org.springframework.stereotype.Service;

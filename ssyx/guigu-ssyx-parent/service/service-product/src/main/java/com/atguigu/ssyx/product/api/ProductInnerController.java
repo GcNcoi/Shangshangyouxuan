@@ -58,4 +58,16 @@ public class ProductInnerController {
         return skuInfoService.findSkuInfoByKeyWord(keyword);
     }
 
+    @ApiOperation(value = "获取所有分类")
+    @GetMapping("/inner/findAllCategoryList")
+    public List<Category> findAllCategoryList() {
+        return categoryService.findAllList();
+    }
+
+    @ApiOperation(value = "获取新人专享")
+    @GetMapping("/inner/findNewPersonSkuInfoList")
+    public List<SkuInfo> findNewPersonSkuInfoList() {
+        return skuInfoService.findNewPersonList();
+    }
+
 }

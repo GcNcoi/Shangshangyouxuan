@@ -1,13 +1,19 @@
 package com.atguigu.ssyx.search.controller;
 
 import com.atguigu.ssyx.common.result.Result;
+import com.atguigu.ssyx.model.search.SkuEs;
 import com.atguigu.ssyx.search.service.SkuService;
+import com.atguigu.ssyx.vo.search.SkuEsQueryVo;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 /**
  * 功能描述
@@ -34,6 +40,22 @@ public class SkuApiController {
     public Result lowerGoods(@PathVariable("skuId") Long skuId) {
         skuService.lowerSku(skuId);
         return Result.ok();
+    }
+
+    @ApiOperation(value = "获取爆品商品")
+    @GetMapping("/inner/findHotSkuList")
+    public List<SkuEs> findHotSkuList() {
+        return skuService.findHotSkuList();
+    }
+
+    @ApiOperation("查询分类商品")
+    @GetMapping("{page}/{limit}")
+    public Result listSku(@PathVariable("page") Integer page,
+                          @PathVariable("limit") Integer limit,
+                          SkuEsQueryVo skuEsQueryVo) {
+        PageRequest pageRequest = PageRequest.of(page - 1, limit);
+        Page<SkuEs> skuEsPage = skuService.search(pageRequest, skuEsQueryVo);
+        return Result.ok(skuEsPage);
     }
 
 }

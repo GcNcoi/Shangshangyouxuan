@@ -1,6 +1,6 @@
 package com.atguigu.ssyx.user.mapper;
 
-import com.atguigu.ssyx.user.Leader;
+import com.atguigu.ssyx.model.user.Leader;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 

@@ -29,4 +29,10 @@ public interface ProductFeignClient {
     @GetMapping("/api/product/inner/findSkuInfoByKeyWord/{keyword}")
     List<SkuInfo> findSkuInfoByKeyWord(@PathVariable("keyword") String keyword);
 
+    @GetMapping("/api/product/inner/findAllCategoryList")
+    List<Category> findAllCategoryList();
+
+    @GetMapping("/api/product/inner/findNewPersonSkuInfoList")
+    List<SkuInfo> findNewPersonSkuInfoList();
+
 }
