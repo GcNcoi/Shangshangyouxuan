@@ -12,15 +12,15 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/shequ-product?characterEncoding=utf-8&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
     username: root
-#    password: 123456
-    password: 1234
+    password: 123456
+#    password: 1234
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
 #  配置rabbitmq
   rabbitmq:
-#    host: 192.168.200.128
-    host: 192.168.10.129
+    host: 192.168.200.128
+#    host: 192.168.10.129
     port: 5672
     username: guest
     password: guest
@@ -31,4 +31,9 @@ spring:
         prefetch: 1
         concurrency: 3
         acknowledge-mode: manual   #消费端手动确认
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 10MB
+      max-request-size: 100MB
 # 阿里云配置

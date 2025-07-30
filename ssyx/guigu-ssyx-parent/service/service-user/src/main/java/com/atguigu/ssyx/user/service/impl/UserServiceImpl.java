@@ -1,8 +1,8 @@
 package com.atguigu.ssyx.user.service.impl;
 
+import com.atguigu.ssyx.model.user.Leader;
 import com.atguigu.ssyx.model.user.User;
-import com.atguigu.ssyx.user.Leader;
-import com.atguigu.ssyx.user.UserDelivery;
+import com.atguigu.ssyx.model.user.UserDelivery;
 import com.atguigu.ssyx.user.mapper.LeaderMapper;
 import com.atguigu.ssyx.user.mapper.UserDeliveryMapper;
 import com.atguigu.ssyx.vo.user.LeaderAddressVo;
