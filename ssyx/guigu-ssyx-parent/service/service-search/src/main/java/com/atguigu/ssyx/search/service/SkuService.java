@@ -4,6 +4,7 @@ import com.atguigu.ssyx.model.search.SkuEs;
 import com.atguigu.ssyx.vo.search.SkuEsQueryVo;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,5 +18,5 @@ public interface SkuService {
 
     List<SkuEs> findHotSkuList();
 
-    Page<SkuEs> search(PageRequest pageRequest, SkuEsQueryVo skuEsQueryVo);
+    Page<SkuEs> search(Pageable pageable, SkuEsQueryVo skuEsQueryVo);
 }

@@ -3,6 +3,7 @@ package com.atguigu.ssyx.activity.service.impl;
 import com.atguigu.ssyx.activity.mapper.ActivityRuleMapper;
 import com.atguigu.ssyx.activity.mapper.ActivitySkuMapper;
 import com.atguigu.ssyx.client.product.ProductFeignClient;
+import com.atguigu.ssyx.enums.ActivityType;
 import com.atguigu.ssyx.model.activity.ActivityInfo;
 import com.atguigu.ssyx.model.activity.ActivityRule;
 import com.atguigu.ssyx.model.activity.ActivitySku;
@@ -18,18 +19,19 @@ import com.atguigu.ssyx.activity.mapper.ActivityInfoMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.CollectionUtils;
 
 import java.util.*;
 import java.util.stream.Collectors;
 
 /**
-* @author Administrator
-* @description 针对表【activity_info(活动表)】的数据库操作Service实现
-* @createDate 2025-07-25 17:14:45
-*/
+ * @author Administrator
+ * @description 针对表【activity_info(活动表)】的数据库操作Service实现
+ * @createDate 2025-07-25 17:14:45
+ */
 @Service
 public class ActivityInfoServiceImpl extends ServiceImpl<ActivityInfoMapper, ActivityInfo>
-    implements ActivityInfoService{
+        implements ActivityInfoService {
 
     @Autowired
     private ActivityRuleMapper activityRuleMapper;
@@ -117,6 +119,49 @@ public class ActivityInfoServiceImpl extends ServiceImpl<ActivityInfoMapper, Act
         return skuInfoList.stream()
                 .filter(sku -> !existSkuIdList.contains(sku.getId()))
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public Map<Long, List<String>> findActivity(List<Long> skuIdList) {
+        Map<Long, List<String>> result = new HashMap<>();
+        // 1.遍历skuIdList
+        skuIdList.forEach(skuId -> {
+            // 2.根据skuId进行查询，查询sku对应活动里面规则列表
+            List<ActivityRule> activityRuleList = baseMapper.findActivityRule(skuId);
+            // 3.数据封装规则名称
+            if (!CollectionUtils.isEmpty(activityRuleList)) {
+                // 规则名称拼接
+                // 合并流操作：一次遍历完成设置和收集，减少迭代次数
+                List<String> ruleList = activityRuleList.stream()
+                        .peek(activityRule -> activityRule.setRuleDesc(this.getRuleDesc(activityRule))) // 设置规则描述（副作用操作）
+                        .map(ActivityRule::getRuleDesc) // 提取规则描述
+                        .collect(Collectors.toList()); // 收集结果
+                result.put(skuId, ruleList);
+            }
+        });
+        return result;
+    }
+
+    // 构造规则名称的方法
+    private String getRuleDesc(ActivityRule activityRule) {
+        ActivityType activityType = activityRule.getActivityType();
+        StringBuffer ruleDesc = new StringBuffer();
+        if (activityType == ActivityType.FULL_REDUCTION) {
+            ruleDesc
+                    .append("满")
+                    .append(activityRule.getConditionAmount())
+                    .append("元减")
+                    .append(activityRule.getBenefitAmount())
+                    .append("元");
+        } else {
+            ruleDesc
+                    .append("满")
+                    .append(activityRule.getConditionNum())
+                    .append("元打")
+                    .append(activityRule.getBenefitDiscount())
+                    .append("折");
+        }
+        return ruleDesc.toString();
     }
 }
 

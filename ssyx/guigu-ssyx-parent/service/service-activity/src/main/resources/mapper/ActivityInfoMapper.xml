@@ -5,19 +5,24 @@
 <mapper namespace="com.atguigu.ssyx.activity.mapper.ActivityInfoMapper">
 
     <resultMap id="BaseResultMap" type="com.atguigu.ssyx.model.activity.ActivityInfo">
-            <id property="id" column="id" jdbcType="BIGINT"/>
-            <result property="activityName" column="activity_name" jdbcType="VARCHAR"/>
-            <result property="activityType" column="activity_type" jdbcType="TINYINT"/>
-            <result property="activityDesc" column="activity_desc" jdbcType="VARCHAR"/>
-            <result property="startTime" column="start_time" jdbcType="DATE"/>
-            <result property="endTime" column="end_time" jdbcType="DATE"/>
-            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
-            <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
-            <result property="isDeleted" column="is_deleted" jdbcType="TINYINT"/>
+        <id property="id" column="id" jdbcType="BIGINT"/>
+        <result property="activityName" column="activity_name" jdbcType="VARCHAR"/>
+        <result property="activityType" column="activity_type" jdbcType="TINYINT"/>
+        <result property="activityDesc" column="activity_desc" jdbcType="VARCHAR"/>
+        <result property="startTime" column="start_time" jdbcType="DATE"/>
+        <result property="endTime" column="end_time" jdbcType="DATE"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+        <result property="isDeleted" column="is_deleted" jdbcType="TINYINT"/>
+    </resultMap>
+
+    <resultMap id="ActivityRuleMap" type="com.atguigu.ssyx.model.activity.ActivityRule" autoMapping="true">
+
     </resultMap>
 
     <sql id="Base_Column_List">
-        id,activity_name,activity_type,
+        id
+        ,activity_name,activity_type,
         activity_desc,start_time,end_time,
         create_time,update_time,is_deleted
     </sql>
@@ -36,5 +41,22 @@
             </if>
             and now() between info.start_time and info.end_time
         </where>
+    </select>
+
+    <select id="findActivityRule" resultMap="ActivityRuleMap">
+        SELECT ai.activity_type as activityType,
+               ar.id,
+               ar.activity_id,
+               ar.condition_amount,
+               ar.condition_num,
+               ar.benefit_amount,
+               ar.benefit_discount
+        FROM activity_info ai
+                 INNER JOIN activity_sku ak ON ai.id = ak.activity_id
+                 INNER JOIN activity_rule ar ON ai.id = ar.activity_id
+        WHERE ak.sku_id = #{skuId}
+          AND now() BETWEEN ai.start_time
+            AND ai.end_time
+        ORDER BY ar.condition_amount DESC
     </select>
 </mapper>

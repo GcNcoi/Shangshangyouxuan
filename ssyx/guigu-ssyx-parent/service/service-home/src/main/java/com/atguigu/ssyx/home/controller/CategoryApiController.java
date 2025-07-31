@@ -32,6 +32,4 @@ public class CategoryApiController {
         return Result.ok(productFeignClient.findAllCategoryList());
     }
 
-
-
 }
