@@ -26,7 +26,7 @@ public class SkuInfo extends BaseEntity {
 
 	@ApiModelProperty(value = "商品类型：0->普通商品 1->秒杀商品")
 	@TableField("sku_type")
-	private Integer skuType;
+	private Integer skuType = 0;
 
 	@ApiModelProperty(value = "spu名称")
 	@TableField("sku_name")

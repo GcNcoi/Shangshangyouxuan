@@ -51,13 +51,20 @@ public class SkuApiController {
     }
 
     @ApiOperation("查询分类商品")
-    @GetMapping("{page}/{limit}")
+    @GetMapping("/{page}/{limit}")
     public Result listSku(@ApiParam(name = "page", value = "当前页码", required = true) @PathVariable Integer page,
                           @ApiParam(name = "limit", value = "每页记录数", required = true) @PathVariable Integer limit,
                           @ApiParam(name = "searchParamVo", value = "查询对象", required = false) SkuEsQueryVo skuEsQueryVo) {
         Pageable pageable = PageRequest.of(page - 1, limit);
         Page<SkuEs> skuEsPage = skuService.search(pageable, skuEsQueryVo);
         return Result.ok(skuEsPage);
+    }
+
+    @ApiOperation(value = "更新商品incrHotScore")
+    @GetMapping("/inner/incrHotScore/{skuId}")
+    public Boolean incrHotScore(@PathVariable("skuId") Long skuId) {
+        skuService.incrHotScore(skuId);
+        return true;
     }
 
 }

@@ -1,15 +1,15 @@
 package com.atguigu.ssyx.activity.api;
 
 import com.atguigu.ssyx.activity.service.ActivityInfoService;
+import com.atguigu.ssyx.model.order.CartInfo;
+import com.atguigu.ssyx.vo.order.OrderConfirmVo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.Map;
 
@@ -34,6 +34,18 @@ public class ActivityInfoApiController {
     @PostMapping("/inner/findActivity")
     public Map<Long, List<String>> findActivity(@RequestBody List<Long> skuIdList) {
         return activityInfoService.findActivity(skuIdList);
+    }
+
+    @ApiOperation(value = "根据skuId获取促销与优惠券信息")
+    @GetMapping("/inner/findActivityAndCoupon/{skuId}/{userId}")
+    public Map<String, Object> findActivityAndCoupon(@PathVariable("skuId") Long skuId, @PathVariable("userId") Long userId) {
+        return activityInfoService.findActivityAndCoupon(skuId, userId);
+    }
+
+    @ApiOperation(value = "获取购物车满足条件的促销与优惠券信息")
+    @PostMapping("/inner/findCartActivityAndCoupon/{userId}")
+    public OrderConfirmVo findCartActivityAndCoupon(@RequestBody List<CartInfo> cartInfoList, @PathVariable("userId") Long userId) {
+        return activityInfoService.findCartActivityAndCoupon(cartInfoList, userId);
     }
 
 }

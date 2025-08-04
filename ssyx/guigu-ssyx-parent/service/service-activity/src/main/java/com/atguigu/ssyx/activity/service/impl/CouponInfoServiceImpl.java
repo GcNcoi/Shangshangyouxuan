@@ -20,9 +20,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -120,5 +118,15 @@ public class CouponInfoServiceImpl extends ServiceImpl<CouponInfoMapper, CouponI
         LambdaQueryWrapper<CouponInfo> couponInfoQueryWrapper = new LambdaQueryWrapper<>();
         couponInfoQueryWrapper.like(CouponInfo::getCouponName, keyword);
         return baseMapper.selectList(couponInfoQueryWrapper);
+    }
+
+    @Override
+    public List<CouponInfo> findCouponInfo(Long skuId, Long userId) {
+        // 远程调用：根据skuId获取skuInfo
+        SkuInfo skuInfo = productFeignClient.getSkuInfo(skuId);
+        if(null == skuInfo) return new ArrayList<>();
+        // 根据条件查询：skuId + 分类ID + userId
+        List<CouponInfo> couponInfoList = baseMapper.selectCouponInfoList(skuInfo.getId(), skuInfo.getCategoryId(), userId);
+        return couponInfoList;
     }
 }

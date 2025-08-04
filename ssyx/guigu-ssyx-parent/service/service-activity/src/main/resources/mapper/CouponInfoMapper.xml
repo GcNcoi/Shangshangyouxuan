@@ -5,32 +5,70 @@
 <mapper namespace="com.atguigu.ssyx.activity.mapper.CouponInfoMapper">
 
     <resultMap id="BaseResultMap" type="com.atguigu.ssyx.model.activity.CouponInfo">
-            <id property="id" column="id" jdbcType="BIGINT"/>
-            <result property="couponType" column="coupon_type" jdbcType="TINYINT"/>
-            <result property="couponName" column="coupon_name" jdbcType="VARCHAR"/>
-            <result property="amount" column="amount" jdbcType="DECIMAL"/>
-            <result property="conditionAmount" column="condition_amount" jdbcType="DECIMAL"/>
-            <result property="startTime" column="start_time" jdbcType="DATE"/>
-            <result property="endTime" column="end_time" jdbcType="DATE"/>
-            <result property="rangeType" column="range_type" jdbcType="TINYINT"/>
-            <result property="rangeDesc" column="range_desc" jdbcType="VARCHAR"/>
-            <result property="publishCount" column="publish_count" jdbcType="INTEGER"/>
-            <result property="perLimit" column="per_limit" jdbcType="INTEGER"/>
-            <result property="useCount" column="use_count" jdbcType="INTEGER"/>
-            <result property="receiveCount" column="receive_count" jdbcType="INTEGER"/>
-            <result property="expireTime" column="expire_time" jdbcType="TIMESTAMP"/>
-            <result property="publishStatus" column="publish_status" jdbcType="TINYINT"/>
-            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
-            <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
-            <result property="isDeleted" column="is_deleted" jdbcType="TINYINT"/>
+        <id property="id" column="id" jdbcType="BIGINT"/>
+        <result property="couponType" column="coupon_type" jdbcType="TINYINT"/>
+        <result property="couponName" column="coupon_name" jdbcType="VARCHAR"/>
+        <result property="amount" column="amount" jdbcType="DECIMAL"/>
+        <result property="conditionAmount" column="condition_amount" jdbcType="DECIMAL"/>
+        <result property="startTime" column="start_time" jdbcType="DATE"/>
+        <result property="endTime" column="end_time" jdbcType="DATE"/>
+        <result property="rangeType" column="range_type" jdbcType="TINYINT"/>
+        <result property="rangeDesc" column="range_desc" jdbcType="VARCHAR"/>
+        <result property="publishCount" column="publish_count" jdbcType="INTEGER"/>
+        <result property="perLimit" column="per_limit" jdbcType="INTEGER"/>
+        <result property="useCount" column="use_count" jdbcType="INTEGER"/>
+        <result property="receiveCount" column="receive_count" jdbcType="INTEGER"/>
+        <result property="expireTime" column="expire_time" jdbcType="TIMESTAMP"/>
+        <result property="publishStatus" column="publish_status" jdbcType="TINYINT"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+        <result property="isDeleted" column="is_deleted" jdbcType="TINYINT"/>
+    </resultMap>
+
+    <resultMap id="CouponInfoMap" type="com.atguigu.ssyx.model.activity.CouponInfo" autoMapping="true">
+
     </resultMap>
 
     <sql id="Base_Column_List">
-        id,coupon_type,coupon_name,
+        id
+        ,coupon_type,coupon_name,
         amount,condition_amount,start_time,
         end_time,range_type,range_desc,
         publish_count,per_limit,use_count,
         receive_count,expire_time,publish_status,
         create_time,update_time,is_deleted
     </sql>
+
+    <select id="selectCouponInfoList" resultMap="CouponInfoMap">
+        select ci.id,
+               ci.coupon_type,
+               ci.coupon_name,
+               ci.amount,
+               ci.condition_amount,
+               ci.start_time,
+               ci.end_time,
+               ci.range_type,
+               ci.range_desc,
+               ci.publish_count,
+               ci.per_limit,
+               ci.use_count,
+               ci.receive_count,
+               ci.expire_time,
+               ci.publish_status,
+               ci.create_time,
+               ci.update_time,
+               ci.is_deleted,
+               cu.coupon_status
+        from coupon_info ci
+                 left join coupon_range cr on ci.id = cr.coupon_id and cr.is_deleted = 0
+                 left join coupon_use cu on ci.id = cu.coupon_id and cu.user_id = #{userId} and cu.is_deleted = 0
+        where ci.is_deleted = 0
+          and (
+            ci.range_type = 1
+                or (ci.range_type = 2 and cr.range_id = #{skuId})
+                or (ci.range_type = 3 and cr.range_id = #{categoryId})
+            )
+          and now() between ci.start_time and ci.end_time
+        order by ci.amount desc
+    </select>
 </mapper>

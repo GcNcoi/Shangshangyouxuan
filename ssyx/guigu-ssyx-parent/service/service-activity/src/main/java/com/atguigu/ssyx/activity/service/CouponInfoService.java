@@ -25,4 +25,6 @@ public interface CouponInfoService extends IService<CouponInfo> {
     void saveCouponRule(CouponRuleVo couponRuleVo);
 
     List<CouponInfo> findCouponByKeyword(String keyword);
+
+    List<CouponInfo> findCouponInfo(Long skuId, Long userId);
 }

@@ -2,13 +2,18 @@ package com.atguigu.ssyx.activity.service.impl;
 
 import com.atguigu.ssyx.activity.mapper.ActivityRuleMapper;
 import com.atguigu.ssyx.activity.mapper.ActivitySkuMapper;
+import com.atguigu.ssyx.activity.service.CouponInfoService;
 import com.atguigu.ssyx.client.product.ProductFeignClient;
 import com.atguigu.ssyx.enums.ActivityType;
 import com.atguigu.ssyx.model.activity.ActivityInfo;
 import com.atguigu.ssyx.model.activity.ActivityRule;
 import com.atguigu.ssyx.model.activity.ActivitySku;
+import com.atguigu.ssyx.model.activity.CouponInfo;
+import com.atguigu.ssyx.model.order.CartInfo;
 import com.atguigu.ssyx.model.product.SkuInfo;
 import com.atguigu.ssyx.vo.activity.ActivityRuleVo;
+import com.atguigu.ssyx.vo.order.CartInfoVo;
+import com.atguigu.ssyx.vo.order.OrderConfirmVo;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
@@ -41,6 +46,9 @@ public class ActivityInfoServiceImpl extends ServiceImpl<ActivityInfoMapper, Act
 
     @Autowired
     private ProductFeignClient productFeignClient;
+
+    @Autowired
+    private CouponInfoService couponInfoService;
 
     @Override
     public IPage<ActivityInfo> selectPageActivityInfo(Page<ActivityInfo> pageParam) {
@@ -124,11 +132,11 @@ public class ActivityInfoServiceImpl extends ServiceImpl<ActivityInfoMapper, Act
     @Override
     public Map<Long, List<String>> findActivity(List<Long> skuIdList) {
         Map<Long, List<String>> result = new HashMap<>();
-        // 1.遍历skuIdList
+        // 1. 遍历skuIdList
         skuIdList.forEach(skuId -> {
-            // 2.根据skuId进行查询，查询sku对应活动里面规则列表
+            // 2. 根据skuId进行查询，查询sku对应活动里面规则列表
             List<ActivityRule> activityRuleList = baseMapper.findActivityRule(skuId);
-            // 3.数据封装规则名称
+            // 3. 数据封装规则名称
             if (!CollectionUtils.isEmpty(activityRuleList)) {
                 // 规则名称拼接
                 // 合并流操作：一次遍历完成设置和收集，减少迭代次数
@@ -140,6 +148,88 @@ public class ActivityInfoServiceImpl extends ServiceImpl<ActivityInfoMapper, Act
             }
         });
         return result;
+    }
+
+    @Override
+    public Map<String, Object> findActivityAndCoupon(Long skuId, Long userId) {
+        Map<String, Object> map = new HashMap<>();
+        // 1. 根据skuId获取sku营销活动，一个活动具有多个规则
+        List<ActivityRule> activityRuleList = this.findActivityRuleBySkuId(skuId);
+        // 2. 根据skuId和userId查询有优惠卷信息
+        List<CouponInfo> couponInfoList = couponInfoService.findCouponInfo(skuId, userId);
+        // 3. 封装到map集合
+        map.put("activityRuleList", activityRuleList);
+        map.put("couponInfoList", couponInfoList);
+        return map;
+    }
+
+    // 根据skuId获取活动规则数据
+    @Override
+    public List<ActivityRule> findActivityRuleBySkuId(Long skuId) {
+        List<ActivityRule> activityRuleList = baseMapper.findActivityRule(skuId);
+        for (ActivityRule activityRule : activityRuleList) {
+            String ruleDesc = this.getRuleDesc(activityRule);
+            activityRule.setRuleDesc(ruleDesc);
+        }
+        return activityRuleList;
+    }
+
+    @Override
+    public OrderConfirmVo findCartActivityAndCoupon(List<CartInfo> cartInfoList, Long userId) {
+        // 1. 获取购物车每个购物项参与活动，根据活动规则分组，一个规则对应多个商品
+        List<CartInfoVo> cartInfoVoList = this.findCartActivityList(cartInfoList);
+        // 2. 计算参与活动之后最终金额
+
+        // 3. 获取购物车可以使用优惠券列表
+
+        // 4. 计算商品使用优惠券之后金额，一次只能使用一张优惠券
+
+        // 5. 计算没有参与活动，没有使用优惠券原始金额
+
+        // 6. 参与活动，使用优惠券总金额
+
+        // 7. 封装数据到CartInfoVO返回
+        return null;
+    }
+
+    // 获取购物车对应规则数据
+    @Override
+    public List<CartInfoVo> findCartActivityList(List<CartInfo> cartInfoList) {
+        List<CartInfoVo> cartInfoVoList = new ArrayList<>();
+        // 获取所有skuId
+        List<Long> skuIdList = cartInfoList.stream().map(CartInfo::getSkuId).collect(Collectors.toList());
+        // 根据所有skuId获取参与活动
+        List<ActivitySku> activitySkuList = baseMapper.selectCartActivity(skuIdList);
+        // 根据活动进行分组，每个活动里面有哪些skuId信息
+        // map里面key是分组字段 活动id；value是sku列表数据 set集合
+        Map<Long, Set<Long>> activityIdToSkuIdListMap = activitySkuList.stream().collect(Collectors.groupingBy(ActivitySku::getActivityId, Collectors.mapping(ActivitySku::getSkuId, Collectors.toSet())));
+        // 获取活动规则数据
+        Map<Long, List<ActivityRule>> activityIdToActivityRuleListMap = new HashMap<>();
+        Set<Long> activityIdSet = activitySkuList.stream().map(ActivitySku::getActivityId).collect(Collectors.toSet());
+        if(!CollectionUtils.isEmpty(activityIdSet)) {
+            LambdaQueryWrapper<ActivityRule> wrapper = new LambdaQueryWrapper<>();
+            wrapper.orderByDesc(ActivityRule::getConditionAmount, ActivityRule::getConditionNum);
+            wrapper.in(ActivityRule::getActivityId, activityIdSet);
+            List<ActivityRule> activityRuleList = activityRuleMapper.selectList(wrapper);
+            // 封装到activityIdToActivityRuleListMap里面
+            // 根据活动id进行分组
+            activityIdToActivityRuleListMap = activityRuleList.stream().collect(Collectors.groupingBy(activityRule -> activityRule.getActivityId()));
+        }
+        // 参与活动的购物项的skuId
+        Set<Long> activitySkuIdSet = new HashSet<>();
+        if (!CollectionUtils.isEmpty(activityIdToSkuIdListMap)) {
+            Iterator<Map.Entry<Long, Set<Long>>> iterator = activityIdToSkuIdListMap.entrySet().iterator();
+            while (iterator.hasNext()) {
+                Map.Entry<Long, Set<Long>> entry = iterator.next();
+                Set<Long> skuIdSet = entry.getValue();
+                // 获取当前活动对应的购物项列表
+                List<CartInfo> currentActivityCartInfoList = cartInfoList.stream().filter(cartInfo -> skuIdSet.contains(cartInfo.getSkuId())).collect(Collectors.toList());
+                // 把交集的skuId添加到activitySkuIdSet
+                activitySkuIdSet.addAll(skuIdSet);
+            }
+        }
+        // 没有参与活动的购物项的skuId
+        return Collections.emptyList();
     }
 
     // 构造规则名称的方法
