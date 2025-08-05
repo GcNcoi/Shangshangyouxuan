@@ -180,17 +180,35 @@ public class ActivityInfoServiceImpl extends ServiceImpl<ActivityInfoMapper, Act
         // 1. 获取购物车每个购物项参与活动，根据活动规则分组，一个规则对应多个商品
         List<CartInfoVo> cartInfoVoList = this.findCartActivityList(cartInfoList);
         // 2. 计算参与活动之后最终金额
-
+        BigDecimal activityReduceAmount = cartInfoVoList.stream()
+                .filter(cartInfoVo -> cartInfoVo.getActivityRule() != null)
+                .map(cartInfoVo -> cartInfoVo.getActivityRule().getReduceAmount())
+                .reduce(BigDecimal.ZERO, BigDecimal::add);
         // 3. 获取购物车可以使用优惠券列表
-
+        List<CouponInfo> couponInfoList = couponInfoService.findCartCouponInfo(cartInfoList, userId);
         // 4. 计算商品使用优惠券之后金额，一次只能使用一张优惠券
-
+        BigDecimal couponReduceAmount = new BigDecimal(0);
+        if (!CollectionUtils.isEmpty(couponInfoList)) {
+            couponReduceAmount = couponInfoList.stream().filter(couponInfo -> couponInfo.getIsOptimal().intValue() == 1)
+                    .map(couponInfo -> couponInfo.getAmount())
+                    .reduce(BigDecimal.ZERO, BigDecimal::add);
+        }
         // 5. 计算没有参与活动，没有使用优惠券原始金额
-
+        BigDecimal originalTotalAmount = cartInfoList.stream()
+                .filter(cartInfo -> cartInfo.getIsChecked() == 1)
+                .map(cartInfo -> cartInfo.getCartPrice().multiply(new BigDecimal(cartInfo.getSkuNum())))
+                .reduce(BigDecimal.ZERO, BigDecimal::add);
         // 6. 参与活动，使用优惠券总金额
-
+        BigDecimal totalAmount = originalTotalAmount.subtract(activityReduceAmount).subtract(couponReduceAmount);
         // 7. 封装数据到CartInfoVO返回
-        return null;
+        OrderConfirmVo orderTradeVo = new OrderConfirmVo();
+        orderTradeVo.setCarInfoVoList(cartInfoVoList);
+        orderTradeVo.setActivityReduceAmount(activityReduceAmount);
+        orderTradeVo.setCouponInfoList(couponInfoList);
+        orderTradeVo.setCouponReduceAmount(couponReduceAmount);
+        orderTradeVo.setOriginalTotalAmount(originalTotalAmount);
+        orderTradeVo.setTotalAmount(totalAmount);
+        return orderTradeVo;
     }
 
     // 获取购物车对应规则数据

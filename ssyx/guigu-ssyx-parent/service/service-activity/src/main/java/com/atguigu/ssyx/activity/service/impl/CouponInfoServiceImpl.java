@@ -5,6 +5,7 @@ import com.atguigu.ssyx.client.product.ProductFeignClient;
 import com.atguigu.ssyx.enums.CouponRangeType;
 import com.atguigu.ssyx.model.activity.CouponInfo;
 import com.atguigu.ssyx.model.activity.CouponRange;
+import com.atguigu.ssyx.model.order.CartInfo;
 import com.atguigu.ssyx.model.product.Category;
 import com.atguigu.ssyx.model.product.SkuInfo;
 import com.atguigu.ssyx.vo.activity.CouponRuleVo;
@@ -128,5 +129,52 @@ public class CouponInfoServiceImpl extends ServiceImpl<CouponInfoMapper, CouponI
         // 根据条件查询：skuId + 分类ID + userId
         List<CouponInfo> couponInfoList = baseMapper.selectCouponInfoList(skuInfo.getId(), skuInfo.getCategoryId(), userId);
         return couponInfoList;
+    }
+
+    @Override
+    public List<CouponInfo> findCartCouponInfo(List<CartInfo> cartInfoList, Long userId) {
+        // 1. 根据userId获取用户优惠券信息
+        List<CouponInfo> usrAllCouponInfoList = baseMapper.selectCartCouponInfoList(userId);
+        if (CollectionUtils.isEmpty(usrAllCouponInfoList)) {
+            return new ArrayList<CouponInfo>();
+        }
+        // 2. 从第一步返回list集合中，获取所有优惠券id列表
+        List<Long> couponIdList = usrAllCouponInfoList.stream().map(couponInfo -> couponInfo.getId()).collect(Collectors.toList());
+        // 3. 查询优惠券对应范围
+        LambdaQueryWrapper<CouponRange> wrapper = new LambdaQueryWrapper<>();
+        wrapper.in(CouponRange::getCouponId, couponIdList);
+        List<CouponRange> couponRangeList = couponRangeMapper.selectList(wrapper);
+        // 4. 获取优惠券id，对应skuId列表
+        Map<Long,List<Long>> couponIdTuSkuIdMap = this.findCouponIdTuSkuIdMap(cartInfoList, couponRangeList);
+        // 5. 遍历全部优惠券集合，判断优惠券类型(全场通用；sku；分类)
+
+        // 6. 返回List<CouponInfo>
+        return Collections.emptyList();
+    }
+
+    private Map<Long, List<Long>> findCouponIdTuSkuIdMap(List<CartInfo> cartInfoList, List<CouponRange> couponRangeList) {
+        Map<Long,List<Long>> couponIdTuSkuIdMap = new HashMap<>();
+        // couponRangeList数据处理，根据优惠券id分组
+        Map<Long, List<CouponRange>> couponIdToCouponRangeMap = couponRangeList.stream().collect(Collectors.groupingBy(CouponRange::getCouponId));
+        Iterator<Map.Entry<Long, List<CouponRange>>> iterator = couponIdToCouponRangeMap.entrySet().iterator();
+        while (iterator.hasNext()) {
+            Map.Entry<Long, List<CouponRange>> entry = iterator.next();
+            Long couponId = entry.getKey();
+            // 创建集合set
+            Set<Long> skuIdSet = new HashSet<>();
+            for (CartInfo cartInfo : cartInfoList) {
+                for(CouponRange couponRange : couponRangeList) {
+                    if(CouponRangeType.SKU == couponRange.getRangeType() && couponRange.getRangeId().longValue() == cartInfo.getSkuId().intValue()) {
+                        skuIdSet.add(cartInfo.getSkuId());
+                    } else if(CouponRangeType.CATEGORY == couponRange.getRangeType() && couponRange.getRangeId().longValue() == cartInfo.getCategoryId().intValue()) {
+                        skuIdSet.add(cartInfo.getSkuId());
+                    } else {
+
+                    }
+                }
+            }
+            couponIdTuSkuIdMap.put(couponId, new ArrayList<>(skuIdSet));
+        }
+        return couponIdTuSkuIdMap;
     }
 }

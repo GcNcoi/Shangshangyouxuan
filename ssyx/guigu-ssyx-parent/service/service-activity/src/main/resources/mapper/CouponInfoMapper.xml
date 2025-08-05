@@ -71,4 +71,33 @@
           and now() between ci.start_time and ci.end_time
         order by ci.amount desc
     </select>
+
+    <select id="selectCartCouponInfoList" resultMap="CouponInfoMap">
+        select ci.id,
+        ci.coupon_type,
+        ci.coupon_name,
+        ci.amount,
+        ci.condition_amount,
+        ci.start_time,
+        ci.end_time,
+        ci.range_type,
+        ci.range_desc,
+        ci.publish_count,
+        ci.per_limit,
+        ci.use_count,
+        ci.receive_count,
+        ci.expire_time,
+        ci.publish_status,
+        ci.create_time,
+        ci.update_time,
+        ci.is_deleted
+        from coupon_use cu
+        inner join coupon_info ci on cu.coupon_id = ci.id and ci.is_deleted = 0
+        <where>
+            and cu.is_deleted = 0
+            and cu.user_id = #{userId}
+            and ci.expire_time >= now()
+        </where>
+        order by ci.amount desc
+    </select>
 </mapper>
