@@ -16,9 +16,8 @@
         <result property="isDeleted" column="is_deleted" jdbcType="TINYINT"/>
     </resultMap>
 
-    <resultMap id="ActivityRuleMap" type="com.atguigu.ssyx.model.activity.ActivityRule" autoMapping="true">
-
-    </resultMap>
+    <resultMap id="ActivityRuleMap" type="com.atguigu.ssyx.model.activity.ActivityRule" autoMapping="true"></resultMap>
+    <resultMap id="ActivitySkuMap" type="com.atguigu.ssyx.model.activity.ActivitySku" autoMapping="true"></resultMap>
 
     <sql id="Base_Column_List">
         id
@@ -59,7 +58,7 @@
         ORDER BY ar.condition_amount DESC
     </select>
 
-    <select id="selectCartActivity" resultMap="ActivityRuleMap">
+    <select id="selectCartActivity" resultMap="ActivitySkuMap">
         select info.id as activityId,
                sku.sku_id as skuId
         from activity_info info

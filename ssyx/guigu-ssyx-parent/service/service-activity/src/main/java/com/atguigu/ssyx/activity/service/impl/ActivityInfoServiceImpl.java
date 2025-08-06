@@ -221,7 +221,8 @@ public class ActivityInfoServiceImpl extends ServiceImpl<ActivityInfoMapper, Act
         List<ActivitySku> activitySkuList = baseMapper.selectCartActivity(skuIdList);
         // 根据活动进行分组，每个活动里面有哪些skuId信息
         // map里面key是分组字段 活动id；value是sku列表数据 set集合
-        Map<Long, Set<Long>> activityIdToSkuIdListMap = activitySkuList.stream().collect(Collectors.groupingBy(ActivitySku::getActivityId, Collectors.mapping(ActivitySku::getSkuId, Collectors.toSet())));
+        Map<Long, Set<Long>> activityIdToSkuIdListMap = activitySkuList.stream()
+                .collect(Collectors.groupingBy(ActivitySku::getActivityId, Collectors.mapping(ActivitySku::getSkuId, Collectors.toSet())));
         // 获取活动规则数据
         Map<Long, List<ActivityRule>> activityIdToActivityRuleListMap = new HashMap<>();
         Set<Long> activityIdSet = activitySkuList.stream().map(ActivitySku::getActivityId).collect(Collectors.toSet());
