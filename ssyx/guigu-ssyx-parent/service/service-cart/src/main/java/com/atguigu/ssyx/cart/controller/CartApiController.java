@@ -84,4 +84,30 @@ public class CartApiController {
         return Result.ok(orderTradeVo);
     }
 
+    @ApiOperation(value="更新选中状态")
+    @GetMapping("/checkCart/{skuId}/{isChecked}")
+    public Result checkCart(@PathVariable(value = "skuId") Long skuId,
+                            @PathVariable(value = "isChecked") Integer isChecked, HttpServletRequest request) {
+        Long userId = AuthContextHolder.getUserId();
+        cartInfoService.checkCart(userId, isChecked, skuId);
+        return Result.ok();
+    }
+
+    @ApiOperation(value="更新全部选中状态")
+    @GetMapping("/checkAllCart/{isChecked}")
+    public Result checkAllCart(@PathVariable(value = "isChecked") Integer isChecked, HttpServletRequest request) {
+        Long userId = AuthContextHolder.getUserId();
+        // 调用更新方法
+        cartInfoService.checkAllCart(userId, isChecked);
+        return Result.ok();
+    }
+
+    @ApiOperation(value="批量选择购物车")
+    @PostMapping("/batchCheckCart/{isChecked}")
+    public Result batchCheckCart(@RequestBody List<Long> skuIdList, @PathVariable(value = "isChecked") Integer isChecked, HttpServletRequest request){
+        Long userId = AuthContextHolder.getUserId();
+        cartInfoService.batchCheckCart(skuIdList, userId, isChecked);
+        return Result.ok();
+    }
+
 }

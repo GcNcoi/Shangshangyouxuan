@@ -78,6 +78,7 @@ public class CartInfoServiceImpl implements CartInfoService {
             cartInfo.setSkuId(skuId);
             cartInfo.setUserId(userId);
             cartInfo.setSkuNum(skuNum);
+            cartInfo.setCartPrice(skuInfo.getPrice());
             cartInfo.setCurrentBuyNum(skuNum);
             cartInfo.setSkuType(SkuType.COMMON.getCode());
             cartInfo.setIsChecked(1);
@@ -131,6 +132,46 @@ public class CartInfoServiceImpl implements CartInfoService {
             cartInfoList.sort((o1, o2) -> o2.getCreateTime().compareTo(o1.getCreateTime()));
         }
         return cartInfoList;
+    }
+
+    @Override
+    public void checkCart(Long userId, Integer isChecked, Long skuId) {
+        String cartKey = this.getCartKey(userId);
+        BoundHashOperations<String, String, CartInfo> hashOperations = redisTemplate.boundHashOps(cartKey);
+        CartInfo cartInfo = hashOperations.get(skuId.toString());
+        if (cartInfo != null) {
+            cartInfo.setIsChecked(isChecked);
+            hashOperations.put(skuId.toString(), cartInfo);
+            // 设置过期时间
+            this.setCartKeyExpire(cartKey);
+        }
+    }
+
+    @Override
+    public void checkAllCart(Long userId, Integer isChecked) {
+        String cartKey = this.getCartKey(userId);
+        BoundHashOperations<String, String, CartInfo> hashOperations = redisTemplate.boundHashOps(cartKey);
+        hashOperations.values().forEach(cartInfo -> {
+            cartInfo.setIsChecked(isChecked);
+            hashOperations.put(cartInfo.getSkuId().toString(), cartInfo);
+            // 设置过期时间
+            this.setCartKeyExpire(cartKey);
+        });
+    }
+
+    @Override
+    public void batchCheckCart(List<Long> skuIdList, Long userId, Integer isChecked) {
+        String cartKey = this.getCartKey(userId);
+        BoundHashOperations<String, String, CartInfo> hashOperations = redisTemplate.boundHashOps(cartKey);
+        skuIdList.forEach(skuId -> {
+            CartInfo cartInfo = hashOperations.get(skuId.toString());
+            if (cartInfo != null) {
+                cartInfo.setIsChecked(isChecked);
+                hashOperations.put(skuId.toString(), cartInfo);
+                // 设置过期时间
+                this.setCartKeyExpire(cartKey);
+            }
+        });
     }
 
     // 购物车在redis的key

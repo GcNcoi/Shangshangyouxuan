@@ -55,7 +55,7 @@ public class SkuApiController {
     public Result listSku(@ApiParam(name = "page", value = "当前页码", required = true) @PathVariable Integer page,
                           @ApiParam(name = "limit", value = "每页记录数", required = true) @PathVariable Integer limit,
                           @ApiParam(name = "searchParamVo", value = "查询对象", required = false) SkuEsQueryVo skuEsQueryVo) {
-        Pageable pageable = PageRequest.of(page - 1, limit);
+        Pageable pageable = PageRequest.of(page - 1, 10);
         Page<SkuEs> skuEsPage = skuService.search(pageable, skuEsQueryVo);
         return Result.ok(skuEsPage);
     }
