@@ -1,11 +1,14 @@
 package com.atguigu.ssyx.activity.service.impl;
 
 import com.atguigu.ssyx.activity.mapper.CouponRangeMapper;
+import com.atguigu.ssyx.activity.mapper.CouponUseMapper;
 import com.atguigu.ssyx.client.product.ProductFeignClient;
 import com.atguigu.ssyx.enums.CouponRangeType;
+import com.atguigu.ssyx.enums.CouponStatus;
 import com.atguigu.ssyx.enums.CouponType;
 import com.atguigu.ssyx.model.activity.CouponInfo;
 import com.atguigu.ssyx.model.activity.CouponRange;
+import com.atguigu.ssyx.model.activity.CouponUse;
 import com.atguigu.ssyx.model.order.CartInfo;
 import com.atguigu.ssyx.model.product.Category;
 import com.atguigu.ssyx.model.product.SkuInfo;
@@ -37,6 +40,9 @@ public class CouponInfoServiceImpl extends ServiceImpl<CouponInfoMapper, CouponI
 
     @Autowired
     private CouponRangeMapper couponRangeMapper;
+
+    @Autowired
+    private CouponUseMapper couponUseMapper;
 
     @Autowired
     private ProductFeignClient productFeignClient;
@@ -183,6 +189,35 @@ public class CouponInfoServiceImpl extends ServiceImpl<CouponInfoMapper, CouponI
         }
         // 6. 返回List<CouponInfo>
         return userAllCouponInfoList;
+    }
+
+    @Override
+    public CouponInfo findRangeSkuIdList(List<CartInfo> cartInfoList, Long couponId) {
+        // 根据优惠券Id查询基本信息
+        CouponInfo couponInfo = baseMapper.selectById(couponId);
+        if(null == couponInfo) return null;
+        // 根据优惠券类型查询范围
+        LambdaQueryWrapper<CouponRange> wrapper = new LambdaQueryWrapper<>();
+        wrapper.eq(CouponRange::getCouponId, couponId);
+        List<CouponRange> couponRangeList = couponRangeMapper.selectList(wrapper);
+        // 对应sku信息
+        Map<Long, List<Long>> couponIdTuSkuIdMap = this.findCouponIdTuSkuIdMap(cartInfoList, couponRangeList);
+        // 遍历couponIdTuSkuIdMap，得到value值，封装到couponInfo对象
+        List<Long> skuIdList = couponIdTuSkuIdMap.entrySet().iterator().next().getValue();
+        couponInfo.setSkuIdList(skuIdList);
+        return couponInfo;
+    }
+
+    @Override
+    public void updateCouponInfoUseStatus(Long couponId, Long userId, Long orderId) {
+        // 根据couponId、userId和orderId查询优惠券信息
+        CouponUse couponUse = couponUseMapper.selectOne(new LambdaQueryWrapper<CouponUse>().eq(CouponUse::getCouponId, couponId).eq(CouponUse::getUserId, userId).eq(CouponUse::getOrderId, orderId));
+        if(null == couponUse) return;
+        // 设置修改值
+        couponUse.setCouponStatus(CouponStatus.USED);
+        couponUse.setUsedTime(new Date());
+        // 调用方法修改
+        couponUseMapper.updateById(couponUse);
     }
 
     private Map<Long, List<Long>> findCouponIdTuSkuIdMap(List<CartInfo> cartInfoList, List<CouponRange> couponRangeList) {

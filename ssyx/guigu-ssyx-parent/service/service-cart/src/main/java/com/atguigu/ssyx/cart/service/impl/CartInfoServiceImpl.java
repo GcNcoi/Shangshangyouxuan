@@ -18,6 +18,7 @@ import org.springframework.util.StringUtils;
 
 import java.util.*;
 import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
 
 /**
  * @BelongsProject: guigu-ssyx-parent
@@ -172,6 +173,16 @@ public class CartInfoServiceImpl implements CartInfoService {
                 this.setCartKeyExpire(cartKey);
             }
         });
+    }
+
+    @Override
+    public List<CartInfo> getCartCheckedList(Long userId) {
+        String cartKey = this.getCartKey(userId);
+        BoundHashOperations<String, String, CartInfo> hashOperations = redisTemplate.boundHashOps(cartKey);
+        List<CartInfo> cartInfoList = hashOperations.values();
+        // 筛选出选中商品
+        List<CartInfo> cartInfoListNew = cartInfoList.stream().filter(cartInfo -> cartInfo.getIsChecked().intValue() == 1).collect(Collectors.toList());
+        return cartInfoListNew;
     }
 
     // 购物车在redis的key

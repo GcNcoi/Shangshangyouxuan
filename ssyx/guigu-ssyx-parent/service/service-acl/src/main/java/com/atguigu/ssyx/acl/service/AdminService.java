@@ -10,5 +10,11 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface AdminService extends IService<Admin> {
 
+    /**
+     * 分页查询:获取管理用户分页列表
+     * @param pageParam
+     * @param userQueryVo
+     * @return
+     */
     IPage<Admin> selectPage(Page<Admin> pageParam, AdminQueryVo userQueryVo);
 }

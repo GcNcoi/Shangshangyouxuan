@@ -12,5 +12,10 @@ import java.util.List;
 */
 public interface SkuPosterService extends IService<SkuPoster> {
 
+    /**
+     * 获取商品海报信息
+     * @param id 商品Id
+     * @return
+     */
     List<SkuPoster> findBySkuId(Long id);
 }

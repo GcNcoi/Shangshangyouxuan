@@ -12,5 +12,10 @@ import java.util.List;
 */
 public interface RegionService extends IService<Region> {
 
+    /**
+     * 根据区域关键字查询区域列表信息
+     * @param keyword
+     * @return
+     */
     List<Region> findRegionByKeyword(String keyword);
 }

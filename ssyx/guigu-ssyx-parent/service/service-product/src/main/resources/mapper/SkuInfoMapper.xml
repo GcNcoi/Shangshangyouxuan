@@ -4,37 +4,56 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.atguigu.ssyx.product.mapper.SkuInfoMapper">
 
-    <resultMap id="BaseResultMap" type="com.atguigu.ssyx.model.product.SkuInfo">
-            <id property="id" column="id" />
-            <result property="categoryId" column="category_id" />
-            <result property="attrGroupId" column="attr_group_id" />
-            <result property="skuType" column="sku_type" />
-            <result property="skuName" column="sku_name" />
-            <result property="imgUrl" column="img_url" />
-            <result property="perLimit" column="per_limit" />
-            <result property="publishStatus" column="publish_status" />
-            <result property="checkStatus" column="check_status" />
-            <result property="isNewPerson" column="is_new_person" />
-            <result property="sort" column="sort" />
-            <result property="skuCode" column="sku_code" />
-            <result property="price" column="price" />
-            <result property="marketPrice" column="market_price" />
-            <result property="stock" column="stock" />
-            <result property="lockStock" column="lock_stock" />
-            <result property="lowStock" column="low_stock" />
-            <result property="sale" column="sale" />
-            <result property="wareId" column="ware_id" />
-            <result property="version" column="version" />
-            <result property="createTime" column="create_time" />
-            <result property="updateTime" column="update_time" />
-            <result property="isDeleted" column="is_deleted" />
+    <resultMap id="BaseResultMap" type="com.atguigu.ssyx.model.product.SkuInfo" autoMapping="true">
+        <id property="id" column="id"/>
+        <result property="categoryId" column="category_id"/>
+        <result property="attrGroupId" column="attr_group_id"/>
+        <result property="skuType" column="sku_type"/>
+        <result property="skuName" column="sku_name"/>
+        <result property="imgUrl" column="img_url"/>
+        <result property="perLimit" column="per_limit"/>
+        <result property="publishStatus" column="publish_status"/>
+        <result property="checkStatus" column="check_status"/>
+        <result property="isNewPerson" column="is_new_person"/>
+        <result property="sort" column="sort"/>
+        <result property="skuCode" column="sku_code"/>
+        <result property="price" column="price"/>
+        <result property="marketPrice" column="market_price"/>
+        <result property="stock" column="stock"/>
+        <result property="lockStock" column="lock_stock"/>
+        <result property="lowStock" column="low_stock"/>
+        <result property="sale" column="sale"/>
+        <result property="wareId" column="ware_id"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+        <result property="isDeleted" column="is_deleted"/>
     </resultMap>
 
     <sql id="Base_Column_List">
-        id,category_id,attr_group_id,sku_type,sku_name,img_url,
+        id
+        ,category_id,attr_group_id,sku_type,sku_name,img_url,
         per_limit,publish_status,check_status,is_new_person,sort,
         sku_code,price,market_price,stock,lock_stock,
         low_stock,sale,ware_id,version,create_time,
         update_time,is_deleted
     </sql>
+
+    <update id="unlockStock">
+        update sku_info
+        set lock_stock = lock_stock - #{skuNum}
+        where id = #{skuId}
+    </update>
+
+    <select id="checkStock" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from sku_info
+        where id = #{skuId} and stock - lock_stock >= #{skuNum} for update
+    </select>
+
+    <update id="lockStock">
+        update sku_info
+        set lock_stock = lock_stock + #{skuNum}
+        where id = #{skuId}
+    </update>
 </mapper>

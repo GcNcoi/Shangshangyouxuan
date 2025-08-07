@@ -12,5 +12,10 @@ import java.util.Map;
  */
 public interface HomeService {
 
+    /**
+     * 获取首页内容信息
+     * @param userId 用户Id
+     * @return
+     */
     Map<String, Object> homeData(Long userId);
 }

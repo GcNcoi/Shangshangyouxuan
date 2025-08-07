@@ -142,7 +142,7 @@ public class ActivityInfoServiceImpl extends ServiceImpl<ActivityInfoMapper, Act
                 // 规则名称拼接
                 // 合并流操作：一次遍历完成设置和收集，减少迭代次数
                 List<String> ruleList = activityRuleList.stream()
-                        .peek(activityRule -> activityRule.setRuleDesc(this.getRuleDesc(activityRule))) // 设置规则描述（副作用操作）
+                        .peek(activityRule -> activityRule.setRuleDesc(this.getRuleDesc(activityRule)))
                         .map(ActivityRule::getRuleDesc) // 提取规则描述
                         .collect(Collectors.toList()); // 收集结果
                 result.put(skuId, ruleList);

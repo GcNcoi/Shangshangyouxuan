@@ -11,6 +11,10 @@ import java.util.List;
 * @createDate 2025-07-23 00:15:00
 */
 public interface AttrService extends IService<Attr> {
-
+    /**
+     * 根据平台属性分组id查询
+     * @param groupId 属性分组Id
+     * @return
+     */
     List<Attr> findByGroupId(Long groupId);
 }

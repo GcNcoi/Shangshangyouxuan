@@ -12,5 +12,10 @@ import java.util.List;
 */
 public interface SkuAttrValueService extends IService<SkuAttrValue> {
 
+    /**
+     * 获取商品属性信息
+     * @param id 商品Id
+     * @return
+     */
     List<SkuAttrValue> findBySkuId(Long id);
 }

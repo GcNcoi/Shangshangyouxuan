@@ -11,7 +11,6 @@ feign:
 spring:
   main:
     allow-bean-definition-overriding: true #当遇到同样名字的时候，是否允许覆盖注册
-
   redis:
     host: 192.168.200.128
 #    host: localhost

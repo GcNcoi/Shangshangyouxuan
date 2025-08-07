@@ -16,7 +16,18 @@ import java.util.List;
 */
 public interface CategoryService extends IService<Category> {
 
+    /**
+     * 商品分类列表
+     * @param pageParam 分页参数
+     * @param categoryQueryVo 查询参数
+     * @return
+     */
     IPage<Category> selectPageCategory(Page<Category> pageParam, CategoryQueryVo categoryQueryVo);
 
+    /**
+     * 获取全部商品分类
+     * @return
+     */
     List<Category> findAllList();
+
 }

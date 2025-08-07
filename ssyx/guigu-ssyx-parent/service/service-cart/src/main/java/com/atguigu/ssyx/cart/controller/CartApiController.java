@@ -110,4 +110,10 @@ public class CartApiController {
         return Result.ok();
     }
 
+    @ApiOperation("根据用户Id查询购物车列表")
+    @GetMapping("/inner/getCartCheckedList/{userId}")
+    public List<CartInfo> getCartCheckedList(@PathVariable("userId") Long userId) {
+        return cartInfoService.getCartCheckedList(userId);
+    }
+
 }

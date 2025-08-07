@@ -15,7 +15,17 @@ import java.util.List;
 */
 public interface AttrGroupService extends IService<AttrGroup> {
 
+    /**
+     * 获取属性分组信息
+     * @param pageParam 分页参数
+     * @param attrGroupQueryVo 查询参数
+     * @return
+     */
     IPage<AttrGroup> selectPageAttrGroup(Page<AttrGroup> pageParam, AttrGroupQueryVo attrGroupQueryVo);
 
+    /**
+     * 获取全部属性分组分类
+     * @return
+     */
     List<AttrGroup> findAllList();
 }

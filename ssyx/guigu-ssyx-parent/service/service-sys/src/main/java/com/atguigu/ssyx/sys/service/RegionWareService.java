@@ -15,9 +15,24 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface RegionWareService extends IService<RegionWare> {
 
+    /**
+     * 开通区域列表
+     * @param pageParam
+     * @param regionWareQueryVo
+     * @return
+     */
     IPage<RegionWare> selectPageRegionWare(Page<RegionWare> pageParam, RegionWareQueryVo regionWareQueryVo);
 
+    /**
+     * 添加区域列表
+     * @param regionWare
+     */
     void addRegionWare(RegionWare regionWare);
 
+    /**
+     * 更新区域列表状态
+     * @param id
+     * @param status
+     */
     void updateStatus(Long id, Integer status);
 }
