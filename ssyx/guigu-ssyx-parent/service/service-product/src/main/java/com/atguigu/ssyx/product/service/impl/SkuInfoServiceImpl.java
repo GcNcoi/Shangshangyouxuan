@@ -250,6 +250,7 @@ public class SkuInfoServiceImpl extends ServiceImpl<SkuInfoMapper, SkuInfo>
         return baseMapper.selectList(wrapper);
     }
 
+    @Transactional(rollbackFor = {Exception.class})
     @Override
     public Boolean checkAndLock(List<SkuStockLockVo> skuStockLockVoList, String orderNo) {
         // 1. 判断skuStockLockVoList是否为空
@@ -286,7 +287,6 @@ public class SkuInfoServiceImpl extends ServiceImpl<SkuInfoMapper, SkuInfo>
                 skuStockLockVo.setIsLock(false);
                 return;
             }
-
             // 锁库存：更新
             Integer row = baseMapper.lockStock(skuStockLockVo.getSkuId(), skuStockLockVo.getSkuNum());
             if (row == 1) {

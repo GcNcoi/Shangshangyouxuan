@@ -44,7 +44,7 @@ public class RedissonConfig {
         Config config = new Config();
         //  判断redis 的host是否为空
         if(StringUtils.isEmpty(host)){
-            throw new RuntimeException("host is  empty");
+            throw new RuntimeException("host is empty");
         }
         //  配置host，port等参数
         SingleServerConfig serverConfig = config.useSingleServer()

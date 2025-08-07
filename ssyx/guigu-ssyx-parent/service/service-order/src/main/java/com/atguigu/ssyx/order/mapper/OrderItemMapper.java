@@ -2,6 +2,7 @@ package com.atguigu.ssyx.order.mapper;
 
 import com.atguigu.ssyx.model.order.OrderItem;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Mapper;
 
 /**
 * @author Administrator
@@ -9,6 +10,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 * @createDate 2025-08-07 17:31:59
 * @Entity com.atguigu.ssyx.order.OrderItem
 */
+@Mapper
 public interface OrderItemMapper extends BaseMapper<OrderItem> {
 
 }

@@ -10,21 +10,26 @@ import com.atguigu.ssyx.common.exception.SsyxException;
 import com.atguigu.ssyx.common.result.ResultCodeEnum;
 import com.atguigu.ssyx.common.utils.DateUtil;
 import com.atguigu.ssyx.common.utils.SnowflakeIdGenerator;
+import com.atguigu.ssyx.constant.MqConst;
 import com.atguigu.ssyx.enums.*;
 import com.atguigu.ssyx.model.activity.ActivityRule;
 import com.atguigu.ssyx.model.activity.CouponInfo;
 import com.atguigu.ssyx.model.order.CartInfo;
 import com.atguigu.ssyx.model.order.OrderInfo;
 import com.atguigu.ssyx.model.order.OrderItem;
+import com.atguigu.ssyx.order.mapper.OrderItemMapper;
 import com.atguigu.ssyx.order.service.OrderItemService;
+import com.atguigu.ssyx.service.RabbitService;
 import com.atguigu.ssyx.vo.order.CartInfoVo;
 import com.atguigu.ssyx.vo.order.OrderConfirmVo;
 import com.atguigu.ssyx.vo.order.OrderSubmitVo;
 import com.atguigu.ssyx.vo.product.SkuStockLockVo;
 import com.atguigu.ssyx.vo.user.LeaderAddressVo;
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.atguigu.ssyx.order.service.OrderInfoService;
 import com.atguigu.ssyx.order.mapper.OrderInfoMapper;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.BoundHashOperations;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -66,6 +71,12 @@ public class OrderInfoServiceImpl extends ServiceImpl<OrderInfoMapper, OrderInfo
 
     @Autowired
     private RedisTemplate redisTemplate;
+
+    @Autowired
+    private RabbitService rabbitService;
+
+    @Autowired
+    private OrderItemMapper orderItemMapper;
 
     @Override
     public OrderConfirmVo confirmOrder() {
@@ -126,7 +137,9 @@ public class OrderInfoServiceImpl extends ServiceImpl<OrderInfoMapper, OrderInfo
         // 4. 下单操作
         // 4.1 向order_info和order_item表中插入数据
         Long orderId = this.saveOrder(orderSubmitVo, commonSkuList);
-        // 5. 返回订单Id
+        // 5.下单完成，删除购物车记录，发送mq消息
+        rabbitService.sendMessage(MqConst.EXCHANGE_ORDER_DIRECT, MqConst.ROUTING_DELETE_CART, orderSubmitVo.getUserId());
+        // 6. 返回订单Id
         return orderId;
     }
 
@@ -242,7 +255,13 @@ public class OrderInfoServiceImpl extends ServiceImpl<OrderInfoMapper, OrderInfo
 
     @Override
     public OrderInfo getOrderInfoById(Long orderId) {
-        return null;
+        // 1. 根据orderId查询订单基本信息
+        OrderInfo orderInfo = baseMapper.selectById(orderId);
+        // 2. 根据orderId查询订单所有订单项list列表
+        List<OrderItem> orderItemList = orderItemMapper.selectList(new LambdaQueryWrapper<OrderItem>().eq(OrderItem::getOrderId, orderId));
+        // 3. 查询所有订单项封装到每个订单对象里面
+        orderInfo.setOrderItemList(orderItemList);
+        return orderInfo;
     }
 
     /**
