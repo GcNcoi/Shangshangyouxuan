@@ -2,6 +2,7 @@ package com.atguigu.ssyx.order.controller;
 
 import com.atguigu.ssyx.common.auth.AuthContextHolder;
 import com.atguigu.ssyx.common.result.Result;
+import com.atguigu.ssyx.model.order.OrderInfo;
 import com.atguigu.ssyx.order.service.OrderInfoService;
 import com.atguigu.ssyx.vo.order.OrderSubmitVo;
 import io.swagger.annotations.Api;
@@ -42,6 +43,13 @@ public class OrderInfoController {
     @GetMapping("/auth/getOrderInfoById/{orderId}")
     public Result getOrderInfoById(@PathVariable("orderId") Long orderId) {
         return Result.ok(orderService.getOrderInfoById(orderId));
+    }
+
+    @ApiOperation("根据orderNo查询订单信息")
+    @GetMapping("/inner/getOrderInfo/{orderNo}")
+    public OrderInfo getOrderInfoByOrderNo(@PathVariable("orderNo") String orderNo) {
+        OrderInfo orderInfo = orderService.getOrderInfoByOrderNo(orderNo);
+        return orderInfo;
     }
 
 }

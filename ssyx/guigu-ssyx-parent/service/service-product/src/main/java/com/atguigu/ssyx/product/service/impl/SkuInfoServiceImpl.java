@@ -273,6 +273,21 @@ public class SkuInfoServiceImpl extends ServiceImpl<SkuInfoMapper, SkuInfo>
         return true;
     }
 
+    @Override
+    public void minusStock(String orderNo) {
+        // 1. 从redis缓存中获取订单信息
+        List<SkuStockLockVo> skuStockLockVoList = (List<SkuStockLockVo>) redisTemplate.opsForValue().get(RedisConst.STOCK_INFO + orderNo);
+        if (CollectionUtils.isEmpty(skuStockLockVoList)) {
+            return;
+        }
+        // 2. 遍历skuStockLockVoList，减库存
+        skuStockLockVoList.stream().forEach(skuStockLockVo -> {
+            baseMapper.minusStock(skuStockLockVo.getSkuId(), skuStockLockVo.getSkuNum());
+        });
+        // 3. 删除redis缓存中的订单信息
+        this.redisTemplate.delete(RedisConst.STOCK_INFO + orderNo);
+    }
+
     private void checkLock(SkuStockLockVo skuStockLockVo){
         // 公平锁，就是保证客户端获取锁的顺序，跟他们请求获取锁的顺序，是一样的
         // 公平锁需要排队，谁先申请获取这把锁，谁就可以先获取到这把锁，是按照请求的先后顺序来的

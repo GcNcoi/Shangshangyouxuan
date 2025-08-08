@@ -89,4 +89,10 @@ public interface SkuInfoService extends IService<SkuInfo> {
      * @return
      */
     Boolean checkAndLock(List<SkuStockLockVo> skuStockLockVoList, String orderNo);
+
+    /**
+     * 订单完成时接收RabbitMQ发送消息减库存
+     * @param orderNo
+     */
+    void minusStock(String orderNo);
 }

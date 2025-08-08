@@ -264,6 +264,26 @@ public class OrderInfoServiceImpl extends ServiceImpl<OrderInfoMapper, OrderInfo
         return orderInfo;
     }
 
+    @Override
+    public OrderInfo getOrderInfoByOrderNo(String orderNo) {
+        return baseMapper.selectOne(new LambdaQueryWrapper<OrderInfo>().eq(OrderInfo::getOrderNo, orderNo));
+    }
+
+    @Override
+    public void orderPay(String orderNo) {
+        // 1. 根据orderNo查询订单信息
+        OrderInfo orderInfo = getOrderInfoByOrderNo(orderNo);
+        if (orderInfo == null || orderInfo.getOrderStatus() != OrderStatus.UNPAID) {
+            return;
+        }
+        // 2. 更新订单状态
+        orderInfo.setOrderStatus(OrderStatus.WAITING_DELEVER);
+        orderInfo.setProcessStatus(ProcessStatus.WAITING_DELEVER);
+        baseMapper.updateById(orderInfo);
+        // 3. 扣减库存
+        rabbitService.sendMessage(MqConst.EXCHANGE_ORDER_DIRECT, MqConst.ROUTING_MINUS_STOCK, orderNo);
+    }
+
     /**
      * 计算总金额
      * @param cartInfoList
